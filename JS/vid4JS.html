@@ -6,6 +6,149 @@
     <title>Js variables</title>
 </head>
 <body>
-    
+    <!-- var is function-scoped and can be redeclared.
+let and const are block-scoped.
+let allows reassignment, const does not. -->
+    <script>
+        var name = "John";
+        console.log(name); // Output: John
+
+        let age = 30;
+        console.log(age); // Output: 30
+
+        const pi = 3.14;
+        console.log(pi); // Output: 3.14
+
+        // var can be redeclared
+        var name = "Doe";
+        console.log(name); // Output: Doe
+
+        // let cannot be redeclared
+        // let age = 25; // This will cause an error
+
+        // const cannot be redeclared or reassigned
+        // const pi = 3.14159; // This will cause an error
+    </script>
+    <!-- When to Use var, let, or const?
+1. Always declare variables
+
+2. Always use const if the value should not be changed
+
+3. Always use const if the type should not be changed (Arrays and Objects)
+
+4. Only use let if you cannot use const
+
+5. Never use var if you can use let or const. -->
+<!-- JavaScript Data Types
+JavaScript variables can hold 8 datatypes, but for now, just think of numbers and strings.
+
+Strings are text written inside quotes.
+
+Numbers are written without quotes.
+
+If you put a number in quotes, it will be treated as a text string.
+
+Example
+const pi = 3.14;
+let person = "John Doe";
+let answer = 'Yes I am!'; -->
+
+<!-- One Statement, Many Variables
+You can declare many variables in one statement.
+
+Start the statement with let or constand separate the variables by comma:
+
+Example
+let person = "John Doe", carName = "Volvo", price = 200; -->
+<script>
+    // A declaration can span multiple lines:
+
+// Example
+let person = "John Doe",
+carName = "Volvo",
+price = 200;
+document.write(person + "<br>" + carName + "<br>" + price);
+// The Assignment Operator
+// In JavaScript, the equal sign (=) is an assignment operator, not an equal to operator.
+
+// This is different from algebra. The following does not make sense in algebra:
+
+x = x + 5;
+// In JavaScript, however, it makes perfect sense: it assigns the value of x + 5 to x.
+
+// (It calculates the value of x + 5 and puts the result into x. The value of x is incremented by 5.)
+</script>
+<script>
+    document.write("<br>","<br>");
+// Note:
+// If you put a number in quotes, the rest of the numbers will be treated as strings, and concatenated.
+let a = "5" + 2 + 3;
+document.write(a); // Output: 523
+</script>
+<!-- The let keyword was introduced in ES6 (2015)
+
+Variables declared with let have Block Scope
+
+Variables declared with let must be Declared before use
+
+Variables declared with let cannot be Redeclared in the same scope
+
+Block Scope
+Before ES6 (2015), JavaScript did not have Block Scope.
+
+JavaScript had Global Scope and Function Scope.
+
+ES6 introduced the two new JavaScript keywords: let and const.
+
+These two keywords provided Block Scope in JavaScript:
+
+Example
+Variables declared inside a { } block cannot be accessed from outside the block:
+
+{
+  let x = 2;
+}
+// x can NOT be used here
+Function Scope 
+Inside a function all variables declared with var, let or const have Function Scope:
+
+Example-->
+<script>
+    var x = 2;
+    document.write(x);
+    // we cannot redeclare the value of let type 
+    let c=1;
+    // let c=2; // This will cause an error, as we cannot redeclare a variable declared with let
+    c=12; // This is allowed, as we are reassigning the value, not redeclaring it
+    // { let c=12;} this is alowed as we know let is block scope so we can declare it in another block
+    let d=1; // This is allowed, as we are declaring a new variable
+    document.write("<br>",c,"<br>",d);
+</script>
+<script>
+    // in const type we cannot redeclare the value also we cannot reassign the value
+    const f=2;
+// const f=3; // This will cause an error, as we cannot redeclare a variable declared with const 
+// f=4; // This will cause an error, as we cannot reassign a variable declared with const
+
+
+
+</script>
+  <!-- What is Good?
+let and const have block scope.
+
+let and const can not be redeclared.
+
+let and const must be declared before use.
+
+let and const does not bind to this.
+
+let and const are not hoisted.
+
+What is Not Good?
+var does not have to be declared.
+
+var is hoisted.
+
+var binds to this. -->
 </body>
 </html>

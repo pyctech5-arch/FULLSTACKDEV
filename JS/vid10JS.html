@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String methods</title>
+</head>
+<body>
+    <p id="b3"></p>
+<script>let header="Tamplate Strings";
+let tags=["tamplate strings","javascript","es6"];
+let html=`<h2>${header}</h2><ul>`;
+for(const x of tags){
+      html +=`<li>${x}</li>`;
+}
+html+=`</ul>`;
+document.getElementById("b3").innerHTML=html;</script>
+<!-- JavaScript String charAt()
+The charAt() method returns the character at a specified index (position) in a string: -->
+<p id="de1"></p>
+<p id="de2"></p>
+<p id="de3"></p>
+<p id="de4"></p>
+<p id="de5"></p>
+
+<script>
+    let text="Hello World";
+    let char=text.charAt(0);
+ document.getElementById("de1").innerHTML=char;
+    /*JavaScript String charCodeAt()
+The charCodeAt() method returns the code of the character at a specified index in a string:
+
+The method returns a UTF-16 code (an integer between 0 and 65535).*/
+ let char1=text.charCodeAt(0);
+document.getElementById("de2").innerHTML=char1;
+/*JavaScript codePointAt()
+Examples
+Get code point value at the first position in a string:*/
+let char2=text.charCodeAt(0);
+document.getElementById("de3").innerHTML=char2;  
+/*JavaScript String at()
+ES2022 introduced the string method at():
+
+Examples
+Get the third letter of text:*/
+text="Prashant";
+let letter=text.at(2);
+document.getElementById("de4").innerHTML=letter;
+// Property Access [ ]
+let letter1=text[2];
+document.getElementById("de5").innerHTML=letter1;
+
+</script>
+<p id="de6"></p>
+<p id="de7"></p>
+<p id="de8"></p>
+<p id="de9"></p>
+<p id="de10"></p>
+<p id="de11"></p><p id="de12"></p>
+<script>
+/*JavaScript String concat()
+concat() joins two or more strings:*/
+let text1="hello";
+let text2="world";
+let text3=text1.concat(" ",text2);
+document.getElementById("de6").innerHTML = text3;
+/*Extracting String Parts
+There are 3 methods for extracting a part of a string:
+
+slice(start, end)
+substring(start, end)
+substr(start, length)*/
+let name ="Prashantchavan";
+let newn=name.slice(3,8);
+document.getElementById("de7").innerHTML=newn;
+/*If a parameter is negative, the position is counted from the end of the string:
+
+let text = "Apple, Banana, Kiwi";
+let part = text.slice(-12);*/ 
+let name1="Dhuryodana";
+let c=name1.substring(3,8);
+document.getElementById("de8").innerHTML=c;
+/*Converting to Upper and Lower Case
+A string is converted to upper case with toUpperCase():
+
+A string is converted to lower case with toLowerCase():*/
+let upper="PrasHant";
+let lower="ChavAn";
+let u=upper.toUpperCase();
+let l=lower.toLowerCase();
+document.getElementById("de9").innerHTML=u;
+document.getElementById("de10").innerHTML=l;
+/*JavaScript String isWellFormed()
+The isWellFormed() method returns true if a string is well formed.
+
+Otherwise it returns false.
+
+A string is not well formed if it contains lone surrogates.*/ 
+let a ="Prashant";
+let chek=a.isWellFormed();
+document.getElementById("de11").innerHTML=chek;
+let b ="P3u9e\uD800";
+let chek1=b.isWellFormed();
+document.getElementById("de12").innerHTML=chek1;
+</script>
+<p id="a1"></p>
+<p id="a2"></p>
+<p id="a3"></p>
+<p id="a4"></p>
+<p id="a5"></p>
+<p id="a6">How are you my bro</p>
+<p id="a7"></p>
+
+<button onclick="g()">click to change</button>
+<script>
+    /*JavaScript String trim()
+The trim() method removes whitespace from both sides of a string:*/
+let t="   pthajsn"
+let T="   pthajsn    "
+let S=T.trimStart();
+let E=T.trimEnd();
+document.getElementById("a2").innerHTML="The untrimed length: "+T.length+ " and trim start length: "+S.length+" trim end length is: "+T.length;
+let r=t.trim();
+document.getElementById("a1").innerHTML="After:"+r.length+" between length is before:"+t.length; 
+/*JavaScript String Padding
+ECMAScript 2017 added two new string methods to JavaScript: padStart() and padEnd() to support padding at the beginning and at the end of a string.*/
+let n = 5;
+let k = n.toString();
+document.getElementById("a3").innerHTML= k.padStart(6,"0");
+document.getElementById("a4").innerHTML= k.padEnd(6,"0");
+/*JavaScript String repeat()
+The repeat() method returns a string with a number of copies of a string.
+
+The repeat() method returns a new string.
+
+The repeat() method does not change the original string.*/
+let re="Hi";
+let repe=re.repeat(2); 
+document.getElementById("a5").innerHTML=repe;
+/*Syntax
+string.repeat(count)
+Parameters
+Parameter	Description
+count	Required.
+The number of copies wanted.
+Return Value
+Type	Description
+String	A new string containing the copies.*/
+function g(){let h=document.getElementById("a6").innerHTML;
+document.getElementById("a6").innerHTML=h.replace("How are you","how do u do");}
+// To replace case insensitive, use a regular expression with an /i flag (insensitive):
+// To replace all matches, use a regular expression with a /g flag (global match):
+/*let text = "Please visit Microsoft!";
+let newText = text.replace(/MICROSOFT/i, "W3Schools");*/ 
+/*JavaScript String ReplaceAll()
+In 2021, JavaScript introduced the string method replaceAll():text = text.replaceAll("Cats","Dogs");
+text = text.replaceAll("cats","dogs");
+The replaceAll() method allows you to specify a regular expression instead of a string to be replaced.
+
+If the parameter is a regular expression, the global flag (g) must be set, otherwise a TypeError is thrown.
+
+Example
+text = text.replaceAll(/Cats/g,"Dogs");
+text = text.replaceAll(/cats/g,"dogs");
+Note
+replaceAll() is an ES2021 feature.
+
+replaceAll() does not work in Internet Explorer.
+*/
+/*Converting a String to an Array
+If you want to work with a string as an array, you can convert it to an array.
+
+JavaScript String split()
+A string can be converted to an array with the split() method:
+
+Example
+text.split(",")    // Split on commas
+text.split(" ")    // Split on spaces
+text.split("|")    // Split on pipe
+If the separator is omitted, the returned array will contain the whole string in index [0].
+
+If the separator is "", the returned array will be an array of single characters:*/
+let textu = "Hello";
+const myArr = textu.split("");
+
+textu = "";
+for (let i = 0; i < myArr.length; i++) {
+  textu += myArr[i] + "<br>"
+}
+document.getElementById("a7").innerHTML = textu;
+</script>
+
+</body>
+</html>

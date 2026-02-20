@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Strings</title>
+</head>
+<body>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <script>
+        /*Using Quotes
+A JavaScript string is zero or more characters written inside quotes.*/
+        let text1 = "Hello World!";
+        let text2 = 'Hello World!';
+        /*Quotes Inside Quotes
+You can use quotes inside a string, as long as they don't match the quotes surrounding the string:*/ 
+        let text3 = "It's a nice day!";
+        /*Template Strings
+Templates were introduced with ES6 (JavaScript 2016).
+
+Templates are strings enclosed in backticks (`This is a template string`).
+
+Templates allow single and double quotes inside a string:*/ 
+        let text4 = `He said "Hello World!"`;
+        document.getElementById("demo1").innerHTML = text1;
+        document.getElementById("demo2").innerHTML = text2;
+        document.getElementById("demo3").innerHTML = text3;
+        document.getElementById("demo4").innerHTML = text4;
+        /*String Length
+To find the length of a string, use the built-in length property:*/ 
+        let text5 = "abcdefghijklmnopqrstuvwxyz";    document.getElementById("demo5").innerHTML = text5.length;
+        /*Escape Characters
+Because strings must be written within quotes, JavaScript will misunderstand this string:*/
+/*The string will be chopped to "We are the so-called ".
+
+To solve this problem, you can use an backslash escape character.
+
+The backslash escape character (\) turns special characters into string characters:
+
+Code	Result	Description
+\'	'	Single quote
+\"	"	Double quote
+\\	\	Backslash*/
+/*Six other escape sequences are valid in JavaScript:
+
+Code	Result
+\b	Backspace
+\f	Form Feed
+\n	New Line
+\r	Carriage Return
+\t	Horizontal Tabulator
+\v	Vertical Tabulator*/
+document.getElementById("demo6").innerHTML = "We are the so-called \"Vikings\" from the north.";
+document.getElementById("demo7").innerHTML = "The character \\ is called backslash.";
+document.getElementById("demo8").innerHTML = "First Line \n Second Line"; 
+
+`The quick
+brown fox
+jumps over
+the lazy dog`            // 
+    </script>
+<!-- JavaScript Strings -->
+<script>
+    // x is a string
+let x = "John";
+
+// y is an object
+let y = new String("John");
+
+document.getElementById("demo9").innerHTML =
+typeof x + "<br>" + typeof y;
+/*Basic String Methods
+Javascript strings are primitive and immutable: All string methods produce a new string without altering the original string.
+
+String length
+String charAt()
+String charCodeAt()
+String codePointAt()
+String concat()
+String at()
+String [ ]
+String slice()
+String substring()
+String substr()
+String toUpperCase()
+String toLowerCase()
+String isWellFormed()
+String toWellFormed()
+String trim()
+String trimStart()
+String trimEnd()
+String padStart()
+String padEnd()
+String repeat()
+String replace()
+String replaceAll()
+String split()*/
+function mu(){
+window.location.href='https://www.w3schools.com/js/js_string_reference.asp';}
+</script>
+<button onclick="mu()"> More know about string By Clicking Me!</button>
+<!-- JavaScript String Templates
+String Templates
+Template Strings
+Template Literals
+Beloved child has many names
+
+Back-Tics Syntax
+Template Strings use back-ticks (``) rather than the quotes ("") to define a string:
+
+Example
+let text = `Hello World!`;
+
+Quotes Inside Strings
+Template Strings allow both single and double quotes inside a string:
+
+Example
+let text = `He's often called "Johnny"`;
+
+Multiline Strings
+Template Strings allow multiline strings:
+
+Example
+let text =
+`The quick
+brown fox
+jumps over
+the lazy dog`;
+
+ -->
+<!-- Interpolation
+Template Strings allow variables in strings.
+
+Template strings provide an easy way to interpolate variables in strings. -->
+<!-- Syntax
+${...}
+Example
+Variable Substitutions:
+
+let firstName = "John";
+let lastName = "Doe";
+
+let text = `Welcome ${firstName}, ${lastName}!`;
+
+Interpolation
+Template Strings allow variables in strings.
+
+Template strings provide an easy way to interpolate variables in strings.
+
+Syntax
+ -->
+<h3 id="d1"></h3>
+<script>
+let firstName = "John";
+let lastName = "Doe";
+document.getElementById("demo10").innerHTML = `Welcome ${firstName}, ${lastName}!`;
+</script>
+<!-- JavaScript String Templates
+String Templates
+Template Strings
+Template Literals
+Beloved child has many names
+
+Back-Tics Syntax
+Template Strings use back-ticks (``) rather than the quotes ("") to define a string: -->
+<p id="b2"></p>
+
+
+<script>
+let a=`pras"h"ant how are u doing ur  classes of web dev have u learning properly without  skipping single day`;
+        document.getElementById("demo10").innerHTML=a;
+        /*Interpolation
+Template Strings allow variables in strings.
+
+Template strings provide an easy way to interpolate variables in strings.*/
+let firstname="prashant";
+let lastname="chavan";
+let text=`hello ${firstname} ${lastname} How are u doing in ur life`;
+document.getElementById("d1").innerHTML=text;
+let price = 10;
+let Tax = 0.25;
+/*toFixed() is used for 👇
+
+toFixed() is a JavaScript number method used to:
+
+👉 Round a number to a fixed number of decimal places
+👉 Convert number into a string with specified decimals*/ 
+let total = `Total: ${(price * (1 + Tax)).toFixed(2)}`;
+document.getElementById("b2").innerHTML=total;
+
+</script>
+</body>
+
+</html>
