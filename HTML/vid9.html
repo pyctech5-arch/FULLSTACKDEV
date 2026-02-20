@@ -1,0 +1,52 @@
+<!-- html links and different colors -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html-Link colors</title>
+<style>
+    /* color changing of the link using selectors */
+    .e:link{
+         color: bisque;
+         background-color:transparent;
+         text-decoration: none; 
+    }
+    .e:visited{
+         color:red;
+         background-color:brown;
+         text-decoration: underline; 
+    }
+    .e:hover{
+         color: blue;
+         background-color:lightblue;
+         text-decoration: underline; 
+    }
+    .e:active{
+         color:yellow ;
+         background-color:transparent;
+         text-decoration: underline; 
+    }
+
+    .w:link,.w:visited{
+       background-color: red;
+       padding: 15px 25px ;
+       text-align: center;
+       text-decoration: none;
+       display: inline-block;
+       border:1px solid black;
+       border-radius: 5%;
+    }
+    .w:hover , .w:active{
+        background-color: aqua;
+    }
+
+</style>
+</head>
+<body>
+    <!-- styling ancor tag -->
+    <a class="e" href="https://www.google.com/?zx=1757656812431&no_sw_cr=1">google</a>
+    <!-- styling a tag as a Link buttons -->
+     <a class="w" href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_links_button" target="_blank">click me</a>
+</body>
+</html>

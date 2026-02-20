@@ -1,0 +1,62 @@
+<!-- HTML javascript and file paths -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h1>My First JavaScript</h1>
+<p>Here, a JavaScript changes the value of the src (source) attribute of an image.</p>
+
+<script>
+function light(sw) {
+  var pic;
+  if (sw == 0) {
+    pic = "pic_bulboff.gif"
+  } else {
+    pic = "pic_bulbon.gif"
+  }
+  document.getElementById('myImage').src = pic;
+}
+</script>
+
+<img id="myImage" src="pic_bulboff.gif" width="100" height="180">
+
+<p>
+<button type="button" onclick="light(1)">Light On</button>
+<button type="button" onclick="light(0)">Light Off</button>
+</p>
+
+<button type="button" onclick="document.getElementById('demo').innerHTML = Date()">Click me</button>
+<h3 id="demo"></h3>
+
+<h1 id="hii">hello</h1>
+ <button c onclick="changeColor()">hit me</button>
+<script>
+  function changeColor(){
+    var a=document.getElementById("hii");
+    a.style.fontSize = "25px";
+    a.style.color = "red";
+    a.style.backgroundColor = "yellow";  
+    document.getElementById("demo").innerHTML="Hello JavaScript!";  
+}
+  
+     
+        
+//         function changeColor(){
+//        document.getElementById("hii").style.fontSize = "25px";
+// document.getElementById("hii").style.color = "red";
+// document.getElementById("hii").style.backgroundColor = "yellow";
+//         }
+//         document.getElementById("demo").innerHTML="Hello JavaScript!";
+</script>
+<br>
+<img style="padding-top: 50px;" src="csss/office table.jpg"  alt="google" height="200px" width="250px"><br>
+<img src="/csss/office table.jpg" alt="google" height="200px" width="250px"><br>
+<img src="../csss/office table.jpg" alt="google" height="200px" width="250px">
+
+</body>
+</html>

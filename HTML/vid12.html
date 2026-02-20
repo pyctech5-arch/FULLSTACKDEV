@@ -1,0 +1,68 @@
+<!-- html image maps and the background images -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Html Image Maps</title>
+</head>
+<body style="background-image: url(ironman.png); background-size:cover; background-repeat: no-repeat; background-attachment: fixed; background-image: url(coding\ man.gif);">
+    <!-- Html Image Maps -->
+     <!-- here i found some intresting -->
+      <!-- The image is inserted using the <img> tag. The only difference from other images is that you must add a usemap attribute: -->
+      <img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+  <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+  <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm"> <br><br>
+</map>
+<!-- The Areas
+Then, add the clickable areas.
+
+A clickable area is defined using an <area> element.
+
+Shape
+You must define the shape of the clickable area, and you can choose one of these values:
+
+rect - defines a rectangular region
+circle - defines a circular region
+poly - defines a polygonal region
+default - defines the entire region
+You must also define some coordinates to be able to place the clickable area onto the image.  -->
+<!-- Shape="poly"
+The shape="poly" contains several coordinate points, which creates a shape formed with straight lines (a polygon).
+
+This can be used to create any shape.
+
+Like maybe a croissant shape! -->
+<img src="cosent.jpg" alt="" usemap="#croissant" >
+<map name="croissant">
+    <area shape="poly" coords="140,121,181,116,204,160,204,222,191,270,140,329,85,355,58,352,37,322,40,259,103,161,128,147" href="croissant.htm">
+</map>
+<img src="csss/office table.jpg" alt="officetable" usemap="#officetable">
+<map name="officetable">
+    <area title="click on laptop" shape="poly" coords="460,164,450,342,428,424,771,434,759,353,745,171" href="csss/open book.jpg" alt="laptop book is here">
+</map>
+<!-- refer the https://www.fla-shop.com/image-map/ this website for select cords easily -->
+
+<h1 style="color: lawngreen; text-decoration: underline double;">Adding Background Images :</h1>
+<!--Using CSS backgroud image property  -->
+<p style="background-image:url(coding\ man.gif); color:lawngreen ; padding: 25px;">Iornman Lorem, ipsum dolor sit amet consectetur 
+    adipisicing elit. Placeat praesentium inventore illo aperiam delectus, enim tempore ut rerum doloremque 
+    ipsam et, ex in, quod reiciendis cumque qui perferendis voluptas commodi fuga? Expedita ipsum, suscipit deleniti, amet nam saepe corrupti omnis voluptatem obcaecati id officiis, eveniet distinctio beatae repellat fugiat voluptate provident labore facere placeat praesentium consectetur. Hic neque earum blanditiis? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus unde facere, inventore accusantium pariatur culpa. Quasi iure cum ullam exercitationem laboriosam labore, voluptates minima vitae sequi, corrupti incidunt, saepe odit. Aspernatur, ex obcaecati. Voluptates odit tenetur nisi mollitia inventore doloremque ipsam sapiente est labore sint! Cum, iusto necessitatibus repudiandae nesciunt ratione a pariatur ad perferendis dignissimos odit autem similique ex amet. Aut vitae, quibusdam nisi eos nesciunt adipisci repellendus, tempore cumque sint sequi quia voluptas maiores ipsam eaque fugiat enim incidunt quae laudantium voluptatum error ab? Nostrum quidem soluta, accusantium perspiciatis aperiam earum ratione aliquid necessitatibus, deleniti ex natus dolorem.
+</p>
+<h1 style="font-size: 160px; color:cyan; background-image: url(ironman.png); background-repeat: repeat; background-size:cover; background-attachment:fixed;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore impedit adipisci aperiam, quam a dolorum recusandae vitae explicabo repellendus, ipsa molestias reprehenderit eum id, provident alias temporibus amet? Autem, molestias debitis accusantium temporibus consectetur molestiae tempore dolore qui porro nihil asperiores dolorem nostrum, repellendus necessitatibus et veniam cumque illum officia non. Nisi eveniet aspernatur voluptatum autem maxime hic asperiores, maiores nihil dolor voluptates laudantium facilis iure quas optio quis corrupti?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptatibus molestias libero nobis numquam odit, vitae ipsam ex minima sapiente fugit consequuntur eos! Eum nesciunt voluptatibus vel eos tenetur exercitationem non accusamus ea velit sapiente doloremque dignissimos consequatur, debitis blanditiis iusto alias reprehenderit obcaecati tempora, repellat officia, quos ipsa quas. Voluptates quidem nobis eos enim debitis iste animi quo nisi!
+</h1>
+<!-- background repeat property and also we added background-attach =property for making in a bg-size:cover visible.-->
+ <!-- we can see this in our above body tag -->
+<img src="imh.jpg" usemap="#image-map">
+
+<map name="image-map">
+<area target="_self" alt="these are hairs" title="hairs" href="https://en.wikipedia.org/wiki/Hair" coords="284,269,283,288,286,309,283,344,267,336,263,320,250,312,239,281,228,225,236,176,242,146,270,104,300,71,329,57,362,40,392,30,423,21,451,20,472,24,481,28,504,38,523,48,547,61,568,64,593,75,628,78,657,90,659,114,661,132,671,142,678,156,672,166,666,179,659,188,648,240,669,186,689,170,681,181,695,178,689,180,687,189,662,205,656,217,643,252,636,267,629,280,621,294,614,305,612,323,603,353,594,379,589,347,589,328,589,308,586,292,586,274,581,258,574,237,578,221,579,203,568,185,554,176,548,165,537,165,514,154,505,145,498,144,490,143,482,139,476,137,457,135,441,144,413,154,392,159,380,169,351,181,331,200,306,210,298,243,298,247" shape="poly">
+</map>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Statements and comments</title>
+</head>
+<body>
+    <h1 id="Demo"></h1>
+    <script>
+        /*JavaScript Programs
+        A computer program is a list of "instructions" to be "executed" by a computer.
+        
+        These programming instructions are called statements.
+        
+        Most JavaScript programs contain many statements.
+        Semicolons ;
+Semicolons separate JavaScript statements.
+
+Add a semicolon at the end of each executable statement:
+        The statements are executed, one by one, in the same order as they are written.*/ 
+        let x, y, z;  //This is a single line comment  // Statement 1
+        x = 5;          // Statement 2
+        y = 6;          // Statement 3
+        
+        z = x + y;      // Statement 4
+        document.write(z);  // Statement 5
+        
+        // this is a multi line comment
+        /*JavaScript Statements
+        JavaScript statements are composed of:
+        
+        Values, Operators, Expressions, Keywords, and Comments.
+        
+        This statement tells the browser to write "Hello Dolly." inside an HTML element with id="demo":*/
+        document.getElementById("Demo").innerHTML="Welcome to Js"
+/*JavaScript White Space
+JavaScript ignores multiple spaces. You can add white space to your script to make it more readable.
+
+The following lines are equivalent:*/
+let boy=     "person";
+let boy1="person"; 
+document.write("<br>");
+document.write(boy);
+// this below comment prevent execution if the code above it
+// document.write(boy1);
+
+ </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Errors in CSS</title>
+    <style>
+        /* Missing Semicolons
+Forgetting a semicolon at the end of a property declaration can break the style rule. */
+   .error1 {
+    color: red
+    font-size: 20px;}
+    /* Incorrect Property Names
+Using an invalid property name will cause the entire rule to be ignored. */
+    .error2 {
+        colr: blue;
+        font-size: 18px;
+    }
+    /* Invalid Values    Correct properties but invalid values will also be ignored. */
+    .error3 {
+        color: bluu;
+        font-size: 16px;
+    }  
+    /* Unclosed Braces
+Forgetting to close a style rule with a closing brace can cause the browser to ignore the entire rule. */
+    .error4 {
+        color: green;
+        font-size: 14px;
+    /* Missing Selectors    A style rule without a selector will not be applied to any elements. */
+    {
+        color: purple;
+        font-size: 12px;
+    }                        
+    /* Extra Colons or Braces
+Typos like extra colons or misplaced braces can cause rules to break. */
+.bad {
+  color:: blue;
+}
+   </style>
+</head>
+<body>
+    <!-- CSS Errors
+Errors in CSS can lead to unexpected behavior or styles not being applied correctly. This page shows common CSS mistakes and how to avoid them.
+ -->
+<!-- Tips to Avoid CSS Errors
+Use a code editor with syntax highlighting.
+Validate your CSS with a CSS linter or validator.
+Write CSS in small sections and test frequently. -->
+</body>
+</html>

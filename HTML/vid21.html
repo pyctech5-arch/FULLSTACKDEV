@@ -1,0 +1,50 @@
+<!-- The head element in html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- this is the meta tag for addingg charecter set UTF-Unicode Transformation Format-->
+    <meta charset="UTF-8">
+    <!-- this is the meta tag for adding keywords for search engine  -->
+     <meta name="keywords" content="HTML, CSS, JavaScript">
+    <!-- this is the meta tag for adding  description for search engine  -->
+    <meta name="description" content="This is a sample HTML document demonstrating the head element">
+    <!-- this is the meta tag for adding author name -->
+    <meta name="author" content="Prashant c">
+<!-- this is the meta tag for refreshing the page every 30 seconds -->
+    <meta http-equiv="refresh" content="30">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- this is  the title tag whitch is usedd for adding page title -->
+    <title>This is the tiltle tag</title>
+    <!-- this is the style  tag for  adding css to it -->
+<style>
+    body{background-color: powderblue;}
+</style>
+<!-- link element this is for  linking external resources -->
+<link rel="stylesheet" href="vid21.css">
+<!-- the script tag this is for  adding javascript in html -->
+<script>
+function myfunction(){
+document.querySelector("p").innerHTML="welcome to javascript";
+}
+</script>
+<!-- The HTML <base> Element
+The <base> element specifies the base URL and/or target for all relative URLs in a page.
+
+The <base> tag must have either an href or a target attribute present, or both.
+
+There can only be one single <base> element in a document! -->
+<base href="https://www.google.com/" target="_blank">
+</head>
+<body>
+<h1>this is h1 tag</h1> 
+<p >this is p tag</p> 
+<button  onclick="myfunction()" type="button">
+    try it
+</button>   
+<p>
+    <a href="">HTML base tag</a>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Canvas Graphics</title>
+</head>
+<body>
+    <!-- What is HTML Canvas?
+The HTML <canvas> element is used to draw graphics, on the fly, via JavaScript.
+
+The <canvas> element is only a container for graphics. You must use JavaScript to actually draw the graphics.
+
+Canvas has several methods for drawing paths, boxes, circles, text, and adding images.
+
+Canvas is supported by all major browsers.
+
+Canvas Examples
+A canvas is a rectangular area on an HTML page. By default, a canvas has no border and no content.
+
+The markup looks like this:
+
+<canvas id="myCanvas" width="200" height="100"></canvas>
+Note: Always specify an id attribute (to be referred to in a script), and a width and height attribute to define the size of the canvas. To add a border, use the style attribute.-->
+<!-- cross line -->
+<canvas style="border: 1px solid #000000;" id="myCanvas" width="200" height="100"></canvas>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.moveTo(0,0);
+    ctx.lineTo(200,100);
+    ctx.stroke();
+</script>
+<!-- Circle -->
+<canvas style="border: 1px solid #000000;" id="anvas" width="200" height="100"></canvas>
+<script>
+    var c = document.getElementById("anvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+    ctx.stroke();
+</script>
+<!-- Hello world -->
+<canvas style="border: 1px solid #000000;" id="nvas" width="200" height="100"></canvas>
+<script>
+    var c = document.getElementById("nvas");
+    var ctx = c.getContext("2d");
+    ctx.font = "30px Arial";
+    ctx.fillText("Hello World", 10, 50);
+</script>
+<!-- Hello world stroked -->
+<canvas style="border: 1px solid #000000;" id="Canvas" width="200" height="100"></canvas>
+<script>
+    var c = document.getElementById("Canvas");
+    var ctx = c.getContext("2d");
+    ctx.font = "30px Arial";
+    ctx.strokeText("Hello World", 10, 50);
+</script>
+<!-- linear gradient -->
+<canvas style="border: 1px solid #000000;" id="as" width="200" height="100"></canvas>
+<script>
+    var c = document.getElementById("as");
+var ctx = c.getContext("2d");
+
+// Create gradient
+var grd = ctx.createLinearGradient(101,100, 210, 101);
+grd.addColorStop(0, "red");
+grd.addColorStop(1, "white");
+
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(0, 0, 200, 100);
+</script>
+<!--  -->
+<canvas style="border: 1px solid #000000;" id="ias" width="200" height="100"></canvas>
+<script>
+var c = document.getElementById("ias");
+var ctx = c.getContext("2d");
+
+// Create gradient
+var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+grd.addColorStop(0, "red");
+grd.addColorStop(1, "white");
+
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(0, 0, 200, 100);
+</script>
+
+
+
+
+
+<p>Image to use:</p>
+<img id="scream" src="workplace.jpg" alt="The Scream" width="220" height="277">
+
+<p>Canvas to fill:</p>
+<canvas id="inCanvas" width="230" height="300"
+style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML canvas tag.</canvas>
+
+<p><button onclick="myCanvas()">Try it</button></p>
+
+<script>
+function myCanvas() {
+  var c = document.getElementById("inCanvas");
+  var ctx = c.getContext("2d");
+  var img = document.getElementById("scream");
+  ctx.drawImage(img,-100,-100);
+}
+</script>
+
+</body>
+</html>

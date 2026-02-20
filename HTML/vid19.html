@@ -1,0 +1,51 @@
+<!-- HTML id Attribute and button and iframe -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1 id="hi" onmouseover="idwork()">this is the id </h1>
+    <button onclick="alert('hello!')"  >click here </button>
+
+    <button class="hii" onclick="changeColor()">hit me</button>
+
+
+<br><br><br>
+<form action="ironman.png" method="get">
+    Firstname:<input name="ironman" type="text" ><br><br><br>
+    <button type="submit">Download Image</button>
+    <button type="reset">reset </button>
+<button type="button"> naormal button</button>
+</form>
+
+
+<iframe src="vid18.html" width="400" name="ppp" height="400" title="w3schools" style="border-radius: 10px; border: none; padding-top: 50px; "></iframe>
+
+<button><a style="color: black; text-decoration: none;" href="vid10.html" target="ppp">W3Schools.com</a></button>
+
+    <script>
+        function idwork(){
+          var b=document.getElementById("hi");
+
+               b.style.color="red";
+            
+          
+        }
+      
+        function changeColor(){
+        var a=document.getElementsByClassName("hii");
+            for(var i=0;i<5;i++){
+    a[i].style.backgroundColor="blue";
+    a[i].style.padding="20px";
+ a[i].style.border="black 1px solid";        
+a[i].style.fontSize="200px";
+}
+        }
+      
+    </script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag And Drop API</title>
+<style>
+#div1, #div2 {
+  width: 350px;
+  height: 70px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+</style>
+</head>
+<body>
+    <!-- The HTML Drag and Drop API enables an element to be dragged and dropped. -->
+     <!-- Drag and Drop
+Drag and drop is a very common feature. It is when you "grab" an object and drag it to a different location. -->
+<!-- HTML Drag and Drop API Example
+The example below is a simple drag and drop example: -->
+
+<script>
+function dragstartHandler(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function dragoverHandler(ev) {
+  ev.preventDefault();
+}
+
+function dropHandler(ev) {
+  ev.preventDefault();
+  const data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+
+<h1>Drag and Drop API</h1>
+
+<p>Drag the W3Schools image into the rectangle:</p>
+
+<div id="div1" ondrop="dropHandler(event)"   ondragover="dragoverHandler(event)"></div>
+<br>
+<img id="img1" src="img_logo.gif" draggable="true" ondragstart="dragstartHandler(event)" width="336" height="69">
+
+<!-- Make an Element Draggable
+First of all: To make an element draggable, set the draggable attribute to true:
+
+<img id="img1" draggable="true">
+or:
+
+<p id="p1" draggable="true">Draggable text</p>
+What to Drag - ondragstart and setData()
+Then, specify what should happen when the element is dragged.
+
+In the example above, the ondragstart attribute of the <img> element calls a function (dragstartHandler(ev)), that specifies what data to be dragged.
+
+The dataTransfer.setData() method sets the data type and the value of the dragged data:
+
+function dragstartHandler(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+In this case, the data type is "text" and the value is the id of the draggable element ("img1").
+
+Where to Drop - ondragover
+The ondragover attrribute of the <div> element calls a function (dragoverHandler(ev)), that specifies where the dragged data can be dropped.
+
+By default, data/elements cannot be dropped in other elements. To allow a drop, we must prevent the default handling of the element.
+
+This is done by calling the preventDefault() method for the ondragover event:
+
+function dragoverHandler(ev) {
+  ev.preventDefault();
+}
+Do the Drop - ondrop
+When the dragged data is dropped, a drop event occurs.
+
+In the example above, the ondrop attribute of the <div> element calls a function, dropHandler(event):
+
+function dropHandler(ev) {
+  ev.preventDefault();
+  const data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+Code explained:
+
+Call preventDefault() to prevent the browser default handling of the data (default is open as link on drop)
+Get the dragged data with the dataTransfer.getData() method. This method will return any data that was set to the same type in the setData() method
+The dragged data is the id of the dragged element ("img1")
+Append the dragged element into the drop element
+More Examples
+Example
+How to drag and drop an <h1> element to a <div> element: -->
+
+ <script>
+function dragstartHandler(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function dragoverHandler(ev) {
+  ev.preventDefault();
+}
+
+function dropHandler(ev) {
+  ev.preventDefault();
+  const data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+
+<div id="div1" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+
+<h1 id="h1" draggable="true" ondragstart="dragstartHandler(event)">W3Schools.com</h1>
+   
+    
+
+
+<script>
+function dragstartHandler(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function dragoverHandler(ev) {
+  ev.preventDefault();
+}
+
+function dropHandler(ev) {
+  ev.preventDefault();
+  const data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+
+<div id="div1" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+
+<a id="link1" href="https://w3schools.com" draggable="true" ondragstart="dragstartHandler(event)">W3Schools.com</a>
+
+
+
+    <script>
+    function dragstartHandler(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+    
+    function dragoverHandler(ev) {
+      ev.preventDefault();
+    }
+    
+    function dropHandler(ev) {
+      ev.preventDefault();
+      const data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+    </script>
+<h1>Drag and Drop Image</h1>
+
+<p>Drag the image back and forth between the two div elements.</p>
+
+<div id="div1" ondrop="dropHandler(event)"   ondragover="dragoverHandler(event)">
+<img id="img1" src="img_w3slogo.gif" draggable="true" ondragstart="dragstartHandler(event)" width="88" height="31">
+</div>
+
+<div id="div2" ondrop="dropHandler(event)"   ondragover="dragoverHandler(event)"></div>
+<!-- 
+Create a .js Web Worker File
+Now, let's create a web worker in an external JavaScript file.
+
+Here we create a script that counts. The script is stored in the "demo_workers.js" file:
+
+var i = 0;
+
+function timedCount() {
+  i = i + 1;
+  postMessage(i);
+  setTimeout("timedCount()",500);
+}
+
+timedCount();
+Note: The important part of the code above is the postMessage() method - which is used to post messages back to the HTML page.
+
+Create a Web Worker Object
+Once we have created the .js web worker file, we can call it from an HTML page.
+
+The following lines checks if a worker (w) already exists, if not - it creates a new web worker object and points to the .js file: "demo_workers.js":
+
+if (typeof(w) == "undefined") {
+  w = new Worker("demo_workers.js");
+}
+Then we can SEND and RETRIEVE messages from the web worker.
+
+Data is sent between web workers and the main thread via a system of messages - both sides send their messages using the postMessage() method, and respond to messages via the onmessage event handler.
+
+Add an onmessage event listener to the web worker object.
+
+w.onmessage = function(event){
+  document.getElementById("result").innerHTML = event.data;
+};
+When the web worker in the .js posts a message, the code within the event listener is executed. The data from the web worker is stored in event.data.
+
+Terminate a Web Worker
+When a web worker object is created, it will continue to listen for messages until it is terminated.
+
+To terminate a web worker object, and free browser/computer resources, use the terminate() method:
+
+w.terminate();
+Reuse the Web Worker
+If you set the web worker variable to undefined, after it has been terminated, you can reuse the worker/code:
+
+w = undefined;
+Full Web Worker Example
+We have already seen the Web Worker code in the .js file.
+
+Below is the full code for the HTML page: -->
+<!-- Web Workers and the DOM
+Since web workers are in external .js files, they do not have access to the following JavaScript objects:
+
+The window object
+The document object
+The parent object -->
+</body>
+</html>

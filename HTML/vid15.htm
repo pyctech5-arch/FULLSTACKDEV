@@ -1,0 +1,149 @@
+<!-- html tables and borders and their styling -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Tables</title>
+<style>
+    table,tr,th,td{
+        border: 1px solid black ;
+        border-style:dashed;
+        border-collapse: collapse;
+        padding: 20px;
+        margin-left: 270px;
+        margin-top: 50px;
+    }
+    tr:nth-child(even){
+background-color:lightgray;
+    }
+    tr:hover{
+      background-color: aquamarine;         
+    }
+
+</style>
+</head>
+<body>
+<!-- html tables- A table in HTML consists of table cells inside rows and columns.  -->
+<!-- Each table cell is defined by a <td> and a </td> tag. -->
+ <!-- Everything between <td> and </td> is the content of a table cell. -->
+<!-- my time table -->
+<h1 style="text-align: center; text-decoration: underline double;">-:HTML TABLES:-</h1> 
+<table>
+    <colgroup>
+        <col span="2" style="background-color: red;">
+        <col span="2" style="background-color: yellow;">
+        <col span="2" style="background-color: green;">
+    </colgroup>
+    <caption style="font-size: 30px;">This Is My Study Plan Included Time Table.</caption>
+    <thead>
+         <tr style="font-size: 30px;"><th>Html</th>
+            <th>CSS</th>
+            <!-- row span and  the colspan is for joining two rows two colums -->
+            <th rowspan="2">javascript</th>
+            <th>react</th>
+            <th>php</th>
+            <th>sql</th>
+        </tr>
+    </thead>
+    <tbody>
+ <tr>
+    <td colspan="2">6:00-7:00</td>
+    <td>7:00-9:00</td>
+    <td>10:00-11:00</td>
+    <td>11:00-12:00</td>
+    <td>12:00-1:00</td>
+    <td>4:00-8:00</td>
+</tr>
+<tr>
+    <td>6:00-7:00</td>
+    <td>7:00-9:00</td>
+    <td>10:00-11:00</td>
+    <td>11:00-12:00</td>
+    <td>12:00-1:00</td>
+    <td>4:00-8:00</td>
+</tr>
+<tr>
+    <td>6:00-7:00</td>
+    <td>7:00-9:00</td>
+    <td>10:00-11:00</td>
+    <td>11:00-12:00</td>
+    <td>12:00-1:00</td>
+    <td>4:00-8:00</td>
+</tr>
+<tr>
+    <td>6:00-7:00</td>
+    <td>7:00-9:00</td>
+    <td>10:00-11:00</td>
+    <td>11:00-12:00</td>
+    <td>12:00-1:00</td>
+    <td>4:00-8:00</td>
+</tr>
+<tr>
+    <td>6:00-7:00</td>
+    <td>7:00-9:00</td>
+    <td>10:00-11:00</td>
+    <td>11:00-12:00</td>
+    <td>12:00-1:00</td>
+    <td>4:00-8:00</td>
+</tr>
+<tr>
+    <td>6:00-7:00</td>
+    <td>7:00-9:00</td>
+    <td>10:00-11:00</td>
+    <td>11:00-12:00</td>
+    <td>12:00-1:00</td>
+    <td>4:00-8:00</td>
+</tr>
+<tr>
+    <td>6:00-7:00</td>
+    <td>7:00-9:00</td>
+    <td>10:00-11:00</td>
+    <td>11:00-12:00</td>
+    <td>12:00-1:00</td>
+    <td>4:00-8:00</td>
+</tr>
+</tbody>
+<tfoot>
+    
+</tfoot>
+</table>
+<!-- Table-2 -->
+ <table>
+    <thead>
+        <tr>
+            <th>Name </th>
+            <th>Address</th>
+            <th>Savings</th>
+        </tr> 
+    </thead>
+    <tbody>
+        <tr>
+            <td>Prashant</td>
+            <td>chavan</td>
+            <td>$400</td>
+        </tr>
+        <tr>
+            <td>Deepak</td>
+            <td style="visibility: hidden;">shinde</td>
+            <td>$200</td>
+        </tr>
+        <tr>
+            <td>Abhishek</td>
+            <td>chikodikar</td>
+            <td>$100</td>
+        </tr>
+        <tr>
+            <td>vinayak</td>
+            <td>mugli</td>
+            <td>$60</td>
+        </tr>
+    </tbody>
+ </table>
+ <!-- data term and data definition in discription list -->
+  <dl>
+    <dt>HTML:</dt>
+    <dd>- Hyper Text Markup Language</dd>
+  </dl>
+</body>
+</html>

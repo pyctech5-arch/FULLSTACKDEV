@@ -1,0 +1,54 @@
+<!-- HTML Forms -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Forms</title>
+<style>
+  body{
+    background-color: black;
+    color: white;
+  }
+</style>
+</head>
+<body>
+  <h2>HTML Forms</h2>
+  <p>HTML forms are used to collect user input.</p>
+  <!-- A form is a collection of input elements like text fields, checkboxes, radio buttons, etc. -->
+  <form action="/submit" method="dialog">
+    <!-- label element is used to associate a label with an input element -->
+    <label for="name">Name:</label>
+    <!-- input type="text" is used for text input or radio ,checkbox ,submit,button -->
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+
+    <input type="submit" value="Submit">
+
+
+<p>Choose your favorite Web language:</p>
+
+<form>
+  <input type="radio" id="html" name="fav_language" value="HTML">
+  <label for="html">HTML</label><br>
+  <input type="radio" id="css" name="fav_language" value="CSS">
+  <label for="css">CSS</label><br>
+  <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+  <label for="javascript">JavaScript</label>
+</form>
+
+
+
+<p>This is the check box example</p>
+<form>
+  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+  <label for="vehicle1"> I have a bike</label><br>
+  <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+  <label for="vehicle2"> I have a car</label><br>
+  <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+  <label for="vehicle3"> I have a boat</label>
+  </form>
+</body>
+</html>

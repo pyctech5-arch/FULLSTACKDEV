@@ -1,0 +1,32 @@
+<!-- HTML pictutre element -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html (Picture) element</title>
+</head>
+<body>
+<!-- Html (Picture) element -->
+<!-- The HTML <picture> element allows you to display different pictures for different devices or screen sizes.
+--> 
+    <!-- this element set the default image bases on the  size of screen -->
+     <!-- When to use the Picture Element
+There are two main purposes for the <picture> element:
+
+1. Bandwidth
+If you have a small screen or device, it is not necessary to load a large image file. The browser will use the first <source> element with matching attribute values, and ignore any of the following elements.
+
+2. Format Support
+Some browsers or devices may not support all image formats. By using the <picture> element, you can add images of all formats, and the browser will use the first format it recognizes, and ignore any of the following elements. -->
+<picture>
+    <source media="(min-width: 650px)" srcset="cosent.jpg">
+    <source media="(min-width: 465px)" srcset="gg.png" heiht="140px">
+    <img src="csss/office table.jpg" alt="office table" width="auto">
+<map name="">
+    <area shape="" coords="" href="" alt="">
+</map>
+</picture>
+</body>
+</html>

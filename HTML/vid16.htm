@@ -1,0 +1,74 @@
+<!-- HTML lists and types and demo navbar creation -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Lists</title>
+    <style>
+      li:hover{
+        background-color: gray;
+      }
+      #ll{
+            top: 0%;
+            padding: 11px;
+      }
+    </style>
+</head>
+<body style="top: 0px;">
+ <!-- lets create a navigation bar using this  -->
+<ul id="nav" style="background-color:lightgray; display: flex; gap: 20px; position: sticky; top:0px;" >
+    <li id="ll" style="list-style: none;"><a href="#html" style="text-decoration: none; color: black; font-size: 31px; font: bolder;">Html</a></li>
+    <li id="ll" style="list-style: none;"><a href="#html" style="text-decoration: none; color: black; font-size: 31px; font: bolder;">Css</a></li>
+    <li id="ll" style="list-style: none;"><a href="#html" style="text-decoration: none; color: black; font-size: 31px; font: bolder;">JavaScript</a></li>
+    <li id="ll" style="list-style: none;"><a href="#html" style="text-decoration: none; color: black; font-size: 31px; font: bolder;">Java</a></li>
+    <li id="ll" style="list-style: none;"><a href="#html" style="text-decoration: none; color: black; font-size: 31px; font: bolder;">python</a></li>
+</ul>
+    <!-- HTml lists  there are two types of lists ordered lists and unordered lists (ol and ul) -->
+   <!-- Ordered list dinoted by numbers and unrdered list denoted by points -->
+<!-- Example of ordere list -->
+ <!-- we can also change the type of it by num and small letters and capital letters and roman numbers -->
+ <ol type="I">
+    <li>coffe</li>
+    <li>Tea</li>
+    <li>chai</li>
+    <li>milk shek</li>
+    <li>Butter milk</li>
+ </ol>
+ <!-- Example of Unordered list -->
+  <!-- we can also change type of point or dot and ex:disc and square and circle none-->
+<ul type="square">
+    <li>coffe</li>
+    <li>Tea</li>
+    <li>chai</li>
+    <li>milk shek</li>
+    <li>Butter milk</li>
+ </ul>
+ <!-- We can also make the lists nested by combining it as shown ex below -->
+  <!--nesting of lists -->
+ <ol>
+    <li>bat</li>
+    <li>bindu</li>
+    <ul>
+        <li>boxing</li>
+        <li>fighting</li>
+    </ul>
+    <li>apple</li>
+    <li>mango</li>
+  </ol>
+ <!-- There is one more list available which is description list -->
+  <dl>
+    <dt>Coffe</dt>
+    <dd>-black hot drink</dd>
+    <dt>Milk</dt>
+    <dd>-White cold drink</dd>
+  </dl> 
+  <!-- we can also control list counting true start attribute -->
+   <ol start="521">
+    <li>five </li>
+    <li>six </li>
+    <li>seven </li>
+    <li>eight </li>
+   </ol>
+</body>
+</html>
