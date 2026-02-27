@@ -3,10 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>String search</title>
+    <title>jAVA'S NUMBERS</title>
 </head>
 <body>
-    
-    <script></script>
+    <h1>JS Numbers</h1>
+<p id="a1"></p>
+<p id="a2"></p>
+<p id="a3"></p>
+<p id="a4"></p>
+<p id="a5"></p>
+<p id="a6"></p>
+<p id="a7"></p>
+<p id="a8"></p>
+<p id="a9"></p>
+<p id="a10"></p>
+<p id="a11"></p>
+<p id="a12"></p>
+<p id="a13"></p>
+<p id="a14"></p>
+<p id="a15"></p>
+<p id="a16"></p>
+<p id="a17"></p>
+<p id="a18"></p>
+<p id="a19"></p>
+<p id="a20"></p>
+
+    <script>
+        /*Number Types
+JavaScript has only one type of number.
+
+Numbers can be written with or without decimals.*/
+        let x=3.12;
+        let y=3;
+        document.getElementById("a1").innerHTML="thedecimal value is "+x+"<br> the non decimal value is: "+y;
+        // Extra large or extra small numbers can be written with scientific (exponent) notation:
+        let z=1e5;
+        let z1=1e-5;
+        document.getElementById("a2").innerHTML="the large num is: "+z+" the small num can be return as "+z1;
+        /*Integer Precision
+Integers (numbers without a period or exponent notation) are accurate up to 15 digits.*/
+    let a1=999999999999999;
+    let a2=9999999999999999;
+    document.getElementById("a3").innerHTML="the num of 14 digits = "+a1+" the num containing 15 digits is= "+a2;
+    /*Floating Precision
+Floating point arithmetic is not always 100% accurate:*/
+let a3=0.2+0.1;
+let a4=(0.5*10+0.4*10)/10;
+document.getElementById("a4").innerHTML="100% Accurate value is: "+a4+" <br> Not accurate value is "+a3
+// Adding Numbers and Strings
+// If you add two numbers, the result will be a number
+let a5=12;
+let a6=a5+13;
+let a7="12";
+let a8=a7+"13";
+let a9=a5+a7;
+document.getElementById("a5").innerHTML="two num Addition is: "+a6+"<br> Two string concatination is: "+a8+"<br> A string and num addition is concatination :"+a9+"<br>A common mistake is to expect this result to be 37: "+a5+a6+"A common mistake is to expect this result to be 102030: "+(10+20)+"30";
+/*Numeric Strings
+JavaScript strings can have numeric content:*/
+let a10="10";
+let a11="100";
+let b1=a11/a10;
+let b2=a11*a10;
+let b3=a11-a10;
+let b4=a11+a10;
+
+document.getElementById("a6").innerHTML="JavaScript will try to convert strings to numbers in all numeric operations: "+b1+"<br> This will also work for multiplication: "+b2+"<br> And also for substraction:"+b3+" <br>But not for addition "+b4;
+/*NaN - Not a Number
+NaN is a JavaScript reserved word indicating that a number is not a legal number.
+
+Trying to do arithmetic with a non-numeric string will result in NaN (Not a Number):*/
+let b5=100/"Apple";
+// However, if the string is numeric, the result will be a number:
+let b6=100/"10";
+// you can use the global JavaScript function isNaN() to find out if a value is a not a number:
+let b7=isNaN(b5);
+let b8=isNaN(b6);
+document.getElementById("a7").innerHTML="if a string is word: "+b5+"<br> If it is number as String: "+b6+"<br>By the isNAN() function return true if NAN or return false if not"+"<br> Checking if string word: "+b7 +"<br> Cheaking if string Number: "+b8;
+/*Watch out for NaN. If you use NaN in a mathematical operation, the result will also be NaN:*/
+let b9=NaN;
+let b10=5;
+let b11=b9+b10;
+let b12=b9+"10"
+document.getElementById("a8").innerHTML="Return nan when adding a NAN and a number: "+b11+",<br>NaN is a number: typeof NaN returns number:"
+ /*Infinity
+Infinity (or -Infinity) is the value JavaScript will return if you calculate a number outside the largest possible number.*/ 
+
+    let mynum = 2;
+    // Division by 0 (zero) also generates Infinity:
+    let a=2/0;
+    let b=-2/0;
+    /*Hexadecimal
+    JavaScript interprets numeric constants as hexadecimal if they are preceded by 0x.*/
+    let c=0xff;
+let text="";
+while (mynum != Infinity) {
+  mynum = mynum * mynum;
+  text=text+mynum+"<br>";
+  }
+  document.getElementById("a9").innerHTML=text+"<br> And the bivision by o like 2/0 also return :"+a+"<br> Also the -2/0 return: "+b+"<br> And the  hexa value 0x00 to 0xFF for numbers: "+c;
+  /*By default, JavaScript displays numbers as base 10 decimals.
+
+But you can use the toString() method to output numbers from base 2 to base 36.
+
+Hexadecimal is base 16. Decimal is base 10. Octal is base 8. Binary is base 2.*/
+let mynum1 = 32;
+document.getElementById("a10").innerHTML =
+"Decimal 32 = " + "<br><br>" + 
+
+"Hexatrigesimal (base 36): " + mynum1.toString(36) + "<br>" +
+"Duotrigesimal (base 32): " + mynum1.toString(32) + "<br>" +
+"Hexadecimal (base 16): " + mynum1.toString(16) + "<br>" +
+"Duodecimal (base 12): " + mynum1.toString(12) + "<br>" +
+"Decimal (base 10): " + mynum1.toString(10) + "<br>" +
+"Octal (base 8): " + mynum1.toString(8) + "<br>" +
+"Binary (base 2): " + mynum1.toString(2);
+/*JavaScript Numbers as Objects
+Normally JavaScript numbers are primitive values created from literals:*/
+let x1 = 123;
+let y1=new Number(123);
+document.getElementById("a11").innerHTML="The num as object this is num: "+x1+"the type is: "+typeof(x)+"<br>The object is available there :"+y1+
+"And the type is: "+typeof(y1);
+    </script>
+    <a href="https://www.w3schools.com/js/js_numbers.asp">For more in =fo about Js nums</a>
 </body>
 </html>

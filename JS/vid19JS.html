@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script Dates</title>
+</head>
+<body>
+    <!-- JavaScript Dates
+JavaScript Date Objects const us work with dates:
+
+Mon Feb 23 2026 19:53:59 GMT+0530 (India Standard Time) -->
+<p id="a1"></p>
+<p id="a2"></p>
+<p id="a3"></p>
+<p id="a4"></p>
+<p id="a5"></p>
+<p id="a6"></p>
+<p id="a7"></p>
+<p id="a8"></p>
+<p id="a9"></p>
+<p id="a10"></p>
+<p id="a11"></p>
+<p id="a12"></p>
+<p id="a13"></p>
+<p id="a14"></p>
+<p id="a15"></p>
+<p id="a16"></p>
+<p id="a17"></p>
+<p id="a18"></p>
+<p id="a19"></p>
+<p id="a20"></p>
+<script>
+    const a=new Date();
+    const b=new Date("2022-02-25");
+document.getElementById("a1").innerHTML=a+"<br><br> "+b;
+/*Note
+Date objects are static. The "clock" is not "running".
+
+The computer clock is ticking, date objects are not.
+
+JavaScript Date Output
+By default, JavaScript will use the browser's time zone and display a date as a full text string:
+
+Mon Feb 23 2026 19:53:59 GMT+0530 (India Standard Time)
+
+You will learn much more about how to display dates, later in this tutorial.
+
+Creating Date Objects
+Date objects are created with the new Date() constructor.
+
+There are 9 ways to create a new date object:*/
+/*JavaScript new Date()
+new Date() creates a date object with the current date and time:*/ 
+// const a1= new Date()
+// const a2= new Date(date string)
+
+// const a3= new Date(year,month)
+// const a4= new Date(year,month,day)
+// const a5= new Date(year,month,day,hours)
+// const a6= new Date(year,month,day,hours,minutes)
+// const a7= new Date(year,month,day,hours,minutes,seconds)
+// const a8= new Date(year,month,day,hours,minutes,seconds,ms)
+
+// const a9= new Date(milliseconds)
+
+const a1 = new Date();
+document.getElementById("a2").innerHTML=a1
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<title>ES6 Arrow functions</title>
+<body>
+
+<h1>Regular Function</h1>
+
+<p>The <strong>this</strong> keyword represents different objects depending on how the function was called.</p>
+
+<button id="btn">Click Me!</button>
+
+<p><strong>this</strong> represents:</p>
+
+<p id="demo"></p>
+
+<p>See the difference before and after the button is clicked.</p>
+  <!-- /* What About this?
+The handling of this is also different in arrow functions compared to regular functions.
+
+In short, with arrow functions there is no binding of this.
+
+In regular functions the this keyword represented the object that called the function, which could be the window, the document, a button or whatever.
+
+With arrow functions, the this keyword always represents the object that defined the arrow function.
+
+Let us take a look at two examples to understand the difference.
+
+Both examples call a method twice, first when the page loads, and once again when the user clicks a button.
+
+The first example uses a regular function, and the second example uses an arrow function.
+
+The result shows that the first example returns two different objects (window and button), and the second example returns the Header object twice.
+
+Example:
+ -->
+<script>
+class Header {
+  constructor() {
+    this.color = "Red";
+  }
+
+  changeColor = function() {
+    document.getElementById("demo").innerHTML += this;
+  }
+}
+
+const myheader = new Header();
+
+//The window object calls the function:
+window.addEventListener("load", myheader.changeColor);
+
+//A button object calls the function:
+document.getElementById("btn").addEventListener("click", myheader.changeColor);
+hlo=()=>{
+  "Hello bro"
+}
+window.print(hlo());
+</script>
+<style>
+  table,tr,th,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+</style>
+<h2>All three are very populer and highly used frameworks.
+</h2>
+<table>
+  <tr>
+    <th>React</th>
+    <th>Angular</th>
+    <th>Vue Js</th>
+  </tr>
+  <tr>
+    <td>component based</td>
+    <td>component based</td>
+    <td>component based</td>
+  </tr>
+    <tr>
+    <td>Very focused features</td>
+    <td>Many more built in features</td>
+    <td>Medium built in features</td>
+  </tr>
+    <tr>
+    <td>javascript</td>
+    <td>typescript</td>
+    <td>javascript</td>
+
+  </tr>
+</table>
+</body>
+</html>

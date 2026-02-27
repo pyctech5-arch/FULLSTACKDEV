@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript function Arguments</title>
+</head>
+<body>
+    <p id="0"></p>
+    <p id="1"></p>
+    <p id="2"></p>
+    <p id="3"></p>
+    <p id="4"></p>
+    <p id="5"></p>
+    <p id="6"></p>
+    <p id="7"></p>
+    <p id="8"></p>
+    <p id="9"></p>
+    <p id="10"></p>
+    <p id="11"></p>
+    <p id="12"></p>
+    <p id="13"></p>
+<p id="a1"></p>
+<p id="a2"></p>
+<p id="a3"></p>
+<p id="a4"></p>
+<p id="a5"></p>
+<p id="a6"></p>
+<p id="a7"></p>
+<p id="a8"></p>
+<p id="a9"></p>
+<p id="a10"></p>
+<p id="a11"></p>
+    <!-- Parameters vs. Arguments
+In JavaScript, function parameters and arguments are distinct concepts:
+
+Parameters are the names listed in the function definition.
+
+Arguments are the real values passed to, and received by the function.
+
+Example -->
+
+<script>
+  function  multiply(a,b){
+          return a*b;
+  }
+  let result=multiply(12,10);
+  document.getElementById("0").innerHTML=result; 
+  /*In the example above:
+
+a and b are parameters
+12 and 10 are arguments
+The argument 12 is assigned to the parameter a.
+
+The argument 10 is assigned to the parameter b.
+
+The Arguments Object
+JavaScript functions have a built-in object called the arguments object.
+
+The argument object contains an array of the arguments used when the function was called (invoked).
+
+This way you can simply use a function to find (for instance) the highest value in a list of numbers:
+
+Example*/
+x = findMax(1, 123, 500, 115, 44, 88);
+
+function findMax() {
+  let max = -Infinity;
+  for (let i = 0; i < arguments.length; i++) {
+    if (arguments[i] > max) {
+      max = arguments[i];
+    }
+  }
+  return max;
+}
+
+x1 = sumAll(1, 123, 500, 115, 44, 88);
+
+function sumAll() {
+  let sum = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  return sum;
+}
+
+document.getElementById("1").innerHTML="The max num is: "+x+"<br> The arguments sum is :"+x1;
+
+/*Argument Rules
+JavaScript function definitions do not specify data types for arguments.
+
+JavaScript functions do not perform type checking on the passed arguments.
+
+JavaScript functions do not check the number of arguments received.
+
+Incorrect Arguments
+Incorrect arguments can return incorrect answers:
+
+Example
+*/
+function toCelsius(fahrenheit) {
+  return (5/9) * (fahrenheit-32);
+} 
+  let value = toCelsius("John");
+document.getElementById("3").innerHTML = value;
+/*Missing Arguments
+If a function is called with fewer arguments than parameters, the missing values become undefined.
+
+Example*/
+ function multiply(a, b) {
+  return a * b;
+}
+
+let d=multiply(4);
+document.getElementById("4").innerHTML=d;
+// In the example above, b is undefined, so the result is NaN.
+/*Note
+A JavaScript function does not perform any checking on parameter values (arguments).
+
+Default Parameters
+If a function is called with missing arguments (less than declared), the missing values are set to undefined.
+
+Sometimes this is acceptable, but sometimes it is better to assign a default value to the parameter:
+
+Example*/
+function myFunction(x, y) {
+  if (y === undefined) {
+    y = 2;
+  }
+  return x*y;
+}
+
+document.getElementById("5").innerHTML = myFunction(4);
+/*Default Parameter Values
+ECMAScript 2015 allows function parameters to have default values.
+
+You can now set a default value for a parameter.
+
+The default value is used if no argument is provided.
+
+Example
+If y is not passed or undefined, then y = 10.*/
+ function myFunction(x, y = 10) {
+  return x + y;
+}
+document.getElementById("6").innerHTML = myFunction(5);
+/*Function Rest Parameter
+The rest parameter (...) allows a function to treat an indefinite number of arguments as an array:
+
+Example*/
+ function sums(...args){
+let sums=0;
+for (let arg of args) sums += arg;
+    return sums;
+ }
+ let x2 = sums(4, 9, 16, 25, 29, 100, 66, 77);
+document.getElementById("7").innerHTML=x2;
+/*Arguments are Passed by Value
+The parameters, in a function call, are the function's arguments.
+
+JavaScript arguments are passed by value: The function only gets to know the values, not the argument's locations.
+
+If a function changes an argument's value, it does not change the parameter's original value.
+
+Changes to arguments are not visible (reflected) outside the function.
+
+Objects are Passed by Reference
+In JavaScript, object references are values.
+
+Because of this, objects will behave like they are passed by reference:
+
+If a function changes an object property, it changes the original value.
+
+Changes to object properties are visible (reflected) outside the function.
+
+
+Common Mistakes
+Confusing Parameters and Arguments
+Parameters are names.
+Arguments are values.
+Forgetting the Order
+Arguments are assigned by position.
+Missing Arguments
+Use default values to avoid undefined.
+Quiz
+What happens when a function is called with fewer arguments than parameters?
+
+Next Chapter
+Function Expressions
+
+A function expression is a function stored in a variable
+The variable name can be used to call the function*/
+
+
+/*JavaScript Function Expressions
+
+What is a Function Expression?
+A function expression is a function stored in a variable.*/
+//  Example
+const multiplya = function (a, b) {return a * b};
+document.getElementById("8").innerHTML=multiplya;
+// After a function expression has been stored in a variable, the variable can be used as a function:
+// Example
+let x4=multiplya(4*3);
+document.getElementById("9").innerHTML=x4;
+/*Anonymous Functions
+Function expressions are commonly used to create anonymous functions.
+
+The function above is actually function without a name.
+
+Functions stored in variables do not need names.
+
+The variable name is used to call the function.
+
+Note
+But, function expressions can also be a named:
+
+const add = function add(a, b) {return a + b;};*/
+/*Function Expressions Use Semicolons
+A function expression is a JavaScript statement.
+
+That is why it usually ends with a semicolon.
+
+Example*/
+
+const add = function(a, b) {
+  return a + b;
+};
+let n=add(12,3);
+document.getElementById("10").innerHTML=n;
+
+/*Function Expressions Use Semicolons
+A function expression is a JavaScript statement.
+
+That is why it usually ends with a semicolon.
+
+Example*/
+const add1 = function(a, b) {
+  return a + b;
+};
+let h=add1(23,2);
+document.getElementById("11").innerHTML=h;
+/*Functions Stored in Variables
+Because a function expression is stored in a variable, it can be used like a value.
+This is useful when passing functions to other functions (callbacks).
+
+A function expression can be assigned to a variable, passed as an argument to another function, or returned from a function.
+
+Example*/
+
+function run(fn) {
+  return fn();
+}
+
+const sayHello = function() {
+  return "Hello";
+};
+
+let j=run(sayHello);
+document.getElementById("12").innerHTML=j;
+/*Functions vs. Function Expressions
+JavaScript functions are defined with the function keyword.
+
+JavaScript functions can be defined in different ways.
+
+In JavaScript, function declarations and function expression refer to different ways of defining functions, their different syntax and how they are handled:
+
+They both work the same when you call them.
+
+The difference is when they become available in your code.
+
+Function Declarations vs Function Expression
+A function declaration (or simply a function) is defined using:
+
+The function keyword
+A function name
+Parameters in parentheses
+A code block brackets*/
+
+function addq(a, b) {return a + b;}
+let wa1=addq(12,2);
+const sayiHello = function() {
+  return "Hello World";
+};
+let k=sayiHello();
+sayHello();
+document.getElementById("13").innerHTML=wa1 +" <br><br>"+ k;
+
+/*Hoisting
+Function declarations can be called before they are defined.
+
+Function expressions can not be called before they are defined.
+
+Function declarations are "hoisted" to the top of their scope. This means you can call a function before it is defined in the code:
+
+*/
+let summ = addd(2, 3); // Will work
+
+function addd(a, b) {return a + b;}
+document.getElementById("a1").innerHTML="The sum of 2 and 3 is: "+summ;
+/*Function expressions are not hoisted in the same way as function declarations.
+
+They are created when the execution reaches their definition, and cannot be called before that point:*/
+
+// let summ11 = add11(2, 3); // ⛔ Will generate error
+// const add11 = function (a, b) {return a + b;};
+// console.log(summ11);
+/*Key Differences
+Syntax:
+Function declarations require a name. Function expressions can be anonymous.
+Hoisting:
+Function declarations are hoisted. Function expressions are not.
+Flexibility:
+Function declarations offer more flexibility in how and where they are used.
+*/ 
+
+/*When to Use Each
+Use function declarations for general-purpose functions
+Use function expressions when assigning functions to variables
+Use function expressions in callbacks and event handlers
+Later in this Tutorial
+Function expressions offer high flexibility and are widely used in JavaScript for various purposes, and you will see a lot more of function expressions in the following chapters:
+
+Arrow Functions
+The concise arrow function syntax (=>) is a modern way of writing function expressions.
+
+Callbacks
+Passing functions as arguments to other functions, such as event listeners or asynchronous operations.
+
+Closures
+Function expressions help create closures, which allow functions to remember and access variables from their containing scope.
+
+Immediately Invoked Function Expressions (IIFEs)
+Functions Expressions that run as soon as they are defined, are often used to create private scopes and avoid global variable conflicts.
+
+*/
+/*Common Mistakes
+Forgetting the Semicolon
+Function expressions are statement and should end with ; (semicolon).
+Expecting Hoisting
+Arrow functions are not hoisted.
+You cannot call a function expression before it is defined.
+Confusing Reference and Call
+sayHello is the function. sayHello() calls the function.
+Confusing Function Names and Variables
+In expressions, the variable name is the function reference.*/
+
+/*JavaScript Arrow Functions
+Arrow Functions allow a shorter syntax for function expressions.
+
+You can skip the function keyword, the return keyword, and the curly brackets:
+
+const add = (a, b) => a * b;
+Arrow Functions were introduced in ES6 and are commonly used in modern JavaScript.
+
+Arrow Function Syntax
+An arrow function uses the => symbol.
+
+An arrow function is always written as a function expression.
+
+Example*/
+
+const addw = (a, b) => {
+  return a + b;
+};
+document.getElementById("a2").innerHTML="The a and b using arroe function: "+addw(12,2);
+// This arrow function does the same thing as a regular function expression.
+
+/*Shorter Syntax
+If the function body contains only one statement:
+
+You can remove the word function, the curly brackets and the return keyword.
+
+Before Arrow
+Function to compute the product of a and b:*/
+
+const aadd = function(a, b) {return a * b}
+document.getElementById("a3").innerHTML=aadd(13,2);
+// With Arrow
+const hello = () => "Hello World!";
+document.getElementById("a4").innerHTML=hello();
+// Before Arrow
+const helloa = function() {return "Hello World!";}
+/*Arrow Functions with One Parameter
+If a function has only one parameter, you can omit the parentheses:
+
+With Paranthesis*/
+const square = (x) => x * x;
+// Without Paranthesis
+
+const squar1e = y => y * y;
+
+document.getElementById("a5").innerHTML=helloa()+"<br><br>"+square(23)+"<br><br>"+"The square ofm3 is: "+squar1e(3);
+/*Arrow Functions Return Value by Default
+If the function has only one statement that returns a value:
+
+You can remove the brackets and the return keyword:
+
+Example*/
+
+const hllo = () => "Hello World!";
+
+document.getElementById("a6").innerHTML=hllo();
+
+/*Arrow Function Parameters
+If you have parameters, you pass them inside the parentheses:
+
+Example
+*/
+const hlo = (val) => "Hello " + val;
+// If you have only one parameter, you can skip the parentheses as well:
+
+// Example
+const heo = val => "Hello " + val;
+document.getElementById("a6").innerHTML=hlo("world!!!!")+"<br>"+heo("Worldd") ;
+/*Arrow Functions with No Parameters
+If there are no parameters, parentheses are required.*/
+
+const hlfo=()=>
+  "Hello World";
+
+document.getElementById("a7").innerHTML=hlfo();
+
+/*You can only omit the return keyword and the curly brackets if the function is a single statement. Because of this, it might be a good habit to always keep them:*/
+
+// This will return undefined
+const myFunctio1 = (x, y) => { x * y };
+document.getElementById("a8").innerHTML=myFunctio1(12,2);
+// This wull return undefined
+// const myFunct = (x, y) => return x * y;
+
+
+// This will return the expected result
+const myFunctio = (x, y) => { return x * y };
+let resul=myFunctio(12,22);
+document.getElementById("a9").innerHTML=resul;
+
+/*Arrow Functions Are Not Declarations
+Arrow functions are always expressions and must be assigned to a variable.
+
+They cannot be used before they are defined.
+
+Example*/
+helo(); // Error
+
+const helo = () => "Hello";
+console.log(helo());
+// Arrow functions must be defined before they are used.
+
+/*Arrow Functions and the this Keyword
+Arrow functions do not have their own this value.
+
+They inherit this from the surrounding code.
+
+Example*/
+const person = {
+  name: "John",
+  greet: function() {
+    return this.name;
+  }
+};
+// Using an arrow function as a method often gives unexpected results.
+
+// Example
+const person1 = {
+  name: "John",
+  greet: () => {
+    return this.name;
+  }
+};
+/**In this case, this does not refer to the person object.
+
+When to Use Arrow Functions
+For short functions
+For callbacks and array methods
+When you do not need your own this
+When Not to Use Arrow Functions
+As object methods
+When you need your own this
+When using function declarations
+Quiz
+What is one important difference between arrow functions and regular functions?
+
+Common Mistakes
+Forgetting Parentheses Rules
+Parentheses are required for zero or multiple parameters.
+Using Arrow Functions as Methods
+Arrow functions do not bind this.
+Expecting Hoisting
+Arrow functions are not hoiste*/
+</script>
+</body>
+</html>

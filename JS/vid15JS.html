@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Function</title>
+</head>
+<body>
+    <!--Invoking JavaScript Functions  -->
+    <!-- Calling a Function
+A JavaScript function runs when it is called.
+
+To call a function, write the name followed by parentheses like name().
+
+Function Invocation
+The code inside a function is NOT executed when the function is defined.
+
+The code inside a function will execute when "something" invokes the function:
+
+When it is called from JavaScript code
+When an event occurs (a user clicks a button)
+Automatically (self invoked)
+It is common to use the term invoke, because a function can be invoked without being called.
+
+It is also common to use say:
+
+call a function
+call upon a function
+start a function
+execute a function
+Examples
+The function below returns the text "Hello World".
+
+But it will not run before you call it.
+
+Example -->
+<p id="a1"></p>
+<p id="a2"></p>
+<p id="a3"></p>
+<p id="a4"></p>
+<p id="a5"></p>
+<p id="a6"></p>
+<p id="a7"></p>
+<p id="a8"></p>
+<p id="a9"></p>
+<p id="a10"></p>
+<p id="a11"></p>
+<p id="a12"></p>
+<p id="a13"></p>
+<p id="a14"></p>
+<p id="a15"></p>
+<p id="a16"></p>
+<p id="a17"></p>
+<p id="a18"></p>
+<p id="a19"></p>
+<p id="a20"></p>
+
+<button onclick="showHello()">click me</button>
+
+<script>
+    function sayHello(){
+        return "Hello world"
+    }
+    document.getElementById("a1").innerHTML=sayHello();
+    /*Calling vs Referencing a Function
+This is an important difference:
+
+sayHello refers to the function itself. It returns the function.
+
+sayHello() refers to the function result. It returns the result
+
+Example*/
+let text=sayHello;
+document.getElementById("a2").innerHTML=text;
+/*Note
+In the example above, text returns the function itself like:
+
+function sayHello() { return "Hello World"; }
+
+Functions Can Be Called from Anywhere
+You can call functions from other functions, from events, or from any code block.*/
+
+function sayhello(){
+return "Hello world";
+}
+function showHello(){
+    document.getElementById("a3").innerHTML=sayHello();
+}
+/*Common Mistakes
+Forgetting Parentheses ()
+sayHello does not run the function.
+You must use sayHello().
+Expecting Return
+Some functions does not return a value.
+Expecting Output
+If a function returns a value, but you must display it to see it.
+Quiz
+What is the difference between sayHello and sayHello() ?
+
+Next Chapter
+Function Parameters
+
+Parameters allow you to send values to a function
+Parameters are listed in parentheses in the function definition
+*/
+
+/*JavaScript Function Parameters
+Parameters (Function Input)
+Parameters allow you to pass (send) values to a function.
+
+Parameters are listed inside the parentheses in the function definition.
+
+Example*/
+/*Functions with Multiple Parameters
+You can add as many parameters as you want, separated by commas.*/
+ function multiply(a, b) {
+  return a * b;
+}
+
+let result = multiply(4, 5);
+document.getElementById("a4").innerHTML="The result of 4+5 is :" +result;
+/*Functions with One Parameter
+A function can have one parameter.*/
+function sayHelloo(name) {
+  return "Hello " + name;
+}
+
+let greeting = sayHelloo("John");
+document.getElementById("a5").innerHTML=greeting;
+function toCelsius(fahrenheit) {
+  return (5 / 9) * (fahrenheit - 32);
+}
+
+let value = toCelsius(77);
+document.getElementById("a5").innerHTML="The return value of    (5/9) * -32 is: "+value;
+/*Parameters vs. Arguments
+In JavaScript, function parameters and arguments are distinct concepts:
+
+Parameters are the names listed in the function definition.
+
+Arguments are the real values passed to, and received by the function.
+
+Learn More:
+Function Arguments
+
+Parameter Rules
+JavaScript function definitions do not specify data types for parameters.
+
+JavaScript functions do not perform type checking on the arguments.
+
+JavaScript functions do not check the number of arguments received.
+
+Incorrect Parameters
+Accessing a function with an incorrect parameter can return an incorrect answer:*/
+function toCelsius(farenheit) {
+  return (5/9) * (farenheit-32);
+}
+
+let value1 = toCelsius();
+
+document.getElementById("a6").innerHTML = "The incorrect parameter will return incorect answer: "+value1;
+/*Default Parameter Values
+ECMAScript 2015 allows function parameters to have default values.
+
+The default value is used if no argument is provided.
+
+Example
+If y is not passed or undefined, then y = 10.*/
+function myfunc(x,y=10){
+return x+y;
+}
+document.getElementById("a7").innerHTML=myfunc(5);
+/*A function can return a value back to the code that called it
+The return statement is used to return a value from a function*/
+
+/*Returning Values from Functions
+A function can return a value back to the code that called it.
+
+The return statement is used to send a value out of a function.
+
+The return Statement
+When a function reaches a return statement, the function stops executing.
+
+The value after the return keyword is sent back to the caller.
+
+Using Return Values in Expressions
+The returned value can be used anywhere a value is expected.
+
+You can use a function call inside another expression.
+
+Example*/
+
+function multiply(a, b) {
+  return a * b;
+}
+
+let total = multiply(2, 3) * 10;
+document.getElementById("a8").innerHTML=total;
+/*Return Values
+A function can return any type of value (not only numbers).
+
+Example*/
+
+function fullName(firstName, lastName) {
+  return firstName + " " + lastName;
+}
+
+let name = fullName("John", "Doe");
+document.getElementById("a8").innerHTML=name;
+/*Return Statements Stop Execution
+Code written after a return statement will NOT be executed.
+
+Example*/
+function multiply(a, b) {
+  return "Done";
+  // Next line will never run
+  return a * b;
+}
+
+let result1 = multiply(4, 3);
+document.getElementById("a9").innerHTML=result1;
+/*Returning Values Early
+You can use return to stop a function early, based on a condition.
+
+Example*/
+
+function checkAge(age) {
+  if (age < 18) {
+    return "Too young";
+  }
+  return "Access granted";
+}
+let answer=checkAge(20);
+document.getElementById("a10").innerHTML=answer; 
+/*Quiz
+What value is returned if a function has no return statement?
+
+Common Mistakes
+Forgetting Return
+A function without return sends back undefined.
+Expecting Code after Return to Run
+Code after return is ignored.
+Confusing console.log() with Return
+console.log() shows output but does not return a value.
+Expecting Return
+If your function does not return a value, storing it in a variable will give undefined.
+Next Chapter
+Function Arguments
+
+Function parameters and arguments are distinct concepts
+Parameters are the names listed in the function definition
+Arguments are the values received by the function
+*/ 
+
+/*JavaScript Function Arguments
+Parameters vs. Arguments
+In JavaScript, function parameters and arguments are distinct concepts:
+
+Parameters are the names listed in the function definition.
+
+Arguments are the real values passed to, and received by the function.*/
+
+function multiply(a, b) {
+  return a * b;
+}
+
+let result2 = multiply(4, 5);
+document.getElementById("a11").innerHTML=result;
+/*In the example above:
+
+a and b are parameters
+4 and 5 are arguments
+The argument 4 is assigned to the parameter a.
+
+The argument 5 is assigned to the parameter b.
+
+The Arguments Object
+JavaScript functions have a built-in object called the arguments object.
+
+The argument object contains an array of the arguments used when the function was called (invoked).
+
+This way you can simply use a function to find (for instance) the highest value in a list of numbers:
+
+Example*/
+
+x = findMax(1, 123, 500, 115, 44, 88);
+
+function findMax() {
+  let max = -Infinity;
+  for (let i = 0; i < arguments.length; i++) {
+    if (arguments[i] > max) {
+      max = arguments[i];
+    }
+  }
+  return max;
+}
+document.getElementById("a12").innerHTML=x;
+
+// Or create a function to sum all input values:
+
+x = sumAll(1, 123, 500, 115, 44, 88);
+ 
+ function sumAll(){
+    let sum=0;
+    for (let i = 0; i < arguments.length; i++) {
+        sum += arguments[i];
+    }
+    return sum;
+ }
+ document.getElementById("a13").innerHTML=x;
+/*If a function is called with too many arguments (more than declared), these arguments can be reached using the arguments object.*/ 
+/*The Order of Arguments Matters
+Arguments are assigned to parameters in the order they appear.*/
+function substract(a,b){
+    return a-b;
+}   
+let a=substract(10,3);
+let b=substract(11,13);
+document.getElementById("a14").innerHTML="the result is : "+a+" And result2: "+b;
+/*Arguments Can Be Variables
+Arguments do not have to be values. They can also be variables.*/
+
+let x1 = 5;
+let y1 = 6;
+
+function multiply(a, b) {
+  return a * b;
+}
+
+let v= multiply(x1, y1);
+document.getElementById("a15").innerHTML=v;
+
+
+</script>
+</body>
+</html>

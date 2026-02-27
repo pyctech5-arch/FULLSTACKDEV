@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- // JavaScript Functions
+    /*Functions Study Path
+    Learn Functions in the Right Order:
+    
+    First the idea
+    Then how to make them
+    Then how to use them*/
+    /*JavaScript Functions
+    Functions are Code Blocks
+    Functions are reusable code blocks designed to perform a particular task.
+    
+    Functions are executed when they are called or invoked.
+    
+    Functions are fundamental in all programming languages.
+    
+    Why Use Functions?
+    Functions help you to:
+    
+    Reuse code (write once, run many times)
+    Organize code into smaller parts
+    Make code easier to read and maintain
+    What Does a Function Look Like?
+    A function can be created with the function keyword, a name, and parentheses.
+    
+    The code to run is written inside curly brackets.
+    
+    Example
+    A one liner: */ -->
+    <h2 id="h">
+
+    </h2>
+    <p id="a1" ></p>
+    <p id="a2"></p>
+    <p id="a3"></p>
+    <p id="a4"></p>
+    <p id="a5"></p>
+    <p id="a6"></p>
+    <p id="a7"></p>
+    <p id="a8"></p>
+    <p id="a9"></p>
+    <p id="a10"></p>
+    <button onclick="sayhello()">click me</button>
+    <button onclick=multiplication()>multiplication</button>
+    <p id="demo"></p>
+    <script>
+        function sayhello(){
+            return document.getElementById("h").innerHTML=  "Hello World!";
+        }
+     
+let y="How are you";    document.getElementById("h").innerHTML=y;
+/*JavaScript Function Syntax
+function name( p1, p2, ... ) {
+  // code to be executed
+}
+Functions are defined with the function keyword:
+
+followed by the function name
+followed by parentheses ( )
+followed by brackets { }
+The function name follows the naming rules for variables.
+
+Optional parameters are listed inside parentheses: ( p1, p2, ... )
+
+Code to be executed is listed inside curly brackets: { }
+
+Functions can return an optional value back to the caller.*/
+function add(a,b){
+return a+b;
+}
+function sub(c,d){
+return c-d;
+}
+document.getElementById("a1").innerHTML="The Addition of 12 nad 12 is: "+add(12,12)+"<br>"+"The substraction of 12 and 23 is: "+sub(12,23)+ "<br><br>"+"The addition of 14 and 44 is : "+add(14,44)+ "<br>"+
+"The substraction of 14 and 42 : "+sub(14,42)+"<br>";
+/*Local Variables
+Variables declared within a JavaScript function, become LOCAL to the function.
+
+Local variables can only be accessed from within the function.
+
+Since local variables are only recognized inside their functions, variables with the same name can be used in different functions.*/
+
+/*Functions Used as Variables
+Functions can be used as variables, in all types of formulas, assignments, and calculations.
+
+Example*/
+let text = "The temperature is " + toCelsius(77) + " Celsius.";
+document.getElementById("demo").innerHTML = text;
+
+function toCelsius(fahrenheit) {
+  return (5/9) * (fahrenheit-32);
+} 
+/*Why Functions?
+Functions enable better code organization and efficiency.
+
+With functions you can reuse the same code many times.
+
+The same code, with different input, can produce different results.
+
+Function Input and Output
+The most useful functions work like this:
+
+Parameters - some values are sent to the function
+Arguments - some values are received by the function
+Function Code - some work is done inside the function
+Return Output - some value is returned from the function
+In the next chapters, you will learn more about input and return values.
+
+Next Chapter
+Calling JavaScript Functions
+
+Functions are executed when they are called or invoked
+You call a function by adding parentheses to its name like: name()*/
+    </script>
+    
+</body>
+</html>
