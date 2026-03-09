@@ -1,10 +1,9 @@
+import './Studentlist.css';
 
 function Studentlist(props) {
     return (
-<>
-<ul>
-    <li>{props.name}</li>
-</ul>
+< >
+<h3 className="names">Student Name: {props.name}</h3>
 </>
     );
 }

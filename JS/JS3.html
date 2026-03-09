@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Basics(Js variables(also known identifers))</title>
+</head>
+<body>
+    <script>
+        // example of correct vaiable
+        var a=10;0
+        document.writeln(a+"<br>");
+        var _a=10;
+        document.writeln(_a+"<br>");
+        var $a=10;
+        document.writeln($a+"<br>");
+        // the below given is the wrong value
+        // var 1a=10;
+        // console.log(1a);
+        var a1=10;
+        document.writeln(a1+"<br><hr>");
+
+var b=a+_a;
+document.write("a+_a= "+b);
+// till es5 the var is only decalred for all variables but the const and let came with version 6 of(ES6) Ecma Script-6 it is a advanced version of javascript.
+// These are block scoped the block is declared {} using curly brases out of the block these variables not going to work
+
+{
+    var temp="Hello world";
+    let temp1="Hello "
+
+    document.write("<br>");
+    // Also accisible in scopeand out of it
+    document.write(temp);
+    document.write("<br>");
+    // this is only accesible in block in scope
+    document.write(temp1);
+    document.write("<br>");
+
+}
+// this is accesible outofscope
+    document.write(temp);
+    document.write("<br>");
+//    this is not  print as we know it block level out of scope
+    // document.write(temp1);
+
+    // this will not execute becaue the sbove is have error only it executes after commenting it
+const constant="12";
+// this is constant also block scope  but one difference between this  no allow us to update the value of this and var allows.
+ document.write(constant);
+// ex:
+// const constant="13";
+//  document.write(constant);
+
+// Example local variables
+// this is global variable
+    var x=10;//outbound
+
+function abc(){
+    // this is local variable
+    var x=10;//inbound
+    document.write(x+"This will work because it is inbounded");
+}
+// instead of calling the value of function will wont return.
+// instead of calling this below method wecannot access value of  the variable.
+abc();
+document.write("<br>");
+// this below shown is accesible by global variable
+document.write(x+"This will not work because it is out bounded");
+</script>
+<hr>
+</body>
+</html>

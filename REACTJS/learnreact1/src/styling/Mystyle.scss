@@ -1,0 +1,10 @@
+
+@use 'sass:color';
+$myColor: red;
+
+h1 {
+  color: $myColor;
+}
+h2{
+  color: color.adjust($myColor,$lightness:-40%);
+}

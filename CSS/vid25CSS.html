@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table borders and display</title>
+    <!-- CSS Table Borders
+The CSS border property is used to specify the width, style, and color of table borders.
+
+The border property is a shorthand property for:
+
+border-width - sets the width of the border
+border-style - sets the style of the border (required)
+border-color - sets the color of the border
+The example below specifies a 1px solid border for <table>, <th>, and <td> elements: -->
+    <style>
+        table, th, td {
+  border: 1px solid green;
+  /* CSS Collapse Table Borders
+The CSS border-collapse property sets whether table borders should collapse into a single border or be separated as in standard HTML.
+
+This property can have one of the following values:
+
+separate - Default value. Borders are separated; each cell will display its own borders
+collapse - Borders are collapsed into a single border when possible */
+border-collapse: separate;
+/* CSS Table Padding
+ */
+ padding: 10px;
+ /* CSS Border Spacing
+ */
+  border-spacing: 15px;
+   text-align: center;
+vertical-align: bottom;
+}
+table{
+    width: 100%;
+}
+th{
+       height: 70px;
+
+}
+tr:hover:nth-child(even){
+cursor: pointer;
+background-color: aquamarine;
+}
+div.tablecontainer {
+  overflow-x: auto;
+}
+/* Display block */
+
+p {
+  background-color: rgb(58, 58, 190);
+  padding: 10px;
+}
+
+span {
+  background-color: rgb(241, 106, 106);
+  color: white;
+  padding: 10px;
+}
+
+p.ex1 {display: none;}
+p.ex2 {display: inline;}
+p.ex3 {display: block;}
+p.ex4 {display: inline-block;}
+p.ex5 {display: flex;}
+p.ex6 {display: grid;}
+table{
+    display: none;
+}
+table#show{
+    display: contents;
+}
+</style>
+</head>
+<body>
+    <!-- CSS Responsive Tables
+A responsive table will display a horizontal scrollbar if the screen is too small to display the full content.
+
+Resize the browser window to see the effect: -->
+<!-- CSS Table Properties
+Property	Description
+border	Sets all the border properties in one declaration
+border-collapse	Specifies whether or not table borders should be collapsed
+border-spacing	Specifies the distance between the borders of adjacent cells
+caption-side	Specifies the placement of a table caption
+empty-cells	Specifies whether or not to display borders and background on empty cells in a table
+table-layout	Sets the layout algorithm to be used for a table -->
+    <div class="tablecontainer" >
+
+        <table id="show">
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Savings</th>
+            </tr>
+            <tr>
+                <td>Peter</td>
+                <td>Griffin</td>
+                <td>$100</td>
+            </tr>
+            <tr>
+                <td>Lois</td>
+    <td>Griffin</td>
+    <td>$150</td>
+</tr>
+<tr>
+    <td>Joe</td>
+    <td>Swanson</td>
+    <td>$300</td>
+</tr>
+<tr>
+    <td>Cleveland</td>
+    <td>Brown</td>
+    <td>$250</td>
+</tr>
+</div>
+<!-- Common display Values
+The CSS display property has many values. The following table lists the most commonly used:
+
+Value	Description
+inline	Displays an element as an inline element
+block	Displays an element as a block element
+contents	Makes the container disappear, making its child elements children of the element the next level up in the DOM
+flex	Displays an element as a block-level flex container
+grid	Displays an element as a block-level grid container
+inline-block	Displays an element as an inline-level block container. The element itself is formatted as an inline element, but you can apply height, width, padding, and margin values
+none	The element is completely hidden from the document flow (does not take up any space).
+ -->
+<span>hellohow are tou dkfnklm sdkmslms</span><span>hellohow are tou dkfnklm sdkmslms</span><span>hellohow are tou dkfnklm sdkmslms</span>
+<h1>The display Property</h1>
+
+<h2 style="visibility: hidden;">display: none:</h2>
+<p class="ex1 hide">
+  <span>Text 1</span>
+  <span>Text 2</span>
+  <span>Text 3</span>
+</p>
+
+<h2>display: inline:</h2>
+<p class="ex2 hide">
+  <span>Text 1</span>
+  <span>Text 2</span>
+  <span>Text 3</span>
+</p>
+
+<h2>display: block:</h2>
+<p class="ex3 hide">
+  <span>Text 1</span>
+  <span>Text 2</span>
+  <span>Text 3</span>
+</p>
+
+<h2>display: inline-block:</h2>
+<p class="ex4 hide">
+  <span>Text 1</span>
+  <span>Text 2</span>
+  <span>Text 3</span>
+</p>
+
+<h2>display: flex:</h2>
+<p class="ex5 hide">
+  <span>Text 1</span>
+  <span>Text 2</span>
+  <span>Text 3</span>
+</p>
+
+<h2>display: grid:</h2>
+<p  class="ex6 hide">
+  <span>Text 1</span>
+  <span>Text 2</span>
+  <span>Text 3</span>
+</p>
+<script>
+    function clickbtn(){
+   document.getElementById("show").style.display="block"
+    }
+  
+</script>
+<button onclick="clickbtn()">Clickk to see table</button>
+
+<button onclick="btn()">hide element</button>
+<!-- CSS Properties
+Property	Description
+max-width	Defines the maximum width of an element
+width	Sets the width of an element
+ -->
+<div style=" width:300px; background-color: aqua; max-width: 200px; border: 1px solid gray;" >hi</div>
+</body>
+</html>

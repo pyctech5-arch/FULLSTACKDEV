@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS inline-block and combinators</title>
+    <style>
+        /* CSS Combinators
+A combinator is something that defines the relationship between two or more selectors.
+
+A CSS selector can contain more than one selector. Between the selectors, we can include a combinator, to create a more specific selection.
+
+There are four different combinators in CSS:
+
+Descendant combinator (space)
+Child combinator (>)
+Next sibling combinator (+)
+Subsequent-sibling combinator (~) */
+/* decenddent selector */
+body h3{
+    background-color: aquamarine;
+}
+/* Child combinators */
+body > span{
+    background-color: antiquewhite;
+}
+/* Next sibling */
+h3 + span{
+    color: aqua;
+}
+/* subsequent sibling */
+h3~span{
+    font-family: 'Courier New', Courier, monospace;
+}
+h3:first-child{
+background-color: #3e6dc4;
+}
+  h3:nth-child{background-color: #FF0000;
+    }
+    </style>
+</head>
+<body>
+   <h3 style="text-align: center;">Display:block</h3>
+    <span style="display:block; ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tempora quo totam obcaecati quam, aperiam est reprehenderit nobis quibusdam cupiditate!</span><br>
+   <h3 style="display: flex; align-items: center; justify-content: center;">Display:inline-block</h3>
+    <span style="display:inline-block;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tempora qu        o totam obcaecati quam         , aperiam est reprehenderit nobis quibusdam cupiditate!</span><br>
+   <h3 style="display: grid; place-items:center">Display:inline</h3>
+    <span style="display: inline;">Lorem ip sum dolor sit amet consectetur a        dipisicing elit. Incidunt tempora  quo totam obcaecati quam, aperiam            est reprehenderit nobis quibusdam cupiditate!</span><br>
+  <!-- Horizontal Alignment
+There are several ways to horizontally align elements:
+
+margin: auto - Center block elements
+text-align: center - Center text inside elements
+float or position - Left/right alignment
+Learn more about Horizontal Alignment »
+
+Vertical Alignment
+Vertical centering can be achieved using modern layout techniques:
+
+Flexbox - Use align-items: center
+Grid - Use place-items: center
+Position + Transform - For elements of unknown dimensions -->
+<pre>
+    Interactive Pseudo-classes
+Interactive pseudo-classes apply styles based on user interaction:
+
+:hover - When mouse is over an element
+:focus - When an element has focus
+:active - When an element is being activated
+:link - Unvisited links
+:visited - Visited links
+Learn more about Interactive Pseudo-classes »
+
+Structural Pseudo-classes
+Structural pseudo-classes select elements based on their position in the document tree:
+
+:first-child - First child of a parent
+:last-child - Last child of a parent
+:nth-child(n) - The nth child of a parent
+:lang() - Elements with a specific language
+
+
+Other Structural Pseudo-classes
+There are many more structural pseudo-classes available:
+
+:last-child - Matches the last child of a parent
+:nth-child(n) - Matches the nth child of a parent
+:nth-last-child(n) - Matches the nth child from the end
+:only-child - Matches an element that is the only child
+:first-of-type - Matches the first element of its type
+:last-of-type - Matches the last element of its type
+</pre>
+<style>
+    /* unvisited link */
+a:link {
+  color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+  color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+  color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+  color: #0000FF;
+}
+</style>
+<a href="google.com">Using psudo-classes</a>
+<style>
+  
+p:last-child {
+background-color: #00FF00;
+}
+
+</style>
+<p>f dfse dkmkf</p>
+<p>dsfs dsv</p>
+<p>fsdfsfwe rew</p>
+<p>erwe erw e</p>
+</body>
+</html>

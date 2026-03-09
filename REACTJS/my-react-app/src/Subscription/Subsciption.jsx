@@ -1,6 +1,6 @@
 import './Subscription.css';
 import Container from '../tamplates/Container';
-import Subscriptiondate from './Subscriptiondate';
+import Subscriptiondate from './NewSubscription/Subscriptiondate'
 import { useState } from 'react';
 
 function Subscription(props) {
@@ -9,7 +9,7 @@ function Subscription(props) {
         setTitle("Subscription purchased!!");
         console.log("on button clicked!", title);
     }
-
+// This  is the controlled component whitch has most jsx code init as this component.
     return (
 
         /*Dynamic data rendering

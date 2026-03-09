@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premitive data types in Js</title>
+</head>
+<body>
+    <!-- in javascript data types  two are there 
+     1.premitive datatypes:int,char,float,boolean,double etc.
+     2.Non premitive datatypes:collection of aboves ex:arrays ,string,interface,enums-->
+<!-- But in javascript a variable can hold all data types without specifying it. -->
+
+<!-- Example of premitive datatypes -->
+ <script>
+     var x="hello";//string
+     var n=70;//int
+     var yes="true";//boolean /true/1
+     var no="false";//boolean /false/0
+     var e=undefined;
+     document.write(e+"<br>");//undefiend value is same if u declared or not
+     var y;
+     document.write(y+"<br>");
+     var z=null;
+     document.write(z);
+
+ </script>
+ <h3>concept of premetive data types</h3>
+ <script>
+    var a="helo"+12;
+document.write(a);
+document.write("<br>");
+var a=50+50+"value";
+document.write(a);
+document.write("<br>");
+
+// Ouotes with string
+var str1="his ";
+var str2='name is "Joel"';
+document.write(str1+str2);
+document.write("<br>");
+document.write("<br>");
+
+// concept of variables for booleans
+var temp1=1;
+var temp2=2;
+if(temp1==temp2){
+    document.write("true");
+}else{
+    document.write("flase");
+}
+document.write("<br>");
+document.write("<br>");
+
+var temp3="true";
+if(temp3){
+    document.write("true");
+}else{
+    document.write("flase");
+}
+// if u confuced of checking types we can use=== for checking data types
+document.write("<br>");
+var a1=1;
+var a2="1";
+//return same 
+ if(a1==a2){
+    document.write("same <br>");
+}else{
+    document.write("not same <br>");
+}
+// return not same
+ if(a1===a2){
+    document.write("same <br>");
+}else{
+    document.write("not same <br>");
+}
+ </script>
+
+    </body>
+</html>

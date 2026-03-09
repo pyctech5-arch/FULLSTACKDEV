@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Arrays</title>
+</head>
+<button onclick="push()" >Click to car.push</button>
+<button onclick="length1()" >Click to car.length</button>
+<button onclick="undefinedvalue()" >Click to undefined holes</button>
+<button onclick="nestedarrayobj()">Click to Display Nested array with obj</button>
+<button onclick="myFunction1()">sort</button>
+
+<p id="a1"></p>
+<p id="a2"></p>
+<p id="a3"></p>
+<p id="a4"></p>
+<p id="a5"></p>
+<p id="demo"></p>
+<p id="demo1"></p>
+
+<body>
+    <!-- An Array is an object type designed for storing data collections.
+
+Key characteristics of JavaScript arrays are:
+
+Elements: An array is a list of values, known as elements.
+
+Ordered: Array elements are ordered based on their index.
+
+Zero indexed: The first element is at index 0, the second at index 1, and so on.
+
+Dynamic size: Arrays can grow or shrink as elements are added or removed.
+
+Heterogeneous: Arrays can store elements of different data types (numbers, strings, objects and other arrays). -->
+<h3>Example of Arrays</h3>
+<script>
+const car=["indigo","fortuner","tesla","TataEv"]
+// Accesing complete array
+document.write(car);
+document.write("<br>");
+// Accesing specific single value of array
+document.write(car[0]);
+document.write("<br>");
+// defining empty array adding value later.
+const bb=[];
+bb[0]="bb`1";
+document.write(bb);
+document.write("<br>");
+
+// using the new Keyword
+const car1=new Array("indigo","fortuner","tesla","TataEv");
+document.write(car1);
+document.write("<br>");
+// changing an array element
+car1[0]="gost";
+document.write(car1);
+document.write("<br>");
+
+// converting into string
+document.write(car1.toString());
+document.write("<br>");
+// accesing array and the objects
+// array value access using the index
+const person = ["John", "Doe", 46];
+document.write(person[0]);
+// object values access true the  propety name
+document.write("<br>");
+const person1 = {firstName:"John", lastName:"Doe", age:46};
+document.write(person1.firstName);
+// if we cheak the type of the array return object
+document.write("<br>");
+const e=typeof(person);
+document.write(e);
+document.write("<br>");
+
+// array methods
+document.write("sorted array with sort() method: "+person.sort())
+document.write("<br>");
+const array=car.length;
+document.write("array with length() method: "+array)
+document.write("<br>");
+// getting value true the length method
+document.write("array with length() method: "+car[car.length-1])
+document.write("<br>");
+
+document.write("<h2>Loops true arrays</h2>");
+let text="<ul>"
+for (let i = 0; i < car.length; i++) {
+text+="<li>"+car[i]+"</li>"
+}
+text+="</ul>";
+
+document.write(text)
+
+document.write("<br>")
+// You can also use the Array.forEach() function:
+
+// Example
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+let text1 = "<h2>For each loop</h2><br><ul>";
+fruits.forEach(myFunction);
+text1 += "</ul>";
+
+function myFunction(value) {
+  text1 += "<li>" + value + "</li>";
+}
+document.write(text1);
+function push(){
+    car.push("thar");
+    document.getElementById("a1").innerHTML=car;
+}
+
+function length1(){
+car[car.length]="farari" ;   document.getElementById("a2").innerHTML=car;
+}
+function undefinedvalue(){
+    car[7]="bens";
+    let text1="";
+    const car2=car.length;
+    for (let i = 0; i < car2; i++) {
+        text1+= car[i]+"<br>";
+    }
+document.getElementById("a3").innerHTML=text1;
+}
+// To validate a array checking
+document.write("To validate a array checking Array.isArray(car): "+Array.isArray(car))
+document.write("<br>");
+document.write("To validate a array checking (car instanceof Array): "+(car instanceof Array))
+
+
+// Javascript true nested array with objects 
+let x = "";
+const myObj = {
+  name: "John",
+  age: 30,
+  cars: [
+    {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+    {name:"BMW", models:["320", "X3", "X5"]},
+    {name:"Fiat", models:["500", "Panda"]}
+  ]
+}
+function nestedarrayobj(){
+for (let i in myObj.cars) {
+  x += "<h2>" + myObj.cars[i].name + "</h2>";
+  for (let j in myObj.cars[i].models) {
+    x += myObj.cars[i].models[j] + "<br>";
+  }
+}
+
+document.getElementById("a4").innerHTML = x;
+}
+/*Basic Array Methods
+Array length
+Array toString()
+Array at()
+Array join()
+Array pop()
+Array push()
+Array shift()
+Array unshift()
+Array isArray()
+Array delete()
+Array concat()
+Array copyWithin()
+Array flat()
+Array slice()
+Array splice()
+Array toSpliced()*/
+document.write("<br>");
+const sic=car.length;
+ document.write("Using car.length :"+sic);
+document.write("<br>");
+ car.length=2;
+  document.write("Using car.length=2  :"+car);
+document.write("<br>");
+  document.write("Using car.toString()  :"+car.toString());
+  document.write("<br>");
+  const carf1=car.at(1);
+  document.write("Using car.at(1) it is same as car[1]  :"+carf1);
+  document.write("<br>");
+  document.write("Using car.toString()  :"+car.join("*"));
+  document.write("<br>");
+  car.push("thar");
+ document.write("Using car.push()  :"+car);
+ document.write("<br>");
+ car.pop();
+ document.write("Using car.pop()  :"+car);
+ document.write("<br>");
+ document.write("Using car.shift()  :"+car.shift());
+ document.write("<br>");
+ car.unshift("braves");
+      document.write("Using car.unshift()  :"+car);  
+ document.write("<br>");
+document.write("fruits before delete :"+fruits)
+ document.write("<br>");
+
+delete fruits[0];
+document.write("Using delete fruits[0] :"+fruits)
+ document.write("<br>");
+ const cocated=car.concat(fruits);
+ document.write("Using cancat(car,fruits)  :"+cocated);
+ document.write("<br>");
+ document.write("Using copyWithin(0,2)  : "+fruits.copyWithin(0,2)); 
+/*JavaScript Array flat()
+ES2019 Introduced the Array flat() method.
+
+The flat() method creates a new array with sub-array elements concatenated to a specified depth.
+
+Example*/
+ document.write("<br>");
+const myArr = [[1,2],[3,4],[5,6]];
+const newArr = myArr.flat();
+document.write("For using  myArr.flat() for adding array with thier sub arrays: "+newArr);
+ document.write("<br>");
+const er=[1,2,3,4,5,6];
+const newArr1 = er.flatMap(x=>[x,x*10]);
+document.write("For using  myArr.flatMap(x=>[x,x*10]) for performing operations on array values as here it is multyply by 10 As shown: "+newArr1);
+document.write("<h3>Splicing and Slicing Arrays</h3>")
+document.write("<br>");
+const fruit = ["Banana", "Orange", "Apple", "Mango"];
+fruit.splice(2,0,"graps","chiku");
+document.write("Using Splice(index toaddvalue,index howmany elements to remove,newelement,newelement,..) : "+fruit);
+/*JavaScript Array toSpliced()
+ES2023 added the Array toSpliced() method as a safe way to splice an array without altering the original array.
+
+The difference between the new toSpliced() method and the old splice() method is that the new method creates a new array, keeping the original array unchanged, while the old method altered the original array.
+
+Example*/
+document.write("<br>")
+ const months = ["Jan", "Feb", "Mar", "Apr"];
+const spliced = months.toSpliced(0, 1);
+document.write("before toSpliced: "+months);
+document.write("<br>");
+document.write("After toSpliced: "+spliced);
+document.write("<br>");
+
+/*JavaScript Array slice()
+The slice() method slices out a piece of an array into a new array:*/ 
+const fru = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const citrus = fru.slice(1);
+const fri = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const citru = fri.slice(1,3);
+document.write( "Before one element slick using .slice(1): "+fru);
+document.write("<br>");
+document.write( "After one element slice using .slice(1): "+citrus);
+document.write("<br>");
+/*The slice() method can take two arguments like slice(1, 3).
+
+The method then selects elements from the start argument, and up to (but not including) the end argument.*/ 
+document.write( "After two element slice using .slice(1,3): "+citru);
+
+
+/*Array Search Methods
+Array indexOf()
+Array lastIndexOf()
+Array includes()
+Array find()
+Array findIndex()
+Array findLast()
+Array findLastIndex()*/
+document.write("<h2>Array search Method</h2>") ;
+document.write("<br>");
+const stu=["prabhu","naresh","manish",
+"vinod","manoj"
+];
+document.write(stu);
+document.write("<br>");
+document.write("Using indexOf()for naresh in the above array: "+stu.indexOf("naresh"));
+document.write("<br>");
+/*JavaScript Array lastIndexOf()
+Array.lastIndexOf() is the same as Array.indexOf(), but returns the position of the last occurrence of the specified element.*/
+ document.write("Using indexOf()for naresh in the above array: "+stu.lastIndexOf("naresh"));
+/*JavaScript Array includes()
+ECMAScript 2016 introduced Array.includes() to arrays. This allows us to check if an element is present in an array (including NaN, unlike indexOf).*/
+document.write("<br>");
+ document.write("Checking the above array  includes('prabhu'): "+stu.includes("prabhu")) ;
+ document.write("<br>");
+const numbers = [4, 9, 16, 25, 29];
+let first = numbers.find(myFunction);
+let second = numbers.findIndex(myFunction);
+function myFunction(value, index, array) {
+  return value > 18;
+}
+document.write(numbers);
+ document.write("<br>");
+document.write("Finding grater then 18 value using .find() in array: "+first);
+/*JavaScript Array findIndex()
+The findIndex() method returns the index of the first array element that passes a test function.
+
+This example finds the index of the first element that is larger than 18:
+
+Note that the function takes 3 arguments:
+
+The item value
+The item index
+The array itself*/
+ document.write("<br>");
+document.write("Finding grater then 18 value index using .findindex() in array: "+second);
+
+/*JavaScript Array findLast() Method
+ES2023 added the findLast() method that will start from the end of an array and return the value of the first element that satisfies a condition.*/ 
+ document.write("<br>");
+
+const t = [27, 28, 30, 40, 42, 35, 30];
+let high = t.findLast(x => x > 40);
+document.write(t);
+ document.write("<br>");
+document.write("The above array return the value > 40 that is:"+high);
+/*JavaScript Array findLastIndex() Method
+The findLastIndex() method finds the index of the last element that satisfies a condition.*/ 
+let pos1 = t.findLastIndex(x => x > 40);
+ document.write("<br>");
+document.write("finding last index of the Array using findLastIndex():  "+pos1);
+ document.write("<br>");
+
+document.write("<h2>Javascript Array Sort </h2>")
+
+/*Alphabetic Sort
+Array sort()
+Array reverse()
+Array toSorted()
+Array toReversed()
+Sorting Objects
+Numeric Sort
+Numeric Sort
+Random Sort
+Math.min()
+Math.max()
+Home made Min()
+Home made Max()*/
+/*Sorting an Array
+The sort() method sorts an array alphabetically:*/  
+const fruit1 = ["Banana", "Orange", "Apple", "Mango"];
+document.write("Array Before sort: ",fruit1)
+ document.write("<br>");
+document.write("Sorted array using .sort() :  "+fruit1.sort());
+ document.write("<br>");
+document.write("Reversed array using .reverse() : "+fruit1.reverse());
+ document.write("<br>");
+ document.write("Sorted array without  adding original array using .toSorted()"+fruit1.toSorted());
+ document.write("<br>");
+document.write("Sorted array without  adding original array using .toReversed(): "+fruit1.toReversed());
+ document.write("<br>");
+/*The Compare Function
+The purpose of the compare function is to define an alternative sort order.
+
+The compare function should return a negative, zero, or positive value, depending on the arguments:*/  
+const points = [40, 100, 1, 5, 25, 10];
+document.write("Before sorting :"+points)
+document.write("<br>");
+document.write("Number sorted accending using .sort(function(a,b){return a-b}) method: "+points.sort(function(a, b){return a - b}))
+
+ document.write("<br>");
+ document.write("Number sorted decending using .sort(function(a,b){return b-a}) method: "+points.sort(function(a, b){return b - a}))
+ document.write("<br>");
+
+const a=points.sort(function(a, b){return a - b})
+const b=points[0];
+const c=points.sort(function(a, b){return b - a})
+const d=points[0];
+
+document.write("This is lowest value find using array.sort(function(a,b){return a-b}) and accesing only array[0] value:  ",b);
+ document.write("<br>");
+
+document.write("This is lowest value find using array.sort(function(a,b){return b-a}) and accesing only array[0] value:  ",d);
+ document.write("<br>");
+/*Using Math.min() on an Array
+You can use Math.min.apply to find the lowest number in an array*/
+const point1 = [40, 100, 1, 5, 25, 10];
+
+function myArrayMin(arr) {
+  return Math.min.apply(null, arr);
+}
+document.write("min value get using Math.min.apply(null,arr) in Function"+myArrayMin(point1));
+ document.write("<br>");
+
+function myArrayMax(arr) {
+  return Math.max.apply(null, arr);
+}
+document.write("max value get using Math.max.apply(null,arr) in Function"+myArrayMax(point1));
+ document.write("<br>");
+/*Sorting Object Arrays
+JavaScript arrays often contain objects:*/ 
+const friends=[
+    {name:"manu",year:2020},
+    {name:"prashant",year:2010},
+    {name:"mansa",year:2000}
+];
+friends.sort(function(a,b){return a.year - b.year});
+displayfriends();
+
+function displayfriends(){
+    document.write(
+        friends[0].name+" "+friends[0].year+"<br>"+
+      friends[1].name+" "+friends[1].year+"<br>"+
+        friends[2].name+" "+friends[2].year+"<br>"
+    )
+}
+document.write("<br>");
+const cars = [
+  {type:"Volvo", year:2016},
+  {type:"Saab", year:2001},
+  {type:"BMW", year:2010}
+];
+function myFunction1() {
+  cars.sort(function(a, b){
+    let x = a.type.toLowerCase();
+    let y = b.type.toLowerCase();
+    if (x < y) {return -1;}
+    if (x > y) {return 1;}
+    return 0;
+  });
+  displayCars1();
+}
+function displayCars1() {
+  document.getElementById("demo").innerHTML =
+  cars[0].type + " " + cars[0].year + "<br>" +
+  cars[1].type + " " + cars[1].year + "<br>" +
+  cars[2].type + " " + cars[2].year;
+}
+ document.write("<br>");
+
+ const myArr2 = [
+  {name:"X00",price:100 },
+  {name:"X01",price:100 },
+  {name:"X02",price:100 },
+  {name:"X03",price:100 },
+  {name:"X04",price:110 },
+  {name:"X05",price:110 },
+  {name:"X06",price:110 },
+  {name:"X07",price:110 },
+  {name:"X08",price:120 },
+  {name:"X09",price:120 },
+  {name:"X10",price:120 },
+  {name:"X11",price:120 },
+  {name:"X12",price:130 },
+  {name:"X13",price:130 },
+  {name:"X14",price:130 },
+  {name:"X15",price:130 },
+  {name:"X16",price:140 },
+  {name:"X17",price:140 },
+  {name:"X18",price:140 },
+  {name:"X19",price:140 }
+];
+
+myArr2.sort( (p1, p2) => {
+  if (p1.price < p2.price) return -1;
+  if (p1.price > p2.price) return 1;
+  return 0;
+});
+
+let txt = "";
+myArr2.forEach(myFunction3);
+
+function myFunction3(value) {
+  txt += value.name + " " + value.price + "<br>"; 
+}
+document.getElementById("demo1").innerHTML ="The sorte array is given below: <br>"+ txt;
+ document.write("<br>");
+
+</script>
+
+</body>
+</html>

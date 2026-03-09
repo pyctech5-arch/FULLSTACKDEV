@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Links</title>
+<style>
+    /* unvisited link */
+a:link {
+  color: red;
+   text-decoration: none;
+     background-color: yellow;
+
+}
+
+/* visited link */
+a:visited {
+  color: green;
+   text-decoration: none;
+  background-color: cyan;
+
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+   text-decoration: underline;
+  background-color: lightgreen;
+
+}
+
+
+/* selected link */
+a:active {
+  color: blue;
+   text-decoration: underline;
+  background-color: hotpink;
+}
+.aa:link, .aa:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.aa:hover, .aa:active {
+  background-color: red;
+}
+</style>
+</head>
+<body>
+    <!-- CSS Styling Links
+HTML links can be styled with many CSS properties, like color, text-decoration, background-color, font-size, font-weight, font-family, etc.). -->
+<a href="google.com">Click to enter google</a>
+
+<br><br>
+<br>
+<span style="cursor: auto">auto</span><br>
+<span style="cursor: crosshair">crosshair</span><br>
+<span style="cursor: default">default</span><br>
+<span style="cursor: e-resize">e-resize</span><br>
+<span style="cursor: help">help</span><br>
+<span style="cursor: move">move</span><br>
+<span style="cursor: n-resize">n-resize</span><br>
+<span style="cursor: ne-resize">ne-resize</span><br>
+<span style="cursor: nw-resize">nw-resize</span><br>
+<span style="cursor: pointer">pointer</span><br>
+<span style="cursor: progress">progress</span><br>
+<span style="cursor: s-resize">s-resize</span><br>
+<span style="cursor: se-resize">se-resize</span><br>
+<span style="cursor: sw-resize">sw-resize</span><br>
+<span style="cursor: text">text</span><br>
+<span style="cursor: w-resize">w-resize</span><br>
+<span style="cursor: wait">wait</span>
+<h2>Link Button</h2>
+
+<a class="aa" href="default.asp" target="_blank">This is a link</a>
+<!-- CSS Styling Lists
+In HTML, there are two main types of lists:
+
+<ul> - unordered lists (list items are marked with bullets)
+<ol> - ordered lists (list items are marked with numbers or letters)
+CSS has the following properties for styling HTML lists:
+
+list-style-type - Specifies the type of list-item marker
+list-style-image - Specifies an image as the list-item marker
+list-style-position - Specifies the position of the list-item markers
+list-style - A shorthand property for the properties above
+CSS Style List-item Markers
+The CSS list-style-type property specifies the type of list-item marker in a list.
+
+The following example shows some of the available list-item markers: -->
+
+<!-- Example
+Replace the list-item markers with an image:
+
+ul {
+  list-style-image: url('sqpurple.gif');
+  list-style-type: square;
+}
+CSS Position the List-item Markers
+The CSS list-style-position property specifies the position of the list-item markers (bullet points).
+
+list-style-position: outside; means that the bullet points will be outside the list item. The start of each line of a list item will be aligned vertically. This is default:
+
+Coffee
+Tea
+Coca-cola
+list-style-position: inside; means that the bullet points will be inside the list item. As it is part of the list item, it will be part of the text and push the text at the start:
+
+Coffee
+Tea
+Coca-cola -->
+<!-- CSS list-style Shorthand Property
+The list-style property is a shorthand property. It is used to set all the list properties in one declaration.
+
+When using the shorthand property, the order of the property values are:
+
+list-style-type
+list-style-position
+list-style-image
+If one of the property values above is missing, the default value for the missing property will be inserted.
+
+Example
+Use the list-style shorthand property:
+
+ul {
+  list-style: square inside url("sqpurple.gif");
+}
+CSS Styling List With Colors
+We can also style lists with colors, margins and padding, to make them look a little more interesting.
+
+Anything added to the <ol> or <ul> tag, affects the entire list, while properties added to the <li> tag will affect the individual list items: -->
+<!-- All CSS List Properties
+Property	Description
+list-style	Sets all the properties for a list in one declaration
+list-style-image	Specifies an image as the list-item marker
+list-style-position	Specifies the position of the list-item markers (bullet points)
+list-style-type	Specifies the type of list-item marker -->
+
+
+</body>
+</html>

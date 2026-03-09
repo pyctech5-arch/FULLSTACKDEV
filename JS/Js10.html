@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Function</title>
+</head>
+<body>
+    <h2>Example  of functions </h2>
+    <script type="text/javascript">    
+    // callin Function object
+// class Car {
+//      model;
+//      color;
+//     Car(model,color) {
+//         this.model=model;
+//     this.color=color;       
+//     }
+// }P
+
+// var xuv = new car("xuv","red");
+// var swift = new car("swift","white")
+document.writeln("<h3>  The  powe of num</h3>");
+var power=new Function("num1","num2","return Math.pow(num1,num2)")
+document.writeln(power(2,3)+"<br>");
+document.writeln(power(5,2));
+document.writeln("<br>")
+var add=new Function("num1","num2","return num1 + num2");
+document.write(add(2,8)+" <br><br>");
+
+
+// without parametrs
+function showme(){
+alert("alert button is clicked")
+}
+
+// with parameters
+        function square(number){
+      alert(number*number);
+      }
+    //   with retun value and parameter
+
+function info(num){
+ return num+"hello how are u" }
+
+document.write(info(50+" ")); 
+
+document.write()
+
+
+</script>
+<br><br>
+<button onclick="showme()">click me</button>
+<h4>>find Square</h4>
+<button onclick="square(2)">click square</button>
+
+<h3>Function Calls()</h3>
+
+
+
+</body>
+</html>

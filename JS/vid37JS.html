@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM</title>
+    <style>
+        #container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+    </style>
+
+</head>
+<body>
+    <pre>
+        The DOM Tree
+When a web page loads, the browser creates a tree-like representation of the HTML document.
+
+Each part of the document are nodes in the tree:
+
+Node	Description
+Document	Owner of all nodes in the document
+html	Element Node
+head	Element Node
+body	Element Node
+a	Element Node
+href	Attribute Node
+h1	Element Node
+My Header	Text Node
+Accessing HTML Elements
+The HTML DOM can be used to access HTML elements.
+
+The most common way to access an HTML element is to use the id of the element:
+    </pre>
+    <p id="demo"></p>
+    <p class="hi"></p>
+    <h3></h3>
+    <h4></h4>
+    <h4></h4>
+    <h4></h4>
+    <h4></h4>
+    <h4></h4>
+    <p><b></b></p>
+
+    <script>
+        // finding element true id
+document.getElementById("demo").innerHTML="Hello World!"
+document.write("<br>");
+/*In the example above, the getElementById method used id="demo" to find the element.
+
+id="demo" is an HTML property
+getElementById() is a DOM Method
+innerHTML is a DOM Property*/ 
+document.getElementsByTagName("b")[0].innerHTML="True tag Name";
+
+// true class name
+document.getElementsByClassName("hi")[0].innerHTML="True Class Name"
+
+// true query selector
+document.querySelector("h3").innerHTML="query selector for html element and class and id: ";
+// for selecting multiple elements true the query selector all
+document.querySelectorAll("h4")[0].innerHTML="All html elements at once with query selector all index[0]"
+</script>
+<h2>HTML DOM API</h2>
+<p>Application Programming Interface
+The DOM API (Application Programming Interface) is a set of Methods and Properties that allow JavaScript to change the content, structure, and style of any HTML elements.</p>
+<img src="html dom.png" height="300" alt="">
+<pre>
+    HTML DOM API Abilities
+The DOM API provides us with the ability to:
+
+Find and select elements
+Change element content and attributes
+Add, remove, or modify elements
+Change CSS styles
+Add event listeners to react to user input
+
+
+Selecting HTML Elements
+Method	Description
+document.getElementById(id)	Find an element by element id
+document.getElementsByTagName(name)	Find elements by tag name
+document.getElementsByClassName(name)	Find elements by class name
+document.querySelector(selector)	Find the first element that matches a CSS selector
+document.querySelectorAll(selector)	Find all elements that match a CSS selector
+
+
+
+Accessing Element Content
+Property	Description
+element.innerHTML	The HTML content of an element
+element.textContent	The text content of an element
+Accessing Element Attributes
+Property	Description
+element.attribute	Change the attribute value of an HTML element
+element.style.property	The style of an HTML element
+Changing Element Attributes
+Method	Description
+element.setAttribute()	Create or set a new attribute
+Manipulating Structure
+Method	Description
+document.createElement()	Creates a new HTML element
+document.removeChild()	Remove an HTML element
+document.appendChild()	Add an HTML element
+document.replaceChild()	Replace an HTML element
+Adding Event Handlers
+Method	Description
+document.getElementById(id).onclick = function(){code}	Adding event handler code to an onclick event
+</pre>
+<form id="frm1" action="/action_page.php">
+  First name: <input type="text" name="fname" value="Donald"><br>
+  Last name: <input type="text" name="lname" value="Duck"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<p>These are the values of each element in the form:</p>
+
+<p id="demo11"></p>
+
+<script>
+const x = document.forms["frm1"];
+let text = "";
+for (let i = 0; i < x.length ;i++) {
+  text += x.elements[i].value + "<br>";
+}
+document.getElementById("demo11").innerHTML = text;
+// For changing the style  by accessing element
+document.getElementsByTagName("p")[0].style.color="blue";
+</script>
+<br><br>
+<h3>HTML DOM Animation</h3>
+<p><button onclick="myMove()">Click Me</button></p> 
+
+<div id ="container">
+  <div id ="animate"></div>
+</div>
+<script>
+function myMove() {
+  let id = null;
+  const elem = document.getElementById("animate");   
+  let pos = 0;
+  clearInterval(id);
+  id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + "px"; 
+      elem.style.left = pos + "px"; 
+    }
+  }
+}
+
+
+
+/*HTML Form Validation
+JavaScript Form Validation
+HTML form validation can be done by JavaScript.
+
+If a form field (fname) is empty, this function alerts a message, and returns false, to prevent the form from being submitted:
+
+JavaScript Example
+function validateForm() {
+  let x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+The function can be called when the form is submitted:
+
+HTML Form Example
+<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+Name: <input type="text" name="fname">
+<input type="submit" value="Submit">
+</form>
+JavaScript Can Validate Numeric Input
+JavaScript is often used to validate numeric input:
+
+Please input a number between 1 and 10
+
+ Submit
+REMOVE ADS
+
+Automatic HTML Form Validation
+HTML form validation can be performed automatically by the browser:
+
+If a form field (fname) is empty, the required attribute prevents this form from being submitted:
+
+HTML Form Example
+<form action="/action_page.php" method="post">
+  <input type="text" name="fname" required>
+  <input type="submit" value="Submit">
+</form>
+Automatic HTML form validation does not work in Internet Explorer 9 or earlier.
+
+Data Validation
+Data validation is the process of ensuring that user input is clean, correct, and useful.
+
+Typical validation tasks are:
+
+has the user filled in all required fields?
+has the user entered a valid date?
+has the user entered text in a numeric field?
+Most often, the purpose of data validation is to ensure correct user input.
+
+Validation can be defined by many different methods, and deployed in many different ways.
+
+Server side validation is performed by a web server, after input has been sent to the server.
+
+Client side validation is performed by a web browser, before input is sent to a web server.
+
+HTML Constraint Validation
+HTML5 introduced a new HTML validation concept called constraint validation.
+
+HTML constraint validation is based on:
+
+Constraint validation HTML Input Attributes
+Constraint validation CSS Pseudo Selectors
+Constraint validation DOM Properties and Methods
+Constraint Validation HTML Input Attributes
+Attribute	Description
+disabled	Specifies that the input element should be disabled
+max	Specifies the maximum value of an input element
+min	Specifies the minimum value of an input element
+pattern	Specifies the value pattern of an input element
+required	Specifies that the input field requires an element
+type 	Specifies the type of an input element
+For a full list, go to HTML Input Attributes.
+
+Constraint Validation CSS Pseudo Selectors
+Selector	Description
+:disabled	Selects input elements with the "disabled" attribute specified
+:invalid	Selects input elements with invalid values
+:optional	Selects input elements with no "required" attribute specified
+:required	Selects input elements with the "required" attribute specified
+:valid	Selects input elements with valid values
+For a full list, go to CSS Pseudo Classes.*/
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+.student_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-family: Arial, sans-serif;
+cursor: pointer;
+}
+
+
+/* base styling for each row */
+.table_row {
+    transition: background-color 0.3s ease;
+}
+
+.table_row:nth-child(even) {
+    background-color: #60ec73;
+}
+
+.table_row:hover {
+    background-color: #151c1d;
+}
+
+/* header cells */
+.table_header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 2px solid #3e8e41;
+    width: 80px;
+    border-radius: 10%;
+}
+
+/* data cells */
+.table_data {
+    padding: 0.75rem;
+    border-bottom: 1px solid #ddd;
+}
+
+/* optional: separate tr borders */
+.table_row td,
+.table_row th {
+    border-right: 1px solid #ccc;
+}
+

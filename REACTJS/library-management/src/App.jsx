@@ -1,5 +1,4 @@
 import Students from './Student/Students'
-import Studentlist from './components/Studentslist'
 function App() {
   return (
     <>

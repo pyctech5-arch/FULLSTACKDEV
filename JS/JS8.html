@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connditional statements</title>
+</head>
+<body>
+    <h2>Conditional Statments</h2>
+<script>
+   var student1={
+    name:"manoj",
+   marks:59,
+   regno:"2NR23304"
+   }
+   // <!-- if condition --> if one condition is true this statment is used
+   document.write("<h3>example if statment: </h3>");
+if(student1.name){
+document.write("the name is presented in student1 object")
+}
+// if -else this consition is usedd for checking the false value also with true
+document.write("<br><hr>");
+document.write("<h3>example if else statment: </h3>");
+if(student1.name==false){
+document.write("The name is presented in student1 object")
+}else{
+    document.write("The stdent name property is not available in the  student1 object")
+}
+// if else-if statement this condition is  used for specifying multiple conditions  by cheaking one by one .
+
+document.write("<br><hr>");
+document.write("<h3>example if elseif else statment: </h3>");
+if(student1.marks>=0 && student1.marks<=40){
+document.write("The student failed the examination");
+}else if(student1.marks>40&&student1.marks<=60){
+document.write("The student passed in 3rd class");
+}else if(student1.marks>60&&student1.marks<=70){
+document.write("The student passed in 2nd class");
+}else if(student1.marks>70&&student1.marks<=80){
+document.write("The student passed in 1st class");
+}else if(student1.marks>80&&student1.marks<=90){
+document.write("The student passed in distingtion");
+}
+else{
+    document.write("The student is not attended the examination");
+}
+
+// the switch case statement this is used to cheack the multiple conditions also we can call it as updated version of if-else if.only by cheaking one condition.
+document.write("<br><hr>");
+document.write("<h3>example switch case statment: </h3>");
+document.write("what is the  day 6?");
+var day=6;
+
+switch (day) {
+    case 1:
+        document.write("<br>");
+    document.write("Monday");
+        break;
+        case 2:
+            document.write("<br>");
+    document.write("Tuesday");
+       break;
+ case 3:
+    document.write("<br>");
+document.write("wednesday");
+        break;
+      case 4:
+        document.write("<br>");
+document.write("Thursday");
+        break;
+         case 5:
+            document.write("<br>");
+document.write("friday");
+        break;
+         case 6:
+            document.write("<br>");
+document.write("Saturday");
+        break;
+case 7:
+     document.write("<br>");
+document.write("Sunday");
+        break;
+    default:
+         document.write("<br>");
+        document.write("The day not found")
+        break;
+}
+
+document.write("<br><hr>");
+document.write("<br><hr>");
+document.write("This  is new date using we are getting the todays day using: (new Date().getDay())")
+// checks date 1-7 and returns
+
+switch (new Date().getDay()) {
+    case 1:
+        document.write("<br>");
+    document.write("Monday");
+        break;
+        case 2:
+            document.write("<br>");
+    document.write("Tuesday");
+       break;
+ case 3:
+    document.write("<br>");
+document.write("wednesday");
+        break;
+      case 4:
+        document.write("<br>");
+document.write("Thursday");
+        break;
+         case 5:
+            document.write("<br>");
+document.write("friday");
+        break;
+         case 6:
+            document.write("<br>");
+document.write("Saturday");
+        break;
+case 7:
+     document.write("<br>");
+document.write("Sunday");
+        break;
+    default:
+         document.write("<br>");
+        document.write("The day not found")
+        break;
+        }
+
+document.write("<br>");
+document.write("For date (new Date().getDate()) return only the date");
+    var a1=new Date().getDate()
+document.write("<br>"+a1);
+
+document.write("<br>");
+document.write("For month (new Date().getMonth()) return only the month:0-11");
+    var a1=new Date().getMonth();
+document.write("<br>"+a1);
+document.write("<br>")
+document.write("For year (new Date().getFullYear()) return only the year:");
+    var a1=new Date().getFullYear();
+document.write("<br>"+a1);
+
+document.write("<br>")
+
+document.write("For complete date use (new Date() only ): ");
+  var a2=new Date();
+     var date=a2;
+document.write("<br>"+"the full date is:"+a2);
+
+</script>
+ 
+</body>
+</html>

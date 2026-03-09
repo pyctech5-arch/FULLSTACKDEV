@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js iterations</title>
+</head>
+<p id="demo"></p>
+<p id="demo1"></p>
+
+<body>
+    <!-- avaScript loops repeat executing a block of code a number of times.
+
+Loops are fundamental for tasks involving:
+
+Iteration over values
+Iteration over data structures
+Performing an action multiple times
+Loop Type	Description
+for	Iterates over values and expressions
+while	Iterates over a condition
+do...while	Iterates over a condition
+for...in	Iterates over the properties of an Object
+for...of	Iterates over array like objects
+forEach()	Iterates over each element in an Array -->
+    <script>
+
+document.writeln("<h2>Introduction to loops</h2>")
+
+    //   for loop
+    document.writeln("<h3>Example of for loop</h3>")
+    const cars=["indigo","furtiga","toyata","thar"];
+for (let i = 0; i < cars.length; i++) {
+    const element = cars[i];
+    document.writeln("<br>"+element);
+}
+    document.writeln("<br>");    
+
+let a="Prashant";
+for (let i = 0; i < a.length; i++){
+    const element = a[i];
+    document.writeln("<br>"+element);    
+}
+    document.writeln("<br>");    
+
+    for (let i = 1; i < 10; i++){
+    const element1 =i;
+    document.writeln("<br>"+element1);    
+}
+    document.writeln("<br>"); 
+    document.writeln("<h3>Example of  while loop</h3>")
+    
+    //   while loop
+    var i=1;
+    while (i<10){
+        document.writeln("the number is"+i+"<br>") ;       
+        i++;
+    }
+    
+  document.writeln("<h3>Example of do while loop</h3>");
+    //   do while loop
+    var i=1;
+    do {
+        document.writeln("<br>the numbers are:>"+i);
+        i++;
+    } while (i<10);
+    
+    //   for in loop
+    // Used for objects only
+      document.writeln("<h3>Example of for in loop</h3>");
+  var temp=" ";
+    var person1={
+        fname:"prashnt",
+        lname:"chavan",
+        eyecolor:"blue",
+        work:"SDE",
+        salary:"20000" 
+    }
+for (value in person1)
+{   temp=temp+person1[value]+" ";
+// document.writeln(person1[value]);
+}
+document.write(temp);
+document.writeln("<br>")
+document.writeln("<h3>For off loop example</h3>")
+    
+// for of loop
+    // with object it does not work
+// for (const element of person1) {
+//     document.write(person1[valuee])
+// }
+// With array
+var car=["a","b","c","d"];
+for (value  of car) {
+    document.write(value+" ")
+}
+document.write("<br>")
+// with string
+const at="prashant";
+for (const e of at) {
+    document.write(e);
+}
+
+document.write("<br>")
+// using for loop
+for (let i = 0; i < car.length; i++) {
+    const e = car[i];
+    document.write(e+"<br>");
+}
+// Home Made Iterable
+function myNumbers() {
+  let n = 0;
+  return {
+    next: function() {
+      n += 10;
+      return {value:n, done:false};
+    }
+  };
+}
+
+// Create Iterable
+const n = myNumbers();
+n.next(); // 10
+n.next(); // 20
+n.next(); // 30
+
+document.getElementById("demo").innerHTML ="Using the .next() method: "+ n.next().value;
+document.writeln("<br>");
+// Create an Object
+myNumbers = {};
+
+// Make it Iterable
+myNumbers[Symbol.iterator] = function() {
+  let n = 0;
+  done = false;
+  return {
+    next() {
+      n += 10;
+      if (n == 100) {done = true}
+      return {value:n, done:done};
+    }
+  };
+}
+
+// Create an Iterator
+let iterator = myNumbers[Symbol.iterator]();
+
+let t3t = ""
+while (true) {
+  const result = iterator.next();
+  if (result.done) break;
+  t3t += result.value +"<br>";
+}
+
+document.getElementById("demo1").innerHTML ="This values are using Symbol.iterator function and next() method: "+ t3t;
+/*Technically, iterables must implement the Symbol.iterator method.
+
+In JavaScript the following are iterables:
+
+Strings
+Arrays
+Typed Arrays
+Sets
+Maps
+Because their prototype objects have a Symbol.iterator method*/
+ /*Function	Description
+drop()	Returns an iterator that skips a specified number of elements before yielding the rest
+every()	Returns true if all elements satisfy a test function
+filter()	Returns an iterator containing elements that satisfy a filter function
+find()	Returns the first element that satisfies a test function
+flatMap()	Returns an iterator by mapping each element and then flattening the results
+forEach()	Executes a function once for each element in the iterator.
+from()	creates an iterator object from an iterable
+map()	Returns an iterator with all elements transformed by a map function
+reduce()	Applies a reducer function against each element to reduce it to a single value
+some()	Returns true if at least one element satisfy a test function
+take()	Returns an iterator that yields a specified number of elements*/
+
+
+/*A JavaScript Function can only return one value.
+
+A JavaScript Generator can return multiple values, one by one.
+
+A JavaScript Generator can yield a stream of data.
+
+A JavaScript Generator can be paused and resumed.*/ 
+/*Generator Functions
+A Generator Function is defined using the function* syntax:
+
+function* myGenerator() {}*/
+/*Generator Objects
+A Generator Object is returned by the generator function.
+
+It conforms to both the iterable and iterator protocols, meaning it can be iterated over using for...of loops.*/
+ function* myStream() {
+// return {value:1, done:false}
+yield 1;
+
+// return {value:2, done:false}
+yield 2;
+
+// return {value:3, done:true}
+return 3;
+}
+
+// Create a Generator
+let myGenerator = myStream();
+let tea = "";
+
+// Loop the Generator
+for (let value of myGenerator) {
+  tea += value + "<br>";
+}
+document.write("using the Generator function:<br> "+tea);
+/*The yield Keyword
+The yield keyword pauses execution and yield a value back to the caller.
+
+The generator's state is preserved, and can be resumed from the point of the yield when next() is called.
+
+Generators maintain their internal state between yield calls, allowing them to continue execution from where they left off.*/
+ /*Generator Object Methods
+A Generator Object conforms to the iterable and iterator protocols.
+
+It can be iterated over with for...of loops.
+
+It also has methods:
+
+Method	Description
+next()	Resumes the next execution of a generator function
+return()	Finishes this execution and returns a given value
+throw()	Throws an exeption in this execution*/
+
+    </script>
+</body>
+</html>

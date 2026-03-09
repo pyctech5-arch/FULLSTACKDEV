@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js debugging Console</title>
+</head>
+<body>
+    <script>
+        /*console.log()
+The most common console method is console.log().
+
+Use it to print values and see what your program is doing.*/
+
+console.log("Hello from JavaScript!");
+/*console.warn()
+Use console.warn() to display warnings.
+
+Warnings tell you something might be wrong, but your code can still run.*/
+console.warn("This is a warning!");
+
+/*console.error()
+Use console.error() to display error messages.
+
+Errors show that something has failed.*/
+ console.error("Something went wrong!");
+/*Logging Multiple Values
+You can log more than one value at once.*/
+  let x = 10;
+let y = 5;
+
+console.log("x =", x, "y =", y);
+/*Inspecting Objects
+The console is very useful for inspecting objects.*/ 
+let user = {name: "John", age: 25};
+
+console.log(user);
+/*console.table()
+Use console.table() to display data in a table format.*/
+ let users = [
+  {name: "John", age: 25},
+  {name: "Anna", age: 30}
+];
+
+console.table(users);
+
+</script>
+<!-- Breakpoints, Watch, Scope
+Breakpoints let you pause JavaScript and inspect what is really happening.
+
+This is the most powerful debugging technique after using the console.
+
+What Is a Breakpoint
+A breakpoint pauses code execution on a specific line.
+
+When the code stops, you can inspect variables and step through the code line by line.
+
+Breakpoints are set inside the browser developer tools.
+
+Note
+You do not guess values when using breakpoints.
+
+You see them.
+
+Setting a Breakpoint
+In the debugger window, you can set breakpoints in the JavaScript code.
+
+At each breakpoint, JavaScript will stop executing, and let you examine JavaScript values.
+
+After examining values, you can resume the execution of code (typically with a play button).
+
+Example
+function add(a, b) {
+  let result = a + b;
+  return result;
+}
+
+document.getElementById("demo").innerHTML = add(10, 5);
+document.getElementById("demo").innerHTML = add(10, 50);
+document.getElementById("demo").innerHTML = add(10, 500);
+document.getElementById("demo").innerHTML = add(10, 5000);
+Open the browser developer tools with F12 and go to the Sources tab.
+
+Click on the line numbers in your script to add breakpoints.
+
+Reload the page to trigger the breakpoint.
+
+Use the play button to run your code line by line.
+
+The debugger Keyword
+The debugger keyword stops the execution of JavaScript, and calls (if available) the debugging function.
+
+This has the same function as setting a breakpoint in the debugger.
+
+If no debugging is available, the debugger statement has no effect.
+
+With the debugger turned on, this code will stop executing before it executes the third line.
+
+Example
+let x = 15 * 5;
+debugger;
+document.getElementById("demo").innerHTML = x;
+Learn More
+Read more about the console.log() method in our JavaScript Console Reference.
+
+Stepping Through Code
+When execution is paused, you can control how the code runs.
+
+Step Over runs the next line.
+Step Into enters a function.
+Step Out exits the current function.
+Step slowly and watch how values change.
+
+The Scope Panel
+The Scope panel shows which variables are available at the current line.
+
+It helps you understand where variables live.
+
+Local variables exist inside a function.
+Global variables exist everywhere.
+Example:
+
+let x = 10;
+
+function test() {
+  let y = 5;
+  console.log(x + y);
+}
+
+test();
+At the breakpoint, y exists only inside the function.
+
+Watching Variables
+The Watch panel lets you track variable values live.
+
+This is useful when values change many times.
+
+Add a variable name to the Watch panel.
+
+The value updates automatically as you step through the code.
+
+Watch variables instead of adding many console.log() calls.
+
+Common Beginner Mistakes
+Beginners often forget to reload the page after adding a breakpoint.
+
+Breakpoints inside loops can trigger many times.
+
+If execution stops repeatedly, disable the breakpoint temporarily.
+
+When to Use Breakpoints
+When values change unexpectedly.
+When code runs but produces wrong results.
+When debugging complex logic.
+Next: Common Errors Explained
+Next page explains the most common JavaScript error messages.
+
+You will learn what they mean and how to fix them.
+
+ -->
+
+ <!-- Debugging Tip
+Do not ignore errors.
+
+Fix the first error before moving on.
+
+One error often causes many others.
+
+Next: Debugging Async Code
+Async code introduces new types of bugs.
+
+The next page shows how to debug fetch(), promises, and async functions. -->
+
+<!-- Debugging Async Code
+Async bugs are the hardest bugs for beginners.
+
+The code looks correct, but nothing seems to happen.
+
+Why Async Code Is Hard to Debug
+Async code runs later.
+
+This makes errors feel invisible.
+
+Common beginner problems include missing data and silent failures. -->
+
+<!-- Debugging fetch()
+The fetch() function is asynchronous.
+
+It does not return data immediately.
+
+Example:
+
+fetch("data.json")
+.then(response => response.json())
+.then(data => console.log(data));
+If nothing appears, check the console first.
+
+Always log the response before using the data.
+
+Improved debugging:
+
+fetch("data.json")
+.then(response => {
+  console.log(response);
+  return response.json();
+})
+.then(data => console.log(data)); -->
+
+<!-- You can set breakpoints on await lines.
+
+Step through async code the same way as normal code.
+
+Handling Async Errors
+Async errors must be handled explicitly.
+
+Otherwise they fail silently.
+
+Example with error handling: -->
+<script>
+
+
+
+// async function loadData() {
+//   let response = await fetch("data.json");
+//   let data = await response.json();
+//   console.log(data);
+// }
+
+// loadData();
+
+
+async function loadData() {
+  try {
+    let response = await fetch("wrong.json");
+    let data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+/*Promises That Never Resolve
+Sometimes async code never finishes.
+
+This usually means a missing return.
+
+Example mistake:
+
+function getData() {
+  fetch("data.json")
+  .then(response => response.json());
+}
+The promise result is never returned.
+
+Always return promises when chaining.
+
+Debugging Checklist for Async Code
+
+Check the console for errors.
+Check the Network tab.
+Log responses before using them.
+Use try...catch with async functions.
+Set breakpoints on await lines.
+You Finished the Debugging Chapters
+You now know how to debug JavaScript step by step.
+
+This skill separates beginners from real developers.*/ 
+</script>
+</body>
+</html>

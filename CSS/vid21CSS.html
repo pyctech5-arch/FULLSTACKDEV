@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the CSS Height property</title>
+</head>
+<body>
+    <!-- CSS Set height and width
+The height and width properties are used to set the height and width of an element.
+
+The height and width do not include padding, borders, or margins. It sets the height and width of the area inside the padding, border, and margin of the element. 
+
+CSS height and width Values
+The height and width properties can have the following values:
+
+auto - This is default. The browser calculates the height and width
+length - Defines the height or width in px, cm, em, etc.
+% - Defines the height or width in percent of the containing block
+initial - Sets the height or width to its default value
+inherit - The height or width will be inherited from its parent value
+-->
+<div style="height:200px; width: 50%; border:solid 1px black; background-color: antiquewhite;">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid quisquam quae explicabo placeat ut iure velit deleniti inventore sit ratione.
+</div>
+<!-- CSS Min-width, Max-width, Min-height and Max-height
+The min-width and max-width properties are used to set the minimum and maximum width of an element.
+
+The min-height and max-height properties are used to set the minimum and maximum height of an element.
+
+CSS Using max-width
+The max-width property sets the maximum allowed width of an element. This prevents the width of an element to be larger than the max-width property value.
+
+The max-width property can have the following values:
+
+length - Defines the maximum width in px, cm, etc.
+% - Defines the maximum width in percent of the containing block
+none - This is default. Means that there is no maximum width
+One problem with the width property can occur when the browser window is smaller than the width of the element. The browser then adds a horizontal scrollbar to the page. So, using max-width will improve the browser's handling on small windows.
+
+CSS max-width Examples
+Drag the browser window to smaller than 600px wide, to see the difference between the two divs below! -->
+<br><br>
+<div style="background-color: beige; width:200px; padding:40px;">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic iure consectetur consequatur commodi molestias? Aut molestiae iste doloremque autem nulla velit quam magni, ipsa fugit soluta asperiores aperiam reprehenderit harum.
+</div>
+<br><br>
+<div style="background-color: beige; min-width:200px; padding: 40px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus odio ea a, veritatis neque, aut impedit dicta nemo quam harum sit voluptates illo. Assumenda earum, magni odit numquam quia sequi.</div>
+<br><br>
+<div style="background-color: beige; max-width:200px; padding: 40px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus odio ea a, veritatis neque, aut impedit dicta nemo quam harum sit voluptates illo. Assumenda earum, magni odit numquam quia sequi.</div>
+
+
+</body>
+</html>

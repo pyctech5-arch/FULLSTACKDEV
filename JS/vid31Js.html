@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Errors</title>
+</head>
+<body>
+    <h3>Intro to the Js Errors</h3>
+    <!-- Errors Will Happen!
+When executing JavaScript code, different errors can occur.
+
+Errors can be coding errors made by the programmer, errors due to wrong input, and other unforeseeable things:
+
+Reference Errors
+Type Errors
+Range Errors
+URI Errors
+Syntax Errors
+Eval Error (deprecated)
+Silent Errors (next chapter) -->
+<!-- How to Handle JavaScript Errors
+The try statement allows you to define a block of code to be tested for errors while it is being executed.
+
+The catch statement allows you to define a block of code to be executed, if an error occurs in the try block.
+
+The JavaScript statements try and catch come in pairs: -->
+    <script>
+        //Syntax
+try {
+//   Block of code to try
+} catch(err) {
+//   Block of code to handle errors
+}
+/*Reference Errors
+A ReferenceError occurs if you use (reference) a variable that does not exist.
+
+Error Type	Example	Error
+ReferenceError	fname = foo;	foo is not defined
+ReferenceError	let x = y;
+let y = 5;	Cannot access y before initialization*/
+document.write("In the expression: let x=5;x=y+1;")
+let x=5;
+try{
+x=y+1;
+}catch(err){
+document.write("<br>");
+document.write("The Error is: "+err.name+"<br>"+"And the error is :"+err.message);
+}
+document.write("<br>");
+/*TypeError	Anna(5);	Anna is not a function
+Type Error	let num = 1;
+num.toUpperCase();
+num.toUpperCase is not a function*/ 
+try {
+  Anna(5);
+} catch(err) {
+  let text = err.name+" "+err.message;
+document.write(text);
+}
+document.write("<br>");
+let num = 1;
+try {
+  num.toUpperCase();
+} catch(err) {
+  let text = err.name+" "+err.message;
+document.write(text);
+}
+document.write("<br>");
+
+/*JavaScript Range Errors
+A RangeError occurs when a value is out of its valid range.
+
+Error Type	Example	Error Message
+RangeError	new Array(-1);	Invalid array length
+RangeError	num.toPrecision(500);	toPrecision() argument must be between 1 and 100*/
+try {
+new Array(-1);
+} catch(err) {
+  let text = err.name+" "+err.message;
+document.write(text);
+}
+document.write("<br>");
+
+let num1 = 1;
+try {
+  num1.toPrecision(500);   // A number cannot have 500 significant digits
+} catch(err) {
+  let text = err.name+" "+err.message;
+document.write(text);
+}
+document.write("<br>");
+/*JavaScript URI Errors
+(Uniform Resource Identifier Errors)
+An URIError occurs if you use illegal characters in a URI function:
+
+Error Type	Example	Error Message
+URIError	decodeURI("%%%");	URI malformed*/ 
+try {
+  decodeURI("%%%");   // You cannot URI decode percent signs
+} catch(err) {
+  let text=err.name+" "+err.message;
+  document.write(text);
+}finally{
+    // alert("no error");
+}
+/*JavaScript Syntax Errors
+A Syntax Error occurs when the code violates JavaScript's grammar rules.
+
+Error	Example	Error
+SyntaxError	fname = "John);	Invalid or unexpected token )
+SyntaxError	Math.round(4.6;	Missing ) after argument list*/ 
+document.write("<br>");
+/*// This line cannot be parsed by JavaScript
+let fName = "John);
+
+// Execution stops here*/
+ /*The statement above will generate the error: Invalid or unexpected token
+
+Execution of the program will stop!
+
+Syntax Errors are Not Catchable
+Syntax errors are not catchable by try...catch
+Syntax errors happen before runtime*/
+/*The browser console (F12 → Console tab) would show something like:
+
+
+Uncaught SyntaxError: missing ) after argument list.*/
+
+/*JavaScript Eval Error
+An EvalError indicates an error in the eval() function.
+
+Newer versions of JavaScript do not throw EvalError.
+
+Use SyntaxError instead.*/
+
+document.write("<br>");
+// Silent Errors
+// JavaScript can fail siently.
+
+// A silent error will not stop your program. The execution will continue.
+
+// The reason for silent errors is historical:
+
+// The first version of JavaScript did not have catch...try exceptions.
+
+/*Silent errors will not stop your program.
+
+let x = 1 / 0;*/
+
+document.write("<br>");
+/*
+JavaScript Error Statements
+The try Statement
+In JavaScript, the try statement is used to handle errors (also called exceptions) that may occur during code execution - without stopping the entire program.
+
+The try statement works together with catch.
+
+Sometimes it works with finally.
+
+And sometimes it works with throw.
+
+The Try Block
+The try block contains the code that might throw an error.
+
+If no error occurs, the catch block is skipped.
+
+The Catch Block
+The catch block executes only if an error occurs in the try block.
+
+The error object provides details about what went wrong.
+
+The Finally Block (Optional)
+The finally block executes after the try and catch blocks, whether an error occurred or not.
+
+It is commonly used for cleanup tasks (e.g., closing files, stopping loaders, etc.).
+
+JavaScript Throws Errors
+When an error occurs, JavaScript will normally stop and generate an error message.
+
+The technical term for this is: JavaScript will throw an exception (throw an error).
+*/ 
+document.write("<br>");
+/*The throw Statement
+The throw statement allows you to create a custom error.
+
+Technically you can throw an exception (throw an error).
+
+The exception can be a JavaScript String, a Number, a Boolean or an Object:*/
+
+document.write("<br>");
+
+
+    </script>
+
+
+<h1>JavaScript Errors</h1>
+<h2>JavaScript try catch</h2>
+
+<p>Please input a number between 5 and 10:</p>
+
+<input id="demo" type="text">
+<button type="button" onclick="myFunction()">Test Input</button>
+<p id="p01"></p>
+
+<script>
+function myFunction() {
+  const message = document.getElementById("p01");
+  message.innerHTML = "";
+  let x = document.getElementById("demo").value;
+  try { 
+    if(x.trim() == "")  throw "empty";
+    if(isNaN(x)) throw "not a number";
+    x = Number(x);
+    if(x < 5)  throw "too low";
+    if(x > 10)   throw "too high";
+  } catch(err) {
+    message.innerHTML = "Input is " + err;
+  }
+}
+</script>
+</body>
+</html>

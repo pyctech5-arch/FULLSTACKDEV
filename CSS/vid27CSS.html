@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Overflow and Float property</title>
+</head>
+<body>
+     <!-- The CSS overflow Property
+The CSS overflow property controls what happens to content that is too big to fit into an area.
+
+It specifies whether to clip the content or to add scrollbars when the content of an element is too big.
+
+The overflow property has the following values:
+
+visible - Default. The overflow is not clipped. The content renders outside the element's box
+hidden - The overflow is clipped, and the rest of the content is hidden
+scroll - Scrollbars are added. User must scroll to see all content
+auto - Similar to scroll, but adds scrollbars only when necessary -->
+<!-- The CSS clear Property
+The clear property specifies what should happen with the element that is NEXT to a floating element.
+
+The clear property prevents elements from wrapping around or beside the floated content.
+
+This property can have one of the following values:
+
+none - Default. Allows elements to float on either side
+left - The element is pushed below floated elements on its left side
+right - The element is pushed below floated elements, on its right side
+both - The element is pushed below floated elements, on both its left and right side
+inherit - The element inherits the clear value from its parent -->
+ <h3>Overflow:hidden Float:right clear:right</h3>
+<div id="1"  style="float:right; clear:right; overflow:hidden; height:200px; width:300px; background-color: antiquewhite; border:1px solid black">
+    <img src="ironman.png" style="float: right; height: 60px; width: 70px;" alt="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, omnis doloribus temporibus aut natus molestiae accusamus animi autem blanditiis laudantium vel mollitia quas fugit vero in est, odio consequatur amet impedit, pariatur voluptatum! Tenetur quasi illum hic corrupti impedit cumque explicabo. Placeat odio quidem eligendi tempora cumque possimus fuga dignissimos beatae recusandae. Natus, quasi? Labore harum nulla ea cum mollitia, fugiat nostrum animi fuga aut assumenda repellendus molestiae voluptatem quibusdam Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, quas? Fugit, sequi. Odio iusto cupiditate consectetur officia natus repudiandae dolor.
+    . </div><br><br><h3>Overflow:scroll Float:left</h3>
+<div id="2"  style=" overflow: scroll; height:200px; width:300px; background-color: antiquewhite; border:1px solid black">
+    <img src="ironman.png" style="float: left; height: 60px; width: 70px;" alt=""> Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, omnis doloribus temporibus aut natus molestiae accusamus animi autem blanditiis laudantium vel mollitia quas fugit vero in est, odio consequatur amet impedit, pariatur voluptatum! Tenetur quasi illum hic corrupti impedit cumque explicabo. Placeat odio quidem eligendi tempora cumque possimus fuga dignissimos beatae recusandae. Natus, quasi? Labore harum nulla ea cum mollitia, fugiat nostrum animi fuga aut assumenda repellendus molestiae voluptatem quibusdam Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, quas? Fugit, sequi. Odio iusto cupiditate consectetur officia natus repudiandae dolor.</div><br><br><h3>Overflow:auto Float:none</h3>
+<div id="3"  style="overflow: auto; height:200px; width:300px; background-color: antiquewhite; border:1px solid black">
+    <img src="ironman.png" style="float: right; height: 60px; width: 70px;" alt=""> Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, omnis doloribus temporibus aut natus molestiae accusamus animi autem blanditiis laudantium vel mollitia quas fugit vero in est, odio consequatur amet impedit, pariatur voluptatum! Tenetur quasi illum hic corrupti impedit cumque explicabo. Placeat odio quidem eligendi tempora cumque possimus fuga dignissimos beatae recusandae. Natus, quasi? Labore harum nulla ea cum mollitia, fugiat nostrum animi fuga aut assumenda repellendus molestiae voluptatem quibusdam Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, quas? Fugit, sequi. Odio iusto cupiditate consectetur officia natus repudiandae dolor.</div><br><br><br><h3>Overflow:visible Float:inherit</h3>
+<div id="4"  style="float: inherit; overflow:visible; height:200px; width:300px; background-color: antiquewhite; border:1px solid black">
+    <img src="ironman.png" style="float: right; height: 60px; width: 70px;" alt="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, omnis doloribus temporibus aut natus molestiae accusamus animi autem blanditiis laudantium vel mollitia quas fugit vero in est, odio consequatur amet impedit, pariatur voluptatum! Tenetur quasi illum hic corrupti impedit cumque explicabo. Placeat odio quidem eligendi tempora cumque possimus fuga dignissimos beatae recusandae. Natus, quasi? Labore harum nulla ea cum mollitia, fugiat nostrum animi fuga aut assumenda repellendus molestiae voluptatem quibusdam Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, quas? Fugit, sequi. Odio iusto cupiditate consectetur officia natus repudiandae dolor. </div>
+<!-- All CSS Overflow Properties
+Property	Description
+overflow	Specifies what happens if content overflows an element's box
+overflow-anchor	Makes it possible to turn off scroll anchoring
+overflow-x	Specifies what to do with the left/right edges of the content if it overflows the element's content area
+overflow-y	Specifies what to do with the top/bottom edges of the content if it overflows the element's content area
+overflow-wrap	Specifies whether or not the browser can break lines with long words, if they overflow its container -->
+</body>
+</html>

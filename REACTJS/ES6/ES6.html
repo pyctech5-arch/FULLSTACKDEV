@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6</title>
+</head>
+<body>
+    <script>
+        class car{
+    constructor(name) {
+        this.name1=name;
+    }
+    present(){
+        return "i Have "+this.name1;
+    }
+}
+// class inheritence
+
+class vehicle extends car{
+    constructor(name1,mod){
+        super(name1);
+        this.model=mod;
+    }
+    show(){
+        return this.present()+", with the model "+this.model;
+    }
+    
+}
+const result=new vehicle("ford","Mustang");
+
+document.write(result.show());
+document.writeln("<br>")
+// Arrow function
+const car2=function(){
+return "Hi car"
+}
+const car3=()=> "hello cars";
+const car1=()=>{
+return "Hi Car1"
+}
+document.write(car1()+"  "+car2()+"  "+car3());
+/*What About this?
+The handling of this is also different in arrow functions compared to regular functions.
+
+In short, with arrow functions there is no binding of this.
+
+In regular functions the this keyword represented the object that called the function, which could be the window, the document, a button or whatever.
+
+With arrow functions, the this keyword always represents the object that defined the arrow function.
+
+Let us take a look at two examples to understand the difference.
+
+Both examples call a method twice, first when the page loads, and once again when the user clicks a button.
+
+The first example uses a regular function, and the second example uses an arrow function.
+
+The result shows that the first example returns two different objects (window and button), and the second example returns the Header object twice.
+
+Example
+With a regular function, this represents the object that called the function:*/ 
+
+    </script>
+    <h1>Regular Function</h1>
+
+<p>The <strong>this</strong> keyword represents different objects depending on how the function was called.</p>
+
+<button id="btn">Click Me!</button>
+
+<p><strong>this</strong> represents:</p>
+
+<p id="demo"></p>
+
+<p>See the difference before and after the button is clicked.</p>
+  
+<script>
+class Header {
+  constructor() {
+    this.color = "Red";
+  }
+
+  changeColor = function() {
+    document.getElementById("demo").innerHTML += this;
+  }
+}
+
+const myheader = new Header();
+
+//The window object calls the function:
+window.addEventListener("load", myheader.changeColor);
+
+//A button object calls the function:
+document.getElementById("btn").addEventListener("click", myheader.changeColor);
+
+</script>
+
+<h1>Arrow Function</h1>
+
+<p>The <strong>this</strong> keyword represents the Header object.</p>
+
+<button id="btn1">Click Me!</button>
+
+<p><strong>this</strong> represents:</p>
+
+<p id="demo1"></p>
+
+ 
+<script>
+class Header {
+  constructor() {
+    this.color = "Red";
+  }
+
+  changeColor = () => {
+    document.getElementById("demo1").innerHTML += this;
+  }
+}
+
+const myheader1 = new Header();
+
+//The window object calls the function:
+window.addEventListener("load", myheader1.changeColor);
+
+//A button object calls the function:
+document.getElementById("btn1").addEventListener("click", myheader1.changeColor);
+
+/*Variables
+Before ES6 there was only one way of defining your variables: with the var keyword. If you did not define them, they would be assigned to the global object. Unless you were in strict mode, then you would get an error if your variables were undefined.
+
+Now, with ES6, there are three ways of defining your variables: var, let, and const.*/ 
+
+var x = 5.6;
+
+// If you use var outside of a function, it belongs to the global scope.
+
+// If you use var inside of a function, it belongs to that function.
+
+// If you use var inside of a block, i.e. a for loop, the variable is still available outside of that block.
+
+
+let x = 5.6;
+
+// let is the block scoped version of var, and is limited to the block (or expression) where it is defined.
+
+// If you use let inside of a block, i.e. a for loop, the variable is only available inside of that loop.
+
+const x = 5.6;
+
+// const is a variable that once it has been created, its value can never change.
+
+// const has a block scope.
+
+// The keyword const is a bit misleading.
+
+// It does not define a constant value. It defines a constant reference to a value.
+
+// Because of this you can NOT:
+
+// Reassign a constant value
+// Reassign a constant array
+// Reassign a constant object
+// But you CAN:
+
+// Change the elements of constant array
+// Change the properties of constant object
+
+
+/*JavaScript Array map()
+The map() Method
+The map() method creates a new array with the results of calling a function for every array element.*/
+
+const numbers = [1, 2, 3, 4];
+const doubled = numbers.map(x => x * 2);
+
+// map() in React
+// The map() method is commonly used in React to render lists of elements:
+
+// Example
+const fruitlist = ['apple', 'banana', 'cherry'];
+
+function MyList() {
+  return (
+    <ul>
+      {fruitlist.map(fruit => 
+        <li key={fruit}>{fruit}</li>
+      )}
+    </ul>
+  );
+}
+// map() with Objects
+// You can also use map() with arrays of objects:
+
+// Example
+const users = [
+  { id: 1, name: 'John', age: 30 },
+  { id: 2, name: 'Jane', age: 25 },
+  { id: 3, name: 'Bob', age: 35 }
+];
+
+function UserList() {
+  return (
+    <ul>
+      {users.map(user => 
+        <li key={user.id}>
+          {user.name} is {user.age} years old
+        </li>
+      )}
+    </ul>
+  );
+}
+
+// map() Parameters
+// The map() method takes three parameters:
+
+// currentValue - The current element being processed
+// index - The index of the current element (optional)
+// array - The array that map was called upon (optional)
+// Example
+const fruitlist1 = ['apple', 'banana', 'cherry'];
+
+function App() {
+  return (
+    <ul>
+      {fruitlist1.map((fruit, index, array) => {
+        return (
+          <li key={fruit}>
+            Number: {fruit}, Index: {index}, Array: {array}
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
+
+
+/*React ES6 Destructuring
+Destructuring in React
+Destructuring is a JavaScript feature that allows you to extract values from objects or arrays into distinct variables. In React, it's commonly used with props, hooks, and state management.
+
+Note: Destructuring makes React code cleaner and more readable by reducing repetitive object and array access.
+
+Destructing Arrays
+Here is the old way of assigning array items to a variable:*/
+
+const vehicles = ['mustang', 'f-150', 'expedition'];
+
+// old way
+const car = vehicles[0];
+const truck = vehicles[1];
+const suv = vehicles[2];
+
+//You can now access each variable separately:
+document.getElementById('demo').innerHTML = truck;
+
+const vehicles1 = ['mustang', 'f-150', 'expedition'];
+
+const [car, truck1, suv1] = vehicles;
+
+//You can now access each variable separately:
+document.getElementById('demo').innerHTML = truck1;
+
+
+
+// If we only want the car and suv we can simply leave out the truck but keep the comma:
+
+const vehicles2 = ['mustang', 'f-150', 'expedition'];
+
+const [car,, suv2] = vehicles;
+// Destructuring comes in handy when a function returns an array:
+
+Example
+function dateInfo(dat) {
+  const d = dat.getDate();
+  const m = dat.getMonth() + 1;
+  const y = dat.getFullYear();
+
+  return [d, m, y];
+}
+
+const [date, month, year] = dateInfo(new Date());
+
+
+// Destructuring Objects
+// You can use destructuring to extract the values from an object:
+
+// Example
+// Unpack the values from an object:
+
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50
+};
+
+// Destructuring
+let {firstName, lastName, age} = person;
+
+//You can now access each variable separately:
+document.getElementById("demo").innerHTML = firstName;
+
+// or objects, the order of the properties does not matter:
+
+// Example
+// Unpack the values in a random order:
+
+// Destructuring
+let {lastName3, age3, firstName3} = person;
+
+
+// Example
+// Set a default value for the missing property:
+
+// Destructuring
+let {firstName2, lastName2, age2, country = "Norway"} = person;
+
+
+/*We can also destructure deeply nested objects by referencing the nested object then using a colon and curly braces to again destructure the items needed from the nested object:
+
+Example*/ 
+const person1 = {
+  firstName1: "John",
+  lastName: "Doe",
+  age: 50,
+  car: {
+    brand: 'Ford',
+    model: 'Mustang',
+  }
+};
+
+// Destructuring
+let {firstName1, car: { brand, model }} = person1;
+
+let message = `My name is ${firstName}, and I drive a ${brand} ${model}.`;
+
+
+/*Destructuring in React Components
+Destructuring is particularly useful in React for working with props, hooks, and API responses. It helps make your code more concise and easier to read.
+
+Props Destructuring
+When a component receives props, you can use destructuring to extract the values you need.
+
+Check out the difference between using and not using destructuring:
+
+//Using destructuring:
+function Greeting({ name, age }) {
+  return <h1>Hello, {name}! You are {age} years old.</h1>;
+}
+//NOT using destructuring:
+function Greeting(props) {
+  return <h1>Hello, {props.name}! You are {props.age} years old.</h1>;
+}
+Let's see a working example:
+
+Example
+Using destructuring to extract props:
+
+import { createRoot } from 'react-dom/client'
+
+function Greeting({ name, age }) {
+  return <h1>Hello, {name}! You are {age} years old.</h1>;
+}
+  
+createRoot(document.getElementById('root')).render(
+  <Greeting name="John" age={25} />
+);
+
+useState Hook Destructuring
+When a component uses the useState hook, we use destructuring to extract the values from it.
+
+Example
+Using destructuring to extract values from useState:
+
+import { createRoot, useState } from 'react-dom/client'
+
+function Counter() {
+  // Destructuring the array returned by useState
+  const [count, setCount] = useState(0);
+  
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      Count: {count}
+    </button>
+  );
+}
+
+createRoot(document.getElementById('root')).render(
+  <Counter />
+);
+
+*/ 
+</script>
+
+</body>
+</html>

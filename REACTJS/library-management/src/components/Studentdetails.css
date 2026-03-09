@@ -1,69 +1,8 @@
-
-.rainbow-box{
-  max-width:720px;
-  margin:16px auto;
-  padding:18px;
-  border-radius:14px;
-  background: linear-gradient(90deg,
-    #ff4d4d 0%,
-    #ff8a00 16%,
-    #ffd500 33%,
-    #32d74b 50%,
-    #0aa5ff 66%,
-    #6b5cff 83%,
-    #ff62d1 100%);
-  box-shadow: 0 10px 30px rgba(10,12,20,0.12);
-  color: #071024; /* dark text to contrast the bright background */
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  /* make inner area slightly muted so text is readable */
-  background-origin: border-box;
-  position: relative;
-  overflow: hidden;
+.details {
+  padding: 10px;
+  color: #34495e;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  text-align: center;
+    border-radius: 20% ;
 }
-
-div.rainbow-box:empty{
-  display: none;
-}
-.details-list:empty{
-display: none;
-}
-
-
-/* optional inner panel to improve readability */
-.rainbow-box::before{
-  content: "";
-  position: absolute;
-  inset: 2px;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.92);
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* put list content above the overlay */
-.details-list{
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  padding: 8px 18px;
-  list-style-position: inside;
-}
-
-/* list items */
-.details-list li{
-  margin: 10px 0;
-  padding: 8px 12px;
-  border-radius: 10px;
-  background: transparent;
-  color: #071024; /* ensure dark readable text */
-  font-weight: 500;
-}
-
-/* smaller screens */
-@media (max-width:520px){
-  .rainbow-box{padding:14px;border-radius:12px}
-  .details-list li{font-size:0.95rem}
-}
-
-/* ...existing code... */

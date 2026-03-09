@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Iterations</title>
+</head>
+<body>
+    <!-- Array Iteration Methods
+Array iteration methods operate on every array item.
+
+Array forEach
+Array map()
+Array flatMap()
+Array filter()
+Array reduce()
+Array reduceRight()
+Array every()
+Array some()
+Array from()
+Array keys()
+Array entries()
+Array with()
+Array Spread (...)
+Array Rest (...) -->
+
+<script>
+    const numbers=[45,5,9,16,25];
+    let text="";
+    numbers.forEach(myfunction)
+    function myfunction(value,index,array){
+        text+=value+"<br>"
+    }
+    document.write("Using ForEach loop: <br>"+text);
+     document.write("<br>");
+
+
+ const number=[45,5,9,16,25];
+ const numbers1=number.map(myfunction1)
+ function myfunction1(value,index,array){
+     return value > 18;
+    }
+    document.write(" Using .map() <br>"+JSON.stringify(numbers1));
+    document.write("<br>");
+     document.write("<br>");
+
+const number2=number.flatMap((x)=>x+2);
+document.write("Using flatMap() :"+number2);
+     document.write("<br>");
+     document.write("<br>");
+
+const number3=number.filter(myfun);
+function myfun(value){
+     return  value>18;
+}
+document.write("values >18 using filtermethod "+number3)
+     document.write("<br>");
+     document.write("<br>");
+
+const number4=number.reduce(myf,100)
+function myf(total,value){
+return total+value;
+}
+document.write("Total of all num using reduce method: "+number4);
+// The reduceRight() method does not reduce the original array.
+     document.write("<br>");
+     document.write("<br>");
+const number5=number.reduceRight(my)
+function my(total,value){
+return total+value;
+}
+document.write("Total of all num using reduceRight method: "+number5);
+     document.write("<br>");
+     document.write("<br>");
+/*JavaScript Array every()
+The every() method checks if all array values pass a test.
+
+This example checks if all array values are larger than 18:*/ 
+let allOver18 = numbers.every(myFunction);
+
+function myFunction(value) {
+  return value > 18;
+}
+document.writeln("Checks all array completly >18 using .every() :"+allOver18);
+     document.write("<br>");
+     document.write("<br>");
+
+/*JavaScript Array some()
+The some() method checks if some array values pass a test.
+
+This example checks if some array values are larger than 18:*/
+ let allOver19 = numbers.some(myFuanction);
+
+function myFuanction(value) {
+  return value > 18;
+}
+document.writeln("Checks some array vales >18 using .some() :"+allOver19);
+     document.write("<br>");
+     document.write("<br>");
+
+/*JavaScript Array.from()
+The Array.from() method returns an Array object from:
+
+Any iterable object
+
+Any object with a length property*/
+let text1="prashant"
+const b=Array.from(text1) ;
+document.write("The array object form using Array.from()"+b);
+     document.write("<br>");
+     document.write("<br>");
+
+const nums=[1,2,3,4];
+const v=Array.from(nums,(x)=>x*2)
+document.write("The array object form using Array.from() multiplication: "+v);
+     document.write("<br>");
+     document.write("<br>");
+
+/*JavaScript Array keys()
+The Array.keys() method returns an Array Iterator object with the keys of an array.
+
+Example
+Create an Array Iterator object, containing the keys of the array:*/
+const juices=["mango","apple","ban","bitrut","cucumber"]
+const keys=juices.keys();
+let tex=" ";
+for (const t of keys) {
+     tex+=t+"<BR>"
+     }
+ document.write("for geting the keys of array use .keays() of JS:<br> ",tex);
+     document.write("<br>");
+     document.write("<br>");
+
+/*JavaScript Array entries()
+Example
+Create an Array Iterator, and then iterate over the key/value pairs:*/  
+let g=juices.entries();
+document.write("For getting the entries in my array use .entries() method: <br>")
+for (let x of g) {
+     document.write(x+"<br>")
+}
+     document.write("<br>");
+     document.write("<br>");
+/*JavaScript Array with() Method
+ES2023 added the Array with() method as a safe way to update elements in an array without altering the original array.*/
+
+const update=juices.with(2,"banana");
+document.write("Using .with() method updating arr elements witout affcting the original array:  "+update);
+     document.write("<br>");
+     document.write("<br>");
+
+/*JavaScript Array Spread (...)
+The ... operator expands an array into individual elements.
+
+This can be used join arrays:*/
+const q1 = ["Jan", "Feb", "Mar"];
+const q2 = ["Apr", "May", "Jun"];
+const q3 = ["Jul", "Aug", "Sep"];
+const q4 = ["Oct", "Nov", "Des"];
+
+const year = [...q1, ...q2, ...q3, ...q4];
+document.write("This is used to add multiple arrays at once using (...)spread operator :",year)
+     document.write("<br>");
+     document.write("<br>");
+
+const arr=[1,5,6,4,3,9,7]
+document.write("finding min value of arr using  Math.min(...arr) :" +Math.min(...arr))
+     document.write("<br>");
+
+document.write("finding max value of arr using  Math.max(...arr) :" +Math.max(...arr))
+     document.write("<br>");
+     document.write("<br>");
+ let cont,w,r;
+ [w,r,...cont]=arr;
+document.write("For making them seperate element from arr use more variables as  [w,r,...cont]=arr; : "+ cont)
+     document.write("<br>");
+document.write("The remaining values are w,r : "+w+","+r)
+     document.write("<br>");
+     /*Complete Boolean reference
+Revised July 2025
+Name	Description
+Boolean()	Returns a boolean
+new Boolean()	Returns a boolean object
+constructor	Returns the function that created JavaScript's Boolean prototype
+prototype	Allows you to add properties and methods to the Boolean prototype
+toString()	Converts a boolean value to a string, and returns the result
+valueOf()	Returns the primitive value of a boolean*/
+ /*Boolean Use Cases
+Boolean values are fundamental for logical operations and control flow in JavaScript programming.
+
+Comparisons
+All comparison operators (like ==, !=, <, >) return true or false.
+
+Given that x = 5, the table below explains comparison:
+
+Description	Example	Returns
+Not equal to	(x == 8)	false
+Unequal to	(x != 8)	true
+Greater than	(x > 8)	false
+Less than	(x < 8)	true*/
+/*Conditions
+Booleans are extensively used in if statements to determine the code blocks to executec.
+
+Example	Returns
+if (day == "Monday")	true or false
+if (salary > 9000)	true or false
+if (age < 18)	true or false
+Loops
+Booleans are extensively used in loops to determine conditions for looping.
+
+Description	Example
+For loop	for (i = 0; i < 5; i++)
+While loop	while (i < 10)
+For in loop	for (x in person)
+For of loop	for (x of cars)*/
+     document.write("<br>");
+     document.write("Getting Array itself using valueOf(): "+arr.valueOf());
+
+/*JavaScript Array Const
+ECMAScript 2015 (ES6)
+In 2015, JavaScript introduced an important new keyword: const.
+
+It has become a common practice to declare arrays using const:*/
+/*Cannot be Reassigned
+An array declared with const cannot be reassigned: it couse Eror
+
+But Arrays are Not Constants
+The keyword const is a little misleading.
+
+It does NOT define a constant array. It defines a constant reference to an array.
+
+Because of this, we can still change the elements of a constant array.
+
+Elements Can be Reassigned
+*/
+const car=["thar","xuv","ertiga","fortuner"];
+/*we cannot update  complete array but we can update the  elemtns*/
+</script>
+
+</body>
+</html>

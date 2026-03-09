@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADVANCED JS</title>
+</head>
+<body>
+    <script>
+        /*Function Definitions vs Function Declarations
+Function definition is a general term for defining a function.
+
+Function declaration is one specific way to define a function.
+
+Examples of function definitions include:
+
+Function declarations
+Function expressions
+Arrow functions*/ 
+
+// function declaration
+function myfunc(a,b){
+return a+b;
+}
+document.write("Using normal function declaration: "+myfunc(3,2));
+document.write("<br>");
+// function Expression(named)
+const myfunction=function name(x,y){
+return x+y;
+}
+document.write("Using function    Expression declaration: "+myfunction(3,2));
+document.write("<br>");
+
+// function expression anonymous
+const func=function(x,y){
+return x+y;
+}
+document.write("Using function    Expression declaration  anonymous: "+(5,3));
+document.write("<br>");
+// Arrow function
+const myfunctionn=(x,y)=>x+y;
+document.write("Using Arrow function : "+myfunctionn(5,3));
+document.write("<br>");
+// function constructor
+const functin=new Function("x","y","return x+y");
+   document.write("Using function   constructor: "+ functin(3,3));
+document.write("<br>");
+//  object Method
+const obj={
+    myfunction1(a,b){
+    return arguments.length;
+    }
+};
+document.write("length of the object function arguments :"+obj.myfunction1(3,4,1,2));
+   </script>
+   <!-- Key Differences
+Function Declaration	Function Expression
+Syntax:
+A statement starting with the function keyword, followed by a required name.	Syntax:
+A part of an expression or assignment, and can be anonymous (without a name).
+Hoisting:
+The function is moved to the top of its scope before code execution, allowing you to call it from anywhere within that code scope, even before its definition.	Hoisting:
+The variable holding the function might be hoisted (depending on var, let, or const), but the function assignment itself is not. You can only call it after it has been defined in the code scope.
+Flexibility:
+Primarily used for general-purpose functions that need to be available globally or in a specific scope.	Flexibility:
+Can be used in various contexts, such as arguments to other functions (callbacks), immediately invoked function expressions, and assigned to object properties. -->
+
+<h2>JavaScript Callbacks</h2>
+<!-- "I will call back later!"
+A JavaScript callback is a function passed as an argument to another function, which is then executed (or "called back") at a later point in time to complete a specific task.
+
+This mechanism is fundamental to JavaScript's event-driven and asynchronous programming model -->
+
+<pre>What is a Callback Function?
+A callback function is a function passed as an argument into another function.
+
+A callback function is intended to be executed later.
+
+Later is typically when a specific event occurs or an asynchronous operation completes.</pre>
+<br><pre>Types of Callbacks
+Asynchronous Callbacks
+Asynchronous callbacks are executed at a later time, allowing the main program to continue running without waiting.
+
+This is essential for preventing the application from freezing during long-running tasks like network requests.
+
+Synchronous Callbacks
+Synchronous Callbacks are executed immediately within the outer function, blocking further operations until completion.
+
+Array methods like map(), filter(), and forEach() use synchronous callbacks.
+
+Event Handling
+Callbacks are often used in JavaScript, especially in event handling.
+
+User interactions, such as button clicks or key presses, can be handled by providing a callback function to an event listener:</pre>
+
+
+</body>
+</html>

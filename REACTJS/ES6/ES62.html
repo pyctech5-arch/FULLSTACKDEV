@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Es6 modules</title>
+</head>
+<body>
+    <!-- Modules
+JavaScript modules allow you to break up your code into separate files.
+
+This makes it easier to maintain the code-base.
+
+ES Modules rely on the import and export statements.
+
+Export
+You can export a function or variable from any file.
+
+Let us create a file named person.js, and fill it with the things we want to export.
+
+There are two types of exports: Named and Default.
+
+ -->
+
+ <!-- Named Exports
+You can create named exports two ways:
+
+Example
+In-line individually:
+
+person.js
+export const name = "Tobias"
+export const age = 18
+Example
+All at once at the bottom:
+
+person.js
+const name = "Tobias"
+const age = 18
+
+export { name, age } -->
+
+
+<!-- Default Exports
+Let us create another file, named message.js, and use it for demonstrating default export.
+
+You can only have one default export in a file.
+
+Example
+Insert the following code into the newly created file:
+
+message.js
+const message = () => {
+  const name = "Tobias";
+  const age = 18;
+  return name + ' is ' + age + 'years old.';
+};
+
+export default message;
+Import
+You can import modules into a file in two ways, based on if they are named exports or default exports.
+
+Named exports must be destructured using curly braces. Default exports do not.
+
+Example
+Import named exports from the file person.js:
+
+import { name, age } from "./person.js";
+
+Example
+Import a default export from the file message.js:
+
+import message from "./message.js";
+
+ -->
+<!-- Rendering -->
+ <script>
+/*React ES6 Ternary Operator
+Ternary Operator
+The ternary operator is a simplified conditional operator like if / else.
+
+Syntax: condition ? <expression if true> : <expression if false>
+
+Here is an example using if / else:
+
+ExampleGet your own React.js Server
+Before:
+
+if (authenticated) {
+  renderApp();
+} else {
+  renderLogin();
+}
+
+Here is the same example using a ternary operator:
+
+Example
+With Ternary
+
+authenticated ? renderApp() : renderLogin();
+
+*/
+
+document.write("<h3>Tamplate Strings</h3>")
+// emplate strings allow you to write strings that span multiple lines and include embedded expressions:
+
+const name="prashant";
+const age=21;
+const message="Hello, "+name+"!\n"+"You are "+age+" year old"
+const msg1=`Hello, ${name} You are ${age} year old`
+document.write("with out tamplate string :"+message);
+document.write("<br>");
+ document.write("with tamplate string :"+msg1);
+ 
+/*Template strings use backticks (`) instead of quotes and can include:
+
+Multiple lines without \n
+Expressions inside ${}
+Quotes without escaping
+Example
+Multi-line Strings:*/
+document.write("<br>");
+document.write("<br>");
+document.write( "Also we can render HTML elements like below:"+`<div>
+    <h1>Title</h1>
+    <p>Paragraph</p>
+  </div>
+`);
+document.write("<br>");
+/*Example
+Using the map function inside template strings:*/ 
+const items = ["apple", "banana", "orange"];
+const list = `You have ${items.length} items:
+${items.map(item => `- ${item}`).join('\n')}`;
+document.writeln(list);
+
+
+// Example
+// Using ternery operator inside template strings:
+document.write("<br>");
+
+document.write("<br>");
+
+const isAdmin = true;
+const message1 = `Status: ${isAdmin ? 'Admin' : 'User'}`;
+document.write(message1);
+
+
+/*Tagged Templates
+You can also use template strings with a function (called a tag) to modify the output.
+
+Note: Tagged templates are an advanced feature. You might not need them in most cases.
+
+The function takes the text and the expression(s) as arguments.
+
+Look at the example below:
+
+Example
+Tagged Template:
+;*/ 
+function highlight(strings, fname) {
+  let x = fname.toUpperCase();
+  return strings[0] + x + strings[1];
+}
+
+let name3 = "John";
+document.write("<br>");
+document.write("<br>");
+let text = highlight`Hello ${name3}, how are you?`;
+document.write(text);
+/*Example Explained
+The function name is highlight, you can name it whatever you want.
+
+The first argument holds the text between the expressions, as an array.
+The array items are splitted by the expression.
+In this example strings[0] holds "Hello " and strings[1] holds " how are you?".
+
+The second argument holds the expressions. In this example fname holds "John".
+
+Inside the function you can use the arguments to create the final string, and return it.
+
+Note: If the template string contains multiple expressions, the text will still be held in the first argument, but the expressions will either be held in multiple arguments, or as an array in the second argument.*/
+
+// Example
+// Tagged Template with multiple expressions:
+document.write("<br>")
+function highlight1(strings, fname1, fname2) {
+  let x1 = fname1.toUpperCase();
+  
+  let o1 = fname2.toUpperCase();
+  return strings[0] + x1 + strings[1] + o1 + strings[2];
+}
+
+let name1 = "John";
+let name2 = "Jane";
+
+let text11 = highlight1`Hello ${name1} and ${name2}, how are you?`;
+document.write(text11);
+
+
+</script>
+</body>
+</html>

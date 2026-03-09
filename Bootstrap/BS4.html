@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+<style>
+    h3{
+        color: red;
+    }
+    .leftdiv{
+        width: 100px;
+        height: 100px;
+background-color:cyan;
+        float: left;
+    }
+    .rightdiv{
+        width: 100px;
+        height: 100px;
+background-color: lightgreen;
+        float: right;
+    }
+</style>
+    <title>Clearfix in BS</title>
+</head>
+<body>
+    <!-- used to clear the flot witch is apply bydefault for all child elements so to remove that for childs we use clearifix for child elements   -->
+    <h3 class="text-center">Example clear fix and close icon utility</h3>
+    <!-- we can see these are overwriting  to overcome from this problem we add clearfix for seperating each element css-->
+     <div class="bg-info clearfix">
+
+         <div class="leftdiv">
+        </div>
+        <div class="rightdiv"></div>
+    </div>
+
+   
+</body>
+</html>

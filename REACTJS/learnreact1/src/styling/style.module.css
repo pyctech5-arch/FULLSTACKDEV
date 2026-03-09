@@ -1,0 +1,43 @@
+/* CSS Modules
+Another way of adding styles to your application is to use CSS Modules.
+
+CSS Modules are convenient for components that are placed in separate files.
+
+The CSS inside a module is available only for the component that imported it, and you do not have to worry about name conflicts.
+
+Create the CSS module with the .module.css extension, example: my-style.module.css.
+
+Example
+Create a new file called "my-style.module.css" and insert some CSS code in it: */
+.bigred {
+  color: Tomato;
+  padding: 40px;
+  font-family: Sans-Serif;
+  text-align: center;
+}
+/* CSS Modules
+Another way of adding styles to your application is to use CSS Modules.
+
+CSS Modules are convenient for components that are placed in separate files.
+
+The CSS inside a module is available only for the component that imported it, and you do not have to worry about name conflicts.
+
+Create the CSS module with the .module.css extension, example: my-style.module.css.
+
+Example
+Create a new file called "my-style.module.css" and insert some CSS code in it: */
+:global(.myheader) {
+  padding: 10px 20px;
+  font-size: 50px;
+  color: white;
+  background-color: dodgerblue;
+}
+/*The :global wrapper makes the class available for everyone.
+
+It is simply called .myheader and not prefixed and added a unique identifier like _myheader_q1obu_1  */
+
+
+/* for adding multiple classes in once */
+/* .className {
+  composes: class1 class2;
+} */

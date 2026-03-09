@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS fonts  and  icons</title>
+    <style>
+        h1{
+  font-family: "Times New Roman", Times, serif;
+        }
+        p{
+              font-family: Arial, Helvetica, sans-serif;
+
+        }
+        /* CSS Generic Font Families
+In CSS, there are five generic font families:
+
+Serif fonts - have a small stroke at the edges of each letter. They create a sense of formality and elegance.
+Sans-serif fonts - have clean lines (no small strokes attached). They create a modern and minimalistic look.
+Monospace fonts - here all the letters have the same fixed width. They create a mechanical look.
+Cursive fonts - imitate human handwriting.
+Fantasy fonts - are decorative/playful fonts.
+All the different font names belong to one of the generic font families. */
+/* CSS Web Safe Fonts
+What are Web Safe Fonts?
+Web safe fonts are fonts that are universally installed across all browsers and devices. */
+/* Web Safe Fonts for HTML and CSS
+The following list are the best web safe fonts for HTML and CSS:
+
+Arial (sans-serif)
+Verdana (sans-serif)
+Tahoma (sans-serif)
+Trebuchet MS (sans-serif)
+Times New Roman (serif)
+Georgia (serif)
+Garamond (serif)
+Courier New (monospace)
+Brush Script MT (cursive) */
+/* CSS Font Style
+The CSS font-style property specifies the font style for a text..
+
+This property can have one of the following values:
+
+normal - The text is shown normally
+italic - The text is shown in italics
+oblique - The text is "leaning" (oblique is very similar to italic) */
+
+/* CSS Font Weight
+The CSS font-weight property specifies how thick or thin characters in text should be displayed.
+
+This property can have one of the following values:
+
+normal - This is default. Defines normal characters
+bold - Defines thick characters
+bolder - Defines thicker characters
+lighter - Defines lighter characters
+100-900 - Defines from thin to thick characters. 400 is the same as normal, and 700 is the same as bold
+Example */
+/* CSS Font Variant
+The CSS font-variant property specifies whether or not a text should be displayed in a small-caps font.
+
+In a small-caps font, all lowercase letters are converted to uppercase letters. However, the converted uppercase letters appears in a smaller font size than the original uppercase letters in the text. */
+
+p {
+  font-variant: small-caps;
+  /*CSS Font Size
+The CSS font-size property is used to specify the size of the text/font.
+
+Being able to manage the text size is very important in web design.
+
+However, you should not use font size adjustments to make paragraphs look like headings, or headings look like paragraphs. Always use the proper HTML tags, like <h1> - <h6> for headings and <p> for paragraphs.
+
+The font-size can be set to an absolute size or to a relative size.*/
+  font-size: large;
+}
+   /* px: Pixels offers fixed and precise control over the font size.
+xx-small, x-small, small, medium, large, x-large, xx-large. These keywords has a predefined set of sizes in browsers.
+Relative sizes:
+
+em: This unit is relative to the font size of the parent element.
+rem: This unit is relative to the font size of the root HTML element.
+%: This unit is relative to the font size of the parent element
+smaller and larger: These units adjust the font size relative to the parent element.
+How to Pick the Right Unit?
+For fixed and precise control, px can be used.
+With px, the web page will not scale well on different screen sizes or with user preferences.
+Absolute size can be useful when the physical size of the output is known.
+For scalable web designs, use em or rem; they allow users to adjust text size in their browser settings.
+Percentage (%) can be useful for adjusting font sizes based on parent elements.
+ */
+ /* 1px
+ 1em=16px; many browsers support
+ 1rem=16px; 
+ vw =based on screen view width
+ */
+ 
+span{
+  font-family: "Sofia", sans-serif;
+ font-size: 30px;
+  text-shadow: 3px 3px 3px #ababab;
+}
+
+ h2{font-family: "Sofia", sans-serif;
+  font-size: 30px;
+}
+/* font short hand  
+The CSS font property is a shorthand property for:
+
+font-style
+font-variant
+font-weight
+font-stretch
+font-size
+line-height
+font-family*/
+/* The CSS font property is a shorthand property for:
+
+font-style
+font-variant
+font-weight
+font-stretch
+font-size
+line-height
+font-family */
+h3{
+     font: italic small-caps bold 15px/30px Georgia, serif;
+ 
+}
+   </style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+
+<!-- Enabling Font Effects
+Google has also enabled different font effects that you can use.
+
+First add effect=effectname to the Google API, then add a special class name to the element that is going to use the special effect. The class name always starts with font-effect- and ends with the effectname. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+<body>
+    <h1>About fonts</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, incidunt labore! Distinctio ipsam modi pariatur explicabo provident tempora vitae accusamus quis dignissimos consequatur!</p>
+
+    <span>Using google fonts</span>
+    <h2 class="font-effect-fire">google font effect</h2>
+    <h2 class="font-effect-neon">Neon Effect</h2>
+<h2 class="font-effect-outline">Outline Effect</h2>
+<h2 class="font-effect-emboss">Emboss Effect</h2>
+<h2 class="font-effect-shadow-multiple">Multiple Shadow Effect</h2>
+<h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque qui esse incidunt non harum!</h3>
+
+<!-- CSS Icons - Font Awesome
+Icons can easily be added to your HTML page, by using an icon library.
+
+      
+How To Add Icons
+The simplest way to add an icon to your HTML page, is with an icon library, such as Font Awesome.
+
+Add the name of the specified icon class to any inline HTML element (like <i> or <span>).
+
+All the icons in the icon libraries below, are scalable vectors that can be customized with CSS (size, color, shadow, etc.) -->
+<script src="https://kit.fontawesome.com/1068acec9b.js" crossorigin="anonymous"></script>
+<i class="fas fa-cloud"></i>
+<i class="fas fa-heart"></i>
+<i class="fas fa-car"></i>
+<i class="fas fa-file"></i>
+<i class="fas fa-bars"></i>
+<!-- Bootstrap Icons
+To use the Bootstrap glyphicons, add the following line inside the <head> section of your HTML page:
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+
+<!-- use bootstrap link to activte -->
+<i class="glyphicon glyphicon-cloud"></i>
+<i class="glyphicon glyphicon-remove"></i>
+<i class="glyphicon glyphicon-user"></i>
+<i class="glyphicon glyphicon-envelope"></i>
+<i class="glyphicon glyphicon-thumbs-up"></i>
+<!-- Google Icons
+To use the Google icons, add the following line inside the <head> section of your HTML page:
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+Note: No downloading or installation is required! -->
+<br>
+<i class="material-icons">cloud</i>
+<i class="material-icons">favorite</i>
+<i class="material-icons">attachment</i>
+<i class="material-icons">computer</i>
+<i class="material-icons">traffic</i>
+</body>
+
+</html>

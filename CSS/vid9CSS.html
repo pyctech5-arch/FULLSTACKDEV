@@ -4,8 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Margins</title>
+    <style>
+        /* Example
+Use the margin shorthand property with four values: */
+
+p {
+  margin: 25px 50px 75px 100px;
+border: 1px solid black;
+}
+
+
+/* Use the margin shorthand property with two values:  */
+
+span{
+    margin: 25px 50px;
+}
+/* Use the margin shorthand property with one value:  */
+
+pre{
+    margin: 25px;
+}
+/* The auto Value
+You can set the margin property to auto to horizontally center the element within its container.
+
+The element will then take up the specified width, and the remaining space will be split equally between the left and right margins.
+
+Example
+Use margin: auto: */
+h2{
+    margin: auto;
+}
+/* The inherit Value
+You can set the margin property to inherit to let the margin be inherited from the parent element.
+
+This example lets the left margin of the <p class="ex1"> element be inherited from the parent element (<div>):
+    
+    Example
+    Use of the inherit value: */
+    .container{
+    height: 200px;
+    width: 200px;  border: 1px solid black;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+    background-color: lightblue;
+    text-align: center;
+    }
+
+h3{
+        margin-left: inherit;
+}
+    </style>
 </head>
 <body>
-  
+    
+    <div class="container">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem error facilis corrupti illo aut dignissimos tenetur fugiat! Incidunt reprehenderit ipsum inventore at amet. Ipsum, harum.
+        <h3>Lorem, ipsum dolor.
+        </h3>
+    </div>
+    <!-- If the margin property has four values:
+    
+    margin: 25px 50px 75px 100px;
+top margin is 25px
+right margin is 50px
+bottom margin is 75px
+left margin is 100px -->
+<p>Hello guys</p>
+<span>Hello Bros</span>
+<pre>Hello welcome to JS</pre>
+<h2>Welcome to js</h2>
+<!-- All CSS Margin Properties
+Property	Description
+margin	A shorthand property for setting all the margin properties in one declaration
+margin-bottom	Sets the bottom margin of an element
+margin-left	Sets the left margin of an element
+margin-right	Sets the right margin of an element
+margin-top	Sets the top margin of an element -->
 </body>
 </html>

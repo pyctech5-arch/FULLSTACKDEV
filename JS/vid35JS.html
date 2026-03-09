@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS- ES2026 ANd other</title>
+</head>
+<body>
+    <!-- New Features in JavaScript 2026
+ECMAScript 2026 introduces several features focused on improving resource management, handling asynchronous operations, and enhancing data manipulation:
+
+New JavaScript Date Object - Temporal Date
+Resource management with using and await using
+Error detection with Error.isError()
+Asynchronous array creation with Array.fromAsync()
+Base64 and hexadecimal encodings for Uint8Array
+Immutability with Records & Tuples (Stage 3 proposal)
+Pattern Matching (Stage 3 proposal) -->
+<pre>
+    The Temporal API
+The Temporal API in JavaScrit 2026 provides standard objects and functions for working with dates and times.
+
+From ES2026, the Temporal API is the standard for modern date and time management in JavaScript, designed to replace the legacy Date object.
+
+Unlike Date, Temporal objects are immutable and provide first-class support for time zones and non-Gregorian calendars.
+
+Resource Management with using
+JavaScript 2026 added two keywords to automatically manage and dispose resources (like file handles or database connections) when they go out of scope, reducing the need for explicit try...finally blocks.
+
+using provides synchronous cleanup of block-scoped variables.
+await using provides asynchronous cleanup for resources like network streams.
+Error Detection with Error.isError()
+Error.isError() is a static method to reliably check if a value is an Error object, improving error handling and debugging.
+
+New Array with Array.fromAsync()
+Array.fromAsync() is a feature that allows developers to create a new Array instance from asynchronous iterables, array-like objects, or Promises, streamlining the handling of data from async sources.
+
+
+Explicit Resource Management
+The using Keyword
+The using keyword is an addition to JavaScript 2026. It provides a mechanism for managing resources that require explicit disposal.
+
+It declares a block-scoped variable, similar to const, but with the difference that it guarantees synchronous disposal of the used resource when the variable goes out of scope.
+
+
+The using keyword simplifies resource management by automatically handling the cleanup process, reducing the risk of resource leaks and improving code readability compared to manual try...finally blocks for disposal.
+
+Resource Management
+using is designed for objects that implement the Symbol.dispose method, which defines the cleanup logic for the resource.
+
+Synchronous Disposal
+When a variable declared with using exits its scope (at the end of a block or function), its Symbol.dispose method is automatically called.
+
+Asynchronous Disposal
+For resources requiring asynchronous cleanup, the await using declaration can be employed. This ensures that the disposal process is awaited before the variable fully goes out of scope.
+
+Block-Scoped
+Like const, variables declared with using are local to the block in which they are declared, and must be initialized at the time of declaration.
+
+Immutable
+Like to const, variables declared with using cannot be reassigned after initialization.
+
+
+Explicit Resource Management
+await using
+Inspired by other languages, JavaScript 2026 introduces using blocks for automatic cleanup of resources like file handles, database connections, or network streams.
+
+This is especially beneficial for asynchronous operations:
+</pre>
+
+
+
+
+<p id="demo"></p>
+<p id="demo2"></p>
+<h3 id="demo3"></h3>
+<script>
+    class MyResource {
+  constructor(name) {
+    this.name = name;
+    myDisplay(`Resource ${this.name} acquired.`);
+  }
+
+  [Symbol.dispose]() {
+    myDisplay(`Resource ${this.name} disposed.`);
+  }
+}
+
+function manageResource() {
+  using resource = new MyResource("Database Connection");
+  // Use the resource here
+  myDisplay(`Using resource: ${resource.name}`);
+}
+
+function myDisplay(text) {
+  document.getElementById("demo").innerHTML += text + "<br>";
+}
+
+manageResource();
+
+document.write("<br>");
+async function processFile() {
+  using fileHandle = await openFile('data.txt');
+
+// Work with fileHandle
+
+} // fileHandle is automatically closed here);
+
+document.getElementById("demo1").innerHTML = "Hello";
+
+/*
+Error.isError()
+The Error.isError() static method checks whether a value is an Error object.
+
+Example
+Error.isError(new TypeError()); // true
+Error.isError({ name: "Error" }); // false
+Error.isError() is a safe alternative to instanceof Error which fails across realms.
+
+Realm-safe error check:
+An Error from an iframe verifies with Error.isError() and fails with instanceof.*/ 
+</script>
+
+<!-- New Set Features in ES2025
+JavaScript 2025 includes built-in methods for set operations, such as intersection(), union(), and difference(), eliminating the need for manual loops or third-party libraries.
+
+Feature	Description	
+union()	Returns the union of two sets	
+intersection()	Returns the intersection of two sets	
+difference()	Returns the difference between two sets	
+symmetricDifference()	Returns the symmetric difference between to sets	
+isSubsetOf()	Returns true if this set is a subset of a given set	
+isSupersetOf()	Returns true if this set is a superset of a given set	
+isDisjointFrom()	Returns true if this set has no elements in in a given set	
+New Iterator Helpers in ES2025
+The introduction of an Iterator object provides a functional interface with lazy evaluation, allowing developers to wrap various iterators like Arrays.
+
+A new set of functional operators for iterators (like .map(), .filter(), and .take()) allows for lazy evaluation, improving performance when handling large data streams.
+
+Function	Description
+drop()	Returns an iterator that skips a specified number of elements before yielding the rest
+every()	Returns true if all elements satisfy a test function
+filter()	Returns an iterator containing elements that satisfy a filter function
+find()	Returns the first element that satisfies a test function
+flatMap()	Returns an iterator by mapping each element and then flattening the results
+forEach()	Executes a function once for each element in the iterator.
+from()	creates an iterator object from an iterable
+map()	Returns an iterator with all elements transformed by a map function
+reduce()	Applies a reducer function against each element to reduce it to a single value
+some()	Returns true if at least one element satisfy a test function
+take()	Returns an iterator that yields a specified number of elements
+REMOVE ADS
+
+Other New Features in ES2025
+Feature	Description	
+RegExp /v flag	An "upgrade" to the /u (unicode) flag	
+RegExp.escape()	Returns a string where regex characters are escaped	
+Float16Array	A Typed Array that stores 16-bit floating-point numbers	
+Math.f16round()	Returns the nearest 16-bit floating point number	
+Promise.try()	Starts a promise chain for handling promise rejections	
+Import Attributes	Import attributes allowed in import statements	
+Warning -->
+
+<!-- New Features in JavaScript 2024
+Feature	Description	
+Object.groupBy()	Groups object elements according to values returned from a callback function	
+Map.groupBy()	Groups map elements according to values returned from a callback function	
+String isWellFormed()	Returns true if a string is well formed	
+String.toWellFormed()	Returns a new string where "lone surrogates" are replaced with Unicode U+FFFD	
+Promise.withResolvers()		
+Atomics
+waitAsync	 -->
+
+
+<!-- avaScript Promise.withResolvers()
+Promise.withResolvers() is a static method that simplifies the creation and management of Promises.
+
+Promise.withResolvers() provides a more convenient way to access the resolve and reject functions associated with a Promise outside of its executor function.
+
+Instead of the traditional new Promise((resolve, reject) => { ... }) constructor pattern, Promise.withResolvers() returns an object containing:
+
+promise: The newly created Promise instance
+resolve: A function to fulfill the promise with a value
+reject: A function to reject the promise with a reason (error) -->
+
+<p id="demo2">Wait 2 seconds.</p>
+<script>
+    const {promise, resolve, reject} = Promise.withResolvers();
+
+// You can now use 'resolve' and 'reject' anywhere
+// in your code to control the state of 'promise'.
+
+// Simulate async work
+setTimeout(() => {
+  const success = Math.random() > 0.5;
+  if (success) {
+    resolve("Operation successful!");
+  } else {
+    reject("Operation failed!");
+  }
+}, 1000);
+
+// Update the UI when the promise finishes
+promise
+  .then((message) => {
+    document.getElementById("demo2").innerHTML = message;
+  })
+  .catch((error) => {
+    document.getElementById("demo2").innerHTML = error; ;
+  });
+
+/*New Features in JavaScript 2023
+Feature	Description	
+#! (Shebang)	Tells the operating system which interpreter to use to execute the script	
+New Array Features in 2023
+Feature	Description	
+findLast()	Returns the value of the last element that satisfies a condition	
+findLastIndex()	Returns the index of the last element that satisfies a condition	
+toReversed()	Reverses an array without altering the original array	
+toSorted()	Sorts an array without altering the original array	
+toSpliced()	Splices an array without altering the original array	
+with()	Updates array elements without altering the original array*/   
+
+const temp = [27, 28, 30, 40, 42, 35, 30];
+let high = temp.findLast(x => x > 40);
+let pos = temp.findLastIndex(x => x > 40);
+document.write(temp);
+document.write("<br>");
+document.write(high);
+document.write("<br>");
+document.write(pos);
+let reverse=temp.toReversed();
+document.write("<br>");
+document.write(reverse);
+let sort=temp.toSorted();
+document.write("<br>");
+document.write(sort);
+
+/*New Features in JavaScript 2022
+Supported in all modern browsers since March 2023.
+
+Feature	Description	
+Array at()	Returns an indexed element from an array	
+String at()	Returns an indexed element from an string	
+RegExp /d	Perform substring matches	
+Object.hasOwn()	Check if a property is the own property of an object	
+error.cause	Lets you specify the reason behind an error	
+await import	Lets JavasSript modules wait for resources that require import before running.	
+Class field declarations	Allows for properties to be defined directly within a class	
+Private methods and fields	Allows for private properties (#method and #field)	
+*/
+/*The at() method returns an indexed element from an array.
+
+The at() method returns the same as [].
+
+The at() method is supported in all modern browsers since March 2022:*/
+
+/*RegExp d Modifier
+ES2022 added the /d modifier to express the start and end of the match.
+
+Example
+let text = "aaaabb";
+let result = text.match(/(aa)(bb)/d);
+RegExp Modifiers are used to spescfy case-insensitive, and other global searches:
+
+Modifier	Description	Try it
+i	Perform case-insensitive matching	
+g	Perform a global match (find all)	
+m	Perform multiline matching	
+d	Perform substring matches (New in ES2022)	
+*/ 
+/*Object hasOwn
+ES2022 provides a safe way to check if a property is the own property of an object.
+
+Object.hasOwn() is similar to Object.hasOwnProperty() but supports all object types.
+
+Example
+Object.hasOwn(myObject, age)*/
+
+
+/*JavaScript await import
+JavasSript modules can now wait for resources that require import before running:
+
+import {myData} from './myData.js';
+
+const data = await myData();
+JavaScript Class Field Declarations
+class Hello {
+  counter = 0; // Class field
+}
+const myClass = new Hello();
+
+let x = myClass.counter;
+JavaScript Private Methods and Fields
+class Hello {
+  #counter = 0;  // Private field
+  #myMethod() {} // Private method
+}
+const myClass = new Hello();
+
+let x = myClass.#counter; // Error
+myClass.#myMethod();      // Error*/
+
+//ECMAScript 2021 
+
+/*
+New Features in JavaScript 2021
+Feature	Description		
+Promise.any()	Takes promises as input and returns a single promise	
+String replaceAll()	Replaces all occurrences of a substring in a string		
+Numeric Separator	New numeric separator (_) makes numbers more readable*/ 
+
+
+/*New Features in JavaScript 2020
+Feature	Description
+BigInt	Stores values too big to store in a JavaScript number
+String matchAll()	Searchs for all occurrences of a string in a string
+Promise.allSettled()	Takes promises as input and returns a single promise
+Dynamic Import	Loads JavaScript modules at runtime
+globalThis	Refers to the global object independent of code environment
+import.meta	Returns an object indicating the base URL of a module
+Namespace Exports	Export a full namespace from a module without having to import it first
+New JavaScript Operators in 2020
+Oper	Description	
+??	Nullish coalescing returns the first argument not nullish	
+?.	Optional chaining returns undefined if an object is undefined or null	
+&&=	Logical AND assignment assigns the second value if the first value is true	
+||=	Logical OR assignment assigns the second value if the first value is false	
+??=	Nullish coalescing assignment assigns the second value if the first value is undefined or null	
+*/
+/*Function Calls
+Use Case	Syntax	Behavior
+Safe function call	obj.method?.()	Returns undefined if method does not exist
+Return handling	let x = fn?.()	x is undefined if fn does not exist
+Arrays
+Use Case	Syntax	Returns
+Safe element access	arr?.[2]	undefined if arr is null or undefined
+Safe property on element	arr?.[1]?.name	Returns undefined safely
+Safe method call	arr?.map(fn)	Returns undefined if arr does not exist
+Default value fallback	arr?.[0] ?? "N/A"	Returns "N/A" if arr or element is missing*/
+/*JavaScript Dynamic Import
+Dynamic Import is a way to load JavaScript modules at runtime, rather than at the start of your program.
+
+Syntax
+import("./module.js")
+The argument must be a string or expression that resolves to a path
+You must run the import inside a module script (<script type="module">)
+Unlike static imports (which must appear at the top of a file), dynamic imports can be used anywhere - inside functions, conditionals, event handlers, etc.
+
+Type	Example	When Loaded
+Static	import { add } from './math.js';	At load time
+Dynamic	const math = await import('./math.js');	When needed
+JavaScript Global This
+globalThis provides a standard way to access the global object, regardless of the environment your the code runs in: In the browser, Node.js, in a Web Worker, or another JS runtime.
+
+The global object is the top-level object in a JavaScript environment:
+
+
+In browsers, it is window.
+In Node.js, it is global.
+In Web Workers, it is self.
+Many environments have their own name for the this object. This caused compatibility issues for code meant to run everywhere.
+
+globalThis was introduced in ECMAScript 2020 (ES11) to solve that problem. It is a unified reference to the global object, no matter the environment.*/ 
+
+
+/*New Features in JavaScript 2019
+Feature	Description	
+String trimStart()	Removes whitespace from the start of a string	
+String trimEnd()	Removes whitespace from the end of a string	
+Object.fromEntries	Creates an object from key/value pairs	
+Optional catch binding	Allows to omit the catch parameter if it is not needed	
+Array flat()	Creates a new array by flattening a nested array	
+Array flatMap()	Maps all array elements and creates a new array by flattening the array	
+Revised Array sort()	Browsers must now use a stable sorting algorithm	
+Revised JSON.stringify()	Strings with UTF-8 code points now convert safely	
+Separator symbols in strings	Line and paragraph separators (\u2028 and \u2029) are now allowed in strings	
+Revised Function.toString()	Now returns source code including comments and spaces and syntax details*/
+
+
+
+/*ECMAScript 2018
+New Features in JavaScript 2018
+Feature	Description	
+Asynchronous Iteration	Allows the await keyword in for/of loops	
+Promise Finally	Schedules a function to be executed when a promise has been "fulfilled" or "rejected"	
+Array Rest Elements	Allows to destruct an array and collect the leftovers	
+Object Rest Properties	Allows to destruct an object and collect the leftovers	
+Shared Memory	Allows different parts of a program to access the same memory	
+New RegExp Features in 2018
+Feature	Description	
+/s	Allows the . (dot) metacharacter to match line terminators	
+\p{}	Matches character with a Unicode character property	
+(?<=y)	(?<=y)x matches "x" if "x" is preceded by "y"	
+(?<!y)	(?<!y)x matches "x" if "x" is NOT preceded by "y"	
+(?<name>)	Captures text and names (labels) it*/
+/*Explained
+(?<firstName>\w+) captures a word and labels it firstName
+(?<lastName>\w+) does the same for lastName
+text.match() returns an array with a groups property
+match.groups() returns an object:
+{firstName:"John", lastName:"Doe" }
+When using a regular expression with capturing groups, the match() method of a string returns a result array that includes a groups property. This groups property is an object that holds the matches for named capturing groups.
+
+JavaScript Threads
+In JavaScript you use the Web Workers API to create threads.
+
+Worker threads are used to execute code in the background so that the main program can continue execution.
+
+Worker threads run simultaneously with the main program. Simultaneous execution of different parts of a program can be time-saving.
+
+JavaScript Shared Memory
+Shared memory is a feature that allows threads (different parts of a program) to access and update the same data in the same memory.
+
+Instead of passing data between threads, you can pass a SharedArrayBuffer object that points to the memory where data is saved.
+
+SharedArrayBuffer
+A SharedArrayBuffer object represents a fixed-length raw binary data buffer similar to the ArrayBuffer object.
+
+*/ 
+
+
+
+/*Explained
+(?<firstName>\w+) captures a word and labels it firstName
+(?<lastName>\w+) does the same for lastName
+text.match() returns an array with a groups property
+match.groups() returns an object:
+{firstName:"John", lastName:"Doe" }
+When using a regular expression with capturing groups, the match() method of a string returns a result array that includes a groups property. This groups property is an object that holds the matches for named capturing groups.
+
+JavaScript Threads
+In JavaScript you use the Web Workers API to create threads.
+
+Worker threads are used to execute code in the background so that the main program can continue execution.
+
+Worker threads run simultaneously with the main program. Simultaneous execution of different parts of a program can be time-saving.
+
+JavaScript Shared Memory
+Shared memory is a feature that allows threads (different parts of a program) to access and update the same data in the same memory.
+
+Instead of passing data between threads, you can pass a SharedArrayBuffer object that points to the memory where data is saved.
+
+SharedArrayBuffer
+A SharedArrayBuffer object represents a fixed-length raw binary data buffer similar to the ArrayBuffer object.
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*New Features in JavaScript 2017
+Feature	Description	
+String padStart()	Pads the beginning of a string	
+String padEnd()	Pads the end of a string	
+Object entries()	Returns an array of the key/value pairs of an object	
+Object values()	Returns an array of the values of an object	
+async and await	Simplifies the handling of promises	
+Trailing Commas	Allows trailing commas where a comma-separated list of values is accepted	
+getOwnProperty
+Descriptors	Returns an object containing all own property descriptors of an object	
+*/ 
+async function myDisplay() {    
+    let myPromise = new Promise(function(resolve) {
+        setTimeout(function() {resolve("I love You !!");}, 3000);
+    });
+    document.getElementById("demo3").innerHTML = await myPromise;
+}
+myDisplay()
+
+
+
+
+
+
+
+/*New Features in JavaScript 2016
+Supported in all modern browsers since March 2017.
+
+Feature	Description	
+**	Raises the first operand to the power of the second	
+**=	Raises the value of a variable to the power of the right operand	
+Array includes()	Checks if an element is present in an array*/ 
+
+</script>
+
+</body>
+</html>

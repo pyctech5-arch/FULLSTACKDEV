@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Texts</title>
+    <style> img.a {
+  vertical-align: baseline;
+}
+
+img.b {
+  vertical-align: text-top;
+}
+
+img.c {
+  vertical-align: text-bottom;
+}
+
+img.d {
+  vertical-align: sub;
+}
+
+img.e {
+  vertical-align: super;
+}
+</style>
+</head>
+<body>
+    <!-- CSS Outline
+An outline is a line that is drawn around elements, OUTSIDE the borders, to make the element "stand out". -->
+<!-- CSS has the following outline properties:
+
+outline-style - Specifies the style of the outline
+outline-color - Specifies the color of the outline
+outline-width - Specifies the width of the outline
+outline-offset - Adds space between the outline and the edge/border of an element
+outline - A shorthand property
+ -->
+
+ <!-- CSS The outline-style Property
+The outline-style property specifies the style of the outline, and can have one of the following values:
+
+dotted - Defines a dotted outline
+dashed - Defines a dashed outline
+solid - Defines a solid outline
+double - Defines a double outline
+groove - Defines a 3D grooved outline
+ridge - Defines a 3D ridged outline
+inset - Defines a 3D inset outline
+outset - Defines a 3D outset outline
+none - Defines no outline
+hidden - Defines a hidden outline
+The following example shows the different outline-style values: -->
+<h3 style="border: 1px solid black; outline: 10px bisque; outline-style: solid;">prasnt</h3>
+<br>
+<!-- CSS Outline Width
+The outline-width property specifies the width of the outline, and can have one of the following values:
+
+thin (typically 1px)
+medium (typically 3px)
+thick (typically 5px)
+A specific size (in px, pt, cm, em, etc) -->
+<h3 style="border: 1px solid black; outline: solid bisque;outline-width:thick;">prasnt</h3>
+<!-- The outline-color property is used to set the color of the outline.
+
+The color can be set by:
+
+name - specify a color name, like "red"
+HEX - specify a hex value, like "#ff0000"
+RGB - specify a RGB value, like "rgb(255,0,0)"
+HSL - specify a HSL value, like "hsl(0, 100%, 50%)"
+invert - performs a color inversion (which ensures that the outline is visible, regardless of color background) -->
+<br>
+<h3 style="border: 1px solid black; outline:thick solid ;outline-color: green;">prasnt</h3>
+<!-- CSS Outline - Shorthand property
+The outline property is a shorthand property for setting the following individual outline properties: -->
+<h3 style="border: 1px solid black; outline:thick solid green;">prasnt</h3>
+
+<!-- The outline-offset property adds a space between an outline and the edge/border of an element. The space between an element and its outline is transparent.
+
+The following example specifies an outline 15px outside the border edge: -->
+<h3 style="border: 1px solid black; outline:thick solid green; outline-offset: 4px;">prasnt</h3>
+
+<!-- CSS Text Color
+The color property is used to set the color of the text. The color is specified by:
+
+a color name - like "red"
+a HEX value - like "#ff0000"
+an RGB value - like "rgb(255,0,0)"
+Look at CSS Color Values for a complete list of possible color values.
+
+The default text color for a page is defined in the body selector. -->
+<h3 style="border: 1px solid black; outline:thick solid green; outline-offset: 4px; color:red;">prasnt</h3>
+<!-- CSS Text Alignment and Text Direction
+In this chapter you will learn about the following properties:
+
+text-align
+text-align-last
+vertical-align
+direction
+unicode-bidi
+ -->
+<!-- Text Alignment
+The text-align property is used to set the horizontal alignment of a text.
+
+This property can have one of the following values:
+
+left - Aligns the text to the left
+right - Aligns the text to the right
+center - Centers the text
+justify - Stretches the lines so that each line has equal width
+The following example shows left, right and center aligned text (left is default if text direction is left-to-right, and right is default if text direction is right-to-left): -->
+<p style="text-align: cneter;">how are u</p>
+<!-- When the text-align property is set to "justify", each line is stretched so that every line has equal width, and the left and right margins are straight (like in magazines and newspapers): -->
+ <p style="text-align: justify;">how are u</p>
+ <!-- This property can have one of the following values:
+
+auto - Default value. The last line is justified and aligned left
+left - The last line is aligned to the left
+right - The last line is aligned to the right
+center - The last line is center-aligned
+justify - The last line is justified as the rest of the lines
+start - The last line is aligned at the start of the line
+end - The last line is aligned at the end of the line
+Example -->
+ <p style="text-align: center;">how are u</p> <p style="text-align: end;">how are u</p> <p style="text-align: start;">how are u</p> <p style="text-align: left;">how are u</p> <p style="text-align: right;">how are u</p>
+  <p style="text-align: auto;">how are u</p>
+ <bdo dir="rtl">fffflxkls</bdo>
+ 
+
+<!-- Vertical Alignment
+The vertical-align property sets the vertical alignment of an element.
+
+This property can have one of the following values:
+
+baseline - Default value. The element is aligned with the baseline of the parent
+length/% - Raises or lower an element by the specified length or percent
+sub - The element is aligned with the subscript baseline of the parent
+super - The element is aligned with the superscript baseline of the parent
+top - The element is aligned with the top of the tallest element on the line
+text-top - The element is aligned with the top of the parent element's font
+middle - The element is placed in the middle of the parent element
+bottom - The element is aligned with the lowest element on the line
+text-bottom - The element is aligned with the bottom of the parent element's font -->
+<h1>The vertical-align Property</h1>
+
+<h2>vertical-align: baseline (default):</h2>
+<p>Align the orange square to baseline: <img class="a" src="ironman.png" width="19" height="19"></p> 
+
+<h2>vertical-align: text-top:</h2>
+<p>Align the orange square to text-top: <img class="b" src="ironman.png" width="19" height="19"></p> 
+
+<h2>vertical-align: text-bottom:</h2>
+<p>Align the orange square to text-bottom: <img class="c" src="ironman.png" width="19" height="19"></p> 
+
+<h2>vertical-align: sub:</h2>
+<p>Align the orange square to sub: <img class="d" src="ironman.png" width="19" height="19"></p> 
+
+<h2>vertical-align: sup:</h2>
+<p>Align the orange square to super: <img class="e" src="ironman.png" width="19" height="19"></p> 
+
+<!-- Text Direction
+The direction property specifies the text direction/writing direction within a block-level element.
+
+Tip: Use this property together with the unicode-bidi property to set or return whether the text should be overridden to support multiple languages in the same document.
+
+Example -->
+<p>This is the default text direction.</p>
+
+<p style="direction: rtl;
+  unicode-bidi: bidi-override;">This is right-to-left text direction.</p>
+<!--  CSS Text Decoration
+The CSS text-decoration property is used to control the appearance of decorative lines on text.
+
+It is a shorthand property for the following individual properties:
+
+text-decoration-line
+text-decoration-color
+text-decoration-style
+text-decoration-thickness-->
+
+
+<h1 style=" text-decoration-line: overline;
+  text-decoration-color: red;">Overline text decoration</h1>
+<h2 style=" text-decoration-line: line-through;
+  text-decoration-color: blue;">Line-through text decoration</h2>
+<h3 style=" text-decoration-line: underline;
+  text-decoration-color: green;  ">Underline text decoration</h3>
+<p style=" text-decoration-line: overline underline;
+  text-decoration-color: purple;  ">Overline and underline text decoration.</p>
+  <!-- The Shorthand Property
+The CSS text-decoration property is a shorthand property for:
+
+text-decoration-line (required)
+text-decoration-color (optional)
+text-decoration-style (optional)
+text-decoration-thickness (optional) -->
+<p style="text-decoration: underline red double 4px;"> text-decoration-line: underline;
+  text-decoration-color: red;
+  text-decoration-style: double;
+  text-decoration-thickness: 5px;</p>
+  <!-- CSS Text Transformation
+The CSS text-transform property is used to control the capitalization of text in an element.
+
+It can be used to transform a text into uppercase or lowercase letters, or capitalize the first letter of each word, without changing the original content in HTML.
+
+This property can have one of the following values:
+
+none - No transformation. Text renders as it is
+capitalize - Transforms the first character of each word to uppercase
+uppercase - Transforms all characters to uppercase
+lowercase - Transforms all characters to lowercase -->
+<h3>Text transformation</h3>
+<p style="text-transform: uppercase;">prashnt</p>
+<!-- CSS Text Spacing
+CSS has several properties to control text spacing.
+
+In this chapter you will learn about the following properties:
+
+text-indent
+letter-spacing
+line-height
+word-spacing
+white-space
+ -->
+<!-- CSS Text Indentation
+The CSS text-indent property is used to specify the indentation of the first line in a text-block.
+
+Tip: Negative values are allowed. The first line will be indented to the left if the value is negative. -->
+<!-- CSS Letter Spacing
+The CSS letter-spacing property is used to specify the space between the characters in a text.
+
+Tip: Negative values are allowed. -->
+<!-- CSS Line Height
+The CSS line-height property is used to specify the space between lines.
+
+Note: Negative values are not allowed. -->
+<!-- CSS Word Spacing
+The CSS word-spacing property is used to specify the space between the words in a text.
+
+Tip: Negative values are allowed.
+
+ -->
+<!-- CSS White Space
+The CSS white-space property specifies how white-space inside an element is handled.
+
+This property can have one of the following values:
+
+normal
+nowrap
+pre
+pre-line
+pre-wrap
+Example -->
+<h3>CSS Text Shadow</h3>
+<!-- CSS Text Shadow
+The text-shadow property adds shadow to text.
+
+In its simplest use, you only specify the horizontal and the vertical shadow.
+
+In addition, you can add a shadow color and blur effect.
+
+Text shadow effect! -->
+<h2 style=" text-shadow: 2px 2px;">text shadow</h2>
+<a href="https://www.w3schools.com/css/css_text_shadow.asp">refer more to text shadow</a>
+</body>
+</html>

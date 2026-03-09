@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Sets</title>
+</head>
+<body>
+    <!-- How to Create a Set
+You can create a JavaScript Set by:
+
+Passing an array to new Set()
+Create an empty set and use add() to add values
+The new Set() Method
+Pass an array to the new Set() constructor: 
+
+Set Methods & Properties
+new Set()
+add()
+clear()
+delete()
+entries()
+forEach()
+has()
+keys()
+values()
+size
+-->
+
+<script>
+    const d=new Set(["a","b","c"]);
+    document.write("declaring setusing  (new Set([' ',' ',..])) And accesing the size of it using .size :"+d.size)
+document.write("<br>");
+document.write("<br>");
+d.add("d");
+const e="e";
+d.add(e);
+
+document.write("Using .add('') adding two elements to set "+d.size);
+document.write("<br>");
+document.write("<br>");
+let text=" ";
+for (const x of d) {
+    text+=x+"<br>"
+}
+document.write("Getting the Set using forof loop:<br> "+text);
+document.write("<br>");
+
+document.write("Finding the typeof the set is return "+typeof(d));
+document.write("<br>");
+document.write("<br>");
+
+document.write("So for that we use instanceof getting itis Set or not using (d instanceof Set) :"+(d instanceof Set));
+document.write("<br>");
+document.write("<br>");
+
+/*
+The has() Method
+The has() method returns true if a specified value exists in a set.
+*/
+document.write("For checking the elemnent value is presented we use .has() eX:d.has('a'): "+d.has("a"))
+document.write("<br>");
+document.write("<br>");
+let tex=""
+d.forEach(value => {
+    tex+=value+"<br>";
+});
+
+document.write("Using forEachloop : <br>"+tex)
+
+let te = " "
+const k=d.values();
+// for (const x of k.values()) {//this also valid
+for (const x of k) {
+    te+=x+"<br>"
+}
+document.write("Using .values() for getting values of the arr :"+te);
+ 
+document.write("<br>");
+
+let twe=" ";
+const to=d.entries();
+for (const r of to) {
+    twe+=r+"<br>"
+}
+document.write("Using .entries() for getting values of the arr :<bR>"+twe);
+document.write("<br>");
+
+/*JavaScript Set Logic
+*/
+document.write("<h3> JS set logic</h3>");
+/*Logic Set Methods
+In JavaScript 2025, 7 new logical methods were added to the Set object:
+
+union()
+difference()
+intersection()
+isDisjointFrom()
+isSubsetOf()
+isSupersetOf()
+symmetricDifference()*/
+
+/*The union() Method
+The union() method returns the union of two sets.
+
+The union() method returns a new set containing the elements which are in this set, or in the argument set, or in both:*/
+ const A = new Set(['a','b','c']);
+const B = new Set(['b','c','d']);
+document.write()
+document.write("<br>");
+let img=document.createElement("img");
+img.src="unino.jpg";
+img.height="60";
+img.width="80";
+document.body.appendChild(img);
+const union=A.union(B);
+let t="";
+union.forEach(value => {
+    t+=value+"<br>"
+});
+document.write("using  Union for adding to arrays: <br>"+t);
+document.write("<br>");
+document.write("<br>");
+/*The intersection() Method
+The intersection() method returns the intersection of two sets.
+
+The intersection() method returns a new set containing the elements which are in this set and in the argument set:*/ 
+var img1=document.createElement("img");
+img1.src="insertion.jpg";
+img1.height="60";
+img1.width="80";
+document.body.appendChild(img1);
+const intersection=A.intersection(B);
+let t1=" ";
+intersection.forEach(value => {
+    t1+=value+"<br>"
+});
+document.write("using  intersection for adding to arrays: <br>"+t1);
+document.write("<br>");
+document.write("<br>");
+/*The difference() Method
+The difference() method returns the difference between two sets.
+
+The difference() method returns a new set containing elements which are in this set but not in the argument set:*/ 
+var img2=document.createElement("img");
+img2.src="difference.jpg";
+img2.height="60";
+img2.width="80";
+document.body.appendChild(img2);
+const difference=A.difference(B);
+let t2=" ";
+difference.forEach(value => {
+    t2+=value+"<br>"
+});
+document.write("using  difference for adding to arrays: <br>"+t2);
+document.write("<br>");
+document.write("<br>");
+/*The symmetricDifference() Method
+The symmetricDifference() method returns the symmetric difference between to sets.
+
+The symmetricDifference() method returns a new set containing elements which are in this set or in the argument set, but not in both:
+
+*/
+var img3=document.createElement("img");
+img3.src="symmetricdifference.jpg";
+img3.height="60";
+img3.width="80";
+document.body.appendChild(img3);
+const symmetricDifference=A.symmetricDifference(B);
+let t3=" ";
+symmetricDifference.forEach(value => {
+    t3+=value+"<br>"
+});
+document.write("using  symetricDifference for adding to arrays: <br>"+t3);
+document.write("<br>");
+document.write("<br>");
+
+/*The isSubsetOf() Method
+The isSubsetOf() method returns true if all elements in this set is also elements in the argument set:*/
+var img4=document.createElement("img");
+img4.src="subset.jpg";
+img4.height="60";
+img4.width="80";
+const answer=A.isSubsetOf(B);
+document.body.appendChild(img4);
+document.write("using  isSubsetOf() for adding to arrays: <br>"+answer);
+document.write("<br>");
+document.write("<br>");
+/*The isSupersetOf() Method
+The isSupersetOf() method returns true if all elements in the argument set are also in this set:*/
+var img5=document.createElement("img");
+img5.src="superset.jpg";
+img5.height="60";
+img5.width="80";
+const answer2=A.isSupersetOf(B);
+document.body.appendChild(img5);
+document.write("using  isSupersetOf() for adding to arrays: <br>"+answer2);
+document.write("<br>");
+document.write("<br>");
+/*The isDisjointFrom() Method
+The isDisjointFrom() method returns true if this set has no elements in common with the argument set:*/
+var img6=document.createElement("img");
+img6.src="Disjoint.jpg";
+img6.height="60";
+img6.width="80";
+const answer3=A.isDisjointFrom(B);
+document.body.appendChild(img6);
+document.write("using  isDisjointFrom() for adding to arrays: <br>"+answer3);
+document.write("<br>");
+document.write("<h3>JavaScript WeakSet</h3>");
+/*JavaScript WeakSet*/
+let set=new WeakSet();
+let obj={fname:"prashant",lname:"chavan"};
+ 
+ set.add(obj);
+ let answe=set.has(obj);
+ document.write("By crearing WeakSet and by  creating an object .add() and adding it in weakset and through the .has() for check present :" +answe);
+document.write("<br>");
+document.write("<br>");
+set.delete(obj);
+ let answe1=set.has(obj);
+ document.write("By crearing WeakSet and by  creating an object and .add() adding it in weakset and .delete() later and through the .has() for check present :" +answe1);
+ document.write("<br>");
+document.write("<br>");
+/*Garbage Collection
+JavaScript employs a memory management mechanism known as Garbage Collection.
+
+The primary functions are:
+
+Ensuring efficient use of memory resources
+Reclaim memory occupied by variables that are no longer in use
+Preventing memory leaks
+
+
+Weak References
+Unlike a regular Set, a WeakSet does not prevent its values from being garbage collected.
+
+If a value (an object) has no references in a program, it becomes eligible for garbage collection.
+
+When the value is garbage collected, its is removed from the WeakSet.
+
+Values Must Be Objects
+Primitive values cannot be values in a WeakSet.
+
+The values must be objects.
+
+This restriction is tied to the garbage collection mechanism; primitives are not garbage collected in the same way as objects.*/
+ /*Tracking Objects
+A WeakSet is similar to a Set, but it only stores objects, and holds them weakly. If there are no other references to an object, it gets garbage collected automatically.
+
+This makes it handy for tracking objects without storing extra data (like counts).*/
+
+let texo = "";
+
+// Create a WeakSet to track persons
+const persons = new WeakSet();
+
+// Visitor Objects
+const John = {name:"John", age:40};
+const Paul = {name:"Paul", age:41};
+const Ringo = {name:"Ringo", age:42};
+const George = {name:"George", age:43};
+
+// Track visits
+track(Paul);
+track(Ringo);
+track(Paul);
+
+// Function to track visitors
+function track(visitor) {
+  if (persons.has(visitor)) {
+    texo += visitor.name + " is visiting again.<br>";
+  } else {
+    persons.add(visitor);
+    texo += visitor.name + ", age" + visitor.age +", is visiting for the first time<br>";
+  }
+}
+document.write("Tracking the visitors of a Hotel through the WeakSet() : <br>"+texo);
+/*Automatic Cleanup
+If you remove all references to a visitor object:
+
+Tracking Visitors:
+John = null;
+
+// The entry for John is now removed from the WeakMap (persons)
+Not Iterable
+WeakSets are not enumerable.
+
+You cannot iterate over the values with for loops, forEach(), or values().
+
+You cannot access the size. WeakSets have no size property.
+
+Limited Methods
+A WeakSet is minimal, memory-safe, and purpose-built for tracking objects privately and efficiently.
+
+WeakSet provides a limited set of methods:
+
+new WeakSet()	Creates a new WeakSet object
+add(object)	Adds an Object to a WeakSet
+delete(object)	Removes a WeakSet object
+has(object)	Returns true if an object exists in a WeakSet
+WeakSet does not have:
+
+A size property
+A spread operator (...)
+A clear() method
+Any logic methods (union, difference, intersection)
+Any iteration methods (forEach, keys, values, entries)
+The above is by design: Objects may disappear in garbage collection, it makes no sense to iterate over or count them.
+
+*/ 
+ 
+</script>
+
+</body>
+</html>

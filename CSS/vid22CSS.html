@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Box-Model and CSS outline</title>
+</head>
+<body>
+    <!-- The CSS Box Model
+In CSS, the term "box model" is used when talking about web design and layout.
+
+The CSS box model is essentially a box that wraps around every HTML element.
+
+Every box consists of four parts: content, padding, borders and margins.
+
+The image below illustrates the CSS box model: -->
+
+<!-- Explanation of the different parts (from innermost part to outermost part):
+
+Content - The content of the box, where text and images appear
+Padding - Clears an area around the content. The padding is transparent
+Border - A border that goes around the padding and content
+Margin - Clears an area outside the border. The margin is transparent
+The box model allows us to add a border around elements, and to define space between elements. -->
+
+<div style=" background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;">
+  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium quas odio commodi libero quos? Autem deserunt velit vel labore modi?</div>
+
+  <!-- Width and Height of an Element
+In order to set the width and height of an element correctly in all browsers, you need to know how the box model works.
+
+Important: When you set the width and height properties of an element with CSS, you just set the width and height of the content area. To calculate the total width and height of an element, you must also include the padding and borders. -->
+
+<!-- Here is the calculation:
+
+  320px (width of content area)
++ 20px (left padding + right padding)
++ 10px (left border + right border)
+= 350px (total width)
+
+  50px (height of content area)
++ 20px (top padding + bottom padding)
++ 10px (top border + bottom border)
+= 80px (total height)
+The total width of an element should be calculated like this:
+
+Total element width = width + left padding + right padding + left border + right border
+
+The total height of an element should be calculated like this:
+
+Total element height = height + top padding + bottom padding + top border + bottom border
+
+Note: The margin property also affects the total space that the box will take up on the page, but the margin is not included in the actual size of the box. The box's total width and height stops at the border. -->
+
+<!-- CSS Outline
+An outline is a line that is drawn around elements, OUTSIDE the borders, to make the element "stand out". -->
+
+<!-- CSS has the following outline properties:
+
+outline-style - Specifies the style of the outline
+outline-color - Specifies the color of the outline
+outline-width - Specifies the width of the outline
+outline-offset - Adds space between the outline and the edge/border of an element
+outline - A shorthand property -->
+
+<!-- CSS The outline-style Property
+The outline-style property specifies the style of the outline, and can have one of the following values:
+
+dotted - Defines a dotted outline
+dashed - Defines a dashed outline
+solid - Defines a solid outline
+double - Defines a double outline
+groove - Defines a 3D grooved outline
+ridge - Defines a 3D ridged outline
+inset - Defines a 3D inset outline
+outset - Defines a 3D outset outline
+none - Defines no outline
+hidden - Defines a hidden outline
+The following example shows the different outline-style values: -->
+<style>
+p {
+outline-color:green;
+padding: 5px;
+border: 2px solid black;
+}
+
+p.dotted {outline-style: dotted; outline-color: aqua; outline-width: 8px;}
+p.dashed {outline-style: dashed;}
+p.solid {outline-style: solid;}
+p.double {outline-style: double;}
+p.groove {outline-style: groove;}
+p.ridge {outline-style: ridge;}
+p.inset {outline-style: inset;}
+p.outset {outline-style: outset;}
+</style>
+
+
+<h2>The outline-style Property</h2>
+
+<p class="dotted">A dotted outline</p>
+<p class="dashed">A dashed outline</p>
+<p class="solid">A solid outline</p>
+<p class="double">A double outline</p>
+<p class="groove">A groove outline. The effect depends on the outline-color value.</p>
+<p class="ridge">A ridge outline. The effect depends on the outline-color value.</p>
+<p class="inset">An inset outline. The effect depends on the outline-color value.</p>
+<p class="outset">An outset outline. The effect depends on the outline-color value.</p>
+<!-- CSS Outline Width
+CSS Outline Width
+The outline-width property specifies the width of the outline, and can have one of the following values:
+
+thin (typically 1px)
+medium (typically 3px)
+thick (typically 5px)
+A specific size (in px, pt, cm, em, etc)
+CSS Outline Width Examples
+Here are some outlines with different widths:
+
+A thin outline.
+
+A medium outline.
+
+A thick outline.
+
+A 8px thick outline. -->
+
+<!-- CSS Outline Color -->
+
+<!-- CSS Outline Color
+The outline-color property is used to set the color of the outline.
+
+The color can be set by:
+
+name - specify a color name, like "red"
+HEX - specify a hex value, like "#ff0000"
+RGB - specify a RGB value, like "rgb(255,0,0)"
+HSL - specify a HSL value, like "hsl(0, 100%, 50%)"
+invert - performs a color inversion (which ensures that the outline is visible, regardless of color background)
+CSS Outline Color Examples
+Here are some different outlines with different colors. Also notice that these elements also have a thin black border inside the outline:
+
+A solid red outline.
+
+A dotted blue outline.
+
+An outset green outline.
+
+A solid invert outline. -->
+
+
+</body>
+</html>

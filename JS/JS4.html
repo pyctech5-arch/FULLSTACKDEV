@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>global variable using window object</title>
+</head>
+<body>
+    <script>
+        {
+            var a1=10;
+        let a2=20;
+        const a3=30;
+    document.write(a2+"<br>");
+    document.write(a3+"<br>");    
+    document.write(a1+"<br>");    
+    }
+// this all above defined variables can acess from using the window object it return var but for let and const it is undefined but in block we can access it true window but out of it return undefined for block scops.
+alert(window.a1);
+document.write(window.a2+"<br>");
+document.write(window.a3+"<br>");
+// it also return undefine for not defined values
+document.write(window.ht+"<br>");
+
+        function abc(){
+        window.y="this is my second variable";
+        document.write(window.y+"<br>");
+         var x="this is a variable";
+        //  this variable is only aceccs inside the function not from outside. it bind block scope
+        document.write(x);
+        }
+// this below is necessary without calling this function we cannot print the value
+        abc()
+        document.write("<br>");
+// this will return values 
+        document.write(window.y);
+        // true window object we ca also acess variable or values in another function also
+        function bcd(){
+            document.write("<br>"+y);
+            // we can also access this true the slert box this also possib
+            alert(window.y);
+        }
+
+        // this below will return error.
+        bcd()
+        document.write(x);
+        // but no wories we can acess the function variable using window object we can render variable on dom
+
+    </script>
+</body>
+</html>

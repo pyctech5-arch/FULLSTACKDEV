@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Temporals</title>
+</head>
+<body>
+  
+    <!--What is JavaScript Temporal?
+Temporal is the new standard for date and time in JavaScript.
+
+New Temporal objects was designed to replace the old Date object.
+
+Unlike legacy Date, Temporal objects are immutable and provide first-class support for time zones, daylight saving time, date arithmetic and non-Gregorian calendars.  -->
+<pre><h2>Temporal Overview</h2>
+JavaScript Temporal are built-in date and time objects that are easier and safer to use than Date.
+
+Temporal separates date and time into distinct classes to prevent "wall-clock" errors.
+
+A Simple Temporal Example
+With Temporal, you can get today's date and add days in a clear and safe way.
+
+Example
+// Create a Temporal object
+const today = Temporal.Now.plainDateISO();
+
+// Add a duration
+const nextWeek = today.add({ days: 7 });
+</pre>
+<p id="g"></p>
+<!-- Temporal Dates are Immutable
+In the example above, notice that today is not changed.
+
+Temporal returns a new value instead of modifying the existing one.
+
+Temporal objects are immutable, which means they cannot be changed after they are created.
+
+-->
+<!-- DST-Safe Arithmetic
+DST-safe arithmetic ensures time calculations (addition and subtraction) remain accurate across Daylight Saving Time (DST) transitions, preventing 1-hour errors.
+
+It involves using timezone and calendar-aware objects (ZonedDateTime) that understand local clock shifts.
+
+RFC 5545 iCalendar
+RFC 5545, titled iCalendar (Internet Calendaring and Scheduling Core Object Specification), is the industry standard for exchanging calendar and scheduling information.
+
+It allows different systems (like Google Calendar, Apple Calendar, and Microsoft Outlook) to communicate seamlessly. -->
+<!-- Temporal Object Types
+Temporal includes several object types for different kinds of date and time values:
+
+Object	Description
+Temporal.Now	Current time (UTC timestamp)
+Temporal.Instant	Exact moment in time (UTC timestamp)
+Temporal.PlainDate	Plain date only (year, month, day)
+Temporal.PlainTime	Plain time without a time zone
+Temporal.PlainDateTime	Date and time without a time zone
+Temporal.ZonedDateTime	Date and time with a time zone
+Temporal.Duration	Length of time (days, hours, minutes)
+-->
+<!-- When to Use Temporal?
+Use Temporal when you need reliable date and time handling.
+
+You need correct time zone support.
+
+You want safe date arithmetic (add or subtract days, months, years).
+
+You want to avoid DST bugs.
+
+You want predictable and readable code.
+
+You may still use Date for very simple tasks, or when you must support environments where Temporal is not available.
+
+Summary
+Temporal is the modern way to work with dates and times in JavaScript.
+
+Temporal fixes common Date problems like time zones, DST bugs, and confusing date math.
+
+In the next chaper, you will learn about the difference between the new Temporal and the old Date.
+: -->
+<!-- Mutability vs Immutability
+Date objects can change. They are mutable.
+
+This can cause unexpected side effects. -->
+<script>
+ const today = Temporal.Now.plainDateISO();
+// Add a duration
+const nextWeek = today.add({ days: 7 });
+ 
+document.getElementById("g").innerHTML=("Next week is " + nextWeek.toString());
+// Create a Date
+let d = new Date(2026, 5, 17);
+
+// Add 7 days
+d.setDate(d.getDate() + 7);
+
+// Here original date is gone
+document.write(d);
+document.write("<br>")
+// Temporal objects cannot change. They are immutable.
+// Operations return a new value instead.
+// Create a Date
+let b = Temporal.PlainDate.from("2026-05-17");
+
+// Add 7 days
+let next = b.add({ days: 7 });
+
+// Here original date is kept
+document.write(b.toString()+"<br>"+next.toString());
+/*Date and Time Zone
+new Date(2026, 4, 1) creates a timestamp of your local time zone at midnight.
+
+This means a day can "shift" when you format it in UTC or in another zone.*/
+ // Months are 0-based (4 = May)
+const a3 = new Date(2026, 4, 1);
+
+// Might be 2026-04-30T22:00:00.000Z in some time zones:
+ document.write(a3.toISOString());
+ document.write("<br>");
+ let f = new Date();
+
+let time1 = f.toString();
+let time2 = f.toUTCString();
+
+document.write(time1 + "<br><br>" + time2);
+
+/*Temporal uses clear types for time zones.
+
+ZonedDateTime always includes a time zone.*/
+ let zoned = Temporal.Now.zonedDateTimeISO();
+ document.write(zoned.toString());
+ /*Date Parsing is Inconsistent
+new Date("2026-05-01") parses as an instant as UTC in modern JS, but historically it has been a minefield of different formats, browser quirks and locale surprises.
+
+Temporal avoids this by:
+
+defining strict parsing rules for ISO strings
+using Temporal.Instant.from() for clearly-typed conversions
+Temporal.PlainDate is not a timestamp.
+
+It is just "2026-05-01" with no time and no time zone, so there can not be any shifting.
+
+Temporal is 1-Based
+Date: January = 0
+Temporal: January = 1 (much more human-friendly)*/
+// May 1:
+document.write("<br>")
+const s=new Date(2026, 4, 1);
+// May 1:
+const s1= new Temporal.PlainDate(2026, 5, 1);
+document.write("The month is different in Date and temporal date: "+s.toString()+"<br>"+s1.toString());
+ document.write("<br>");
+//  Date Math
+// Date math with Date often requires manual calculations.
+
+// Date Example
+let start1 = new Date("2026-05-17");
+
+start1.setDate(start1.getDate() + 30);
+document.write(start1.toString());
+// Temporal has built-in date arithmetic.
+
+// Temporal Example
+let start = Temporal.PlainDate.from("2026-05-17");
+
+let result = start.add({ days: 30 });
+ document.write("<br>");
+document.write(result);
+document.write("<br>");
+const instant1 = Temporal.Now.instant();
+// "for getting current time(Temporal.Now.instant())"+
+document.write(instant1);
+document.write("<br>");
+// This returns a PlainDate object using the ISO calendar(Temporal.Now.plainDateISO()): "
+document.write(Temporal.Now.plainDateISO());
+document.write("<br>");
+// Get the Current Date and Time (No Time Zone)
+// Use plainDateTimeISO() to get the current date and time without a time zone.
+document.write(Temporal.Now.plainTimeISO());
+document.write("<br>");
+
+document.write(Temporal.Now.zonedDateTimeISO());
+
+// Summary
+// Temporal.Now provides clear and flexible ways to get the current date and time.
+
+// You can choose the exact type you need instead of using one general-purpose object.
+document.write("<br>");
+// Create an Instant from a String
+// You can also create an Instant from an ISO 8601 string.
+
+// Example
+const instantt = Temporal.Instant.from("2026-05-01T12:00:00Z");
+document.write(instantt);
+
+
+// Replace Date.now()
+// With Date, you often use Date.now() to get the current timestamp.
+
+// Date Example
+document.write("<br>")
+let timestamp1 = Date.now();
+// With Temporal, you can use:
+document.write(timestamp1)
+document.write("<br>");
+// Temporal Example
+const instant2 = Temporal.Now.instant();
+let timestamp = instant2.epochMilliseconds;
+document.write(timestamp)
+
+document.write("<br>")
+// Convert Instant to Date and Time
+// An Instant does not include time zone information.
+
+// You must convert it to a ZonedDateTime to display local time.
+
+// Example
+const instantd = Temporal.Now.instant();
+const zone = instantd.toZonedDateTimeISO("Europe/Oslo");
+document.write(zone);
+document.write("<br>");
+
+/*
+Nanosecond Precision
+Unlike the Date object which uses milliseconds, Temporal.Instant offers 1000 times higher nanosecond precision.
+
+Clear Separation of Types
+Date represents both a date and a time in one object.
+
+Temporal separates different use cases into different types.
+
+Object	Description
+Temporal.Now	Current time (UTC timestamp)
+Temporal.Instant	Exact moment in time (UTC timestamp)
+Temporal.PlainDate	Plain date only (year, month, day)
+Temporal.PlainTime	Plain time without a time zone
+Temporal.PlainDateTime	Date and time without a time zone
+Temporal.ZonedDateTime	Date and time with a time zone
+Temporal.Duration	Length of time (days, hours, minutes)
+This makes code easier to read and less error-prone.*/
+/*When to Use Date?
+You may still use Date for simple tasks such as getting a quick timestamp.
+
+You may also need it if you support older environments without Temporal.
+
+When to Use Temporal?
+You need correct time zone handling.
+
+You work with international users.
+
+You want safe date arithmetic.
+
+You want clear and modern code.
+
+Date works, but it has limitations and confusing behavior.
+
+Temporal is safer, clearer, and designed for modern applications.*/ 
+/*Get the Current Instant
+An Instant represents an exact moment in time (UTC).
+
+It is similar to a timestamp.*/ 
+
+/*This converts the UTC moment to a specific time zone.
+
+When to Use Instant
+When storing timestamps in a database.
+
+When comparing exact moments in time.
+
+When working with logs or events.
+
+When you need a UTC-based value.
+
+Use Instant when you care about the exact moment, not how it looks in a time zone.
+
+Summary
+Temporal.Instant represents an exact UTC moment in time.
+
+It replaces timestamp usage with Date and provides clearer and safer comparisons.*/
+/*When to Use Which?
+Use new Temporal.PlainDate() when:
+You have trusted numeric values
+You want speed
+You want predictable construction
+You are doing date math
+Use Temporal.PlainDate.from() when:
+You are handling user input (strings)
+You are handling external data (JSON)
+You want maximum flexibility
+Get the Current Date
+Use Temporal.Now.plainDateISO() to get today's date.*/  
+document.write("Hello world")
+document.write("<br>")
+document.write(Temporal.Now.plainDateISO());
+document.write("<br>")
+/*Add and Subtract Days
+Use the add() method to add time.
+This does not change the original date.
+Example
+ */
+let date = Temporal.PlainDate.from("2026-05-17");
+let nextWeek1 = date.add({ days: 7 });
+document.write(nextWeek1);
+ /*
+Use the subtract() method to add time.
+Example
+*/
+document.write("<br>")
+let date1 = Temporal.PlainDate.from("2026-05-17");
+let previousWeek = date.subtract({ days: 7 });
+document.write(previousWeek);
+/*
+Add Months or Years
+You can add months or years safely.
+
+Example*/
+document.write("<br>")
+const date2 = Temporal.PlainDate.from("2026-05-17");
+const nextMonth = date2.add({ months: 1 });
+document.write(nextMonth);
+/*The width() Method
+The with() method creates a new plain date with a different year, month, or day.
+
+Example*/
+// Create a Temporal object
+document.write("<br>")
+const date3 = Temporal.PlainDate.from("2026-05-17");
+
+// Replace month and day
+const customDate = date3.with({ month:12, day:25,year:2024});
+document.write(customDate); 
+</script>
+</body>
+</html>

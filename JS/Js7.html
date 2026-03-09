@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators in js</title>
+</head>
+<body>
+    <p class="demo"></p>
+    <script> 
+    document.write("<h3>Arithmetic operator examples:</h3>");
+    // Arithmetic Operators
+    let x = 5;
+    let y = 2;
+    let z = x + y; // Addition
+    document.write("Addition: "+z);
+    document.write("<br>"); 
+    let a = x - y; // Subtraction
+    document.write("substraction: "+a);
+        document.write("<br>"); 
+
+    let b = x * y; // Multiplication
+    document.write("multiplication: "+a);
+        document.write("<br>"); 
+
+    let c = x / y; // Division
+    document.write("divition: "+a);
+        document.write("<br>"); 
+
+    let d = x % y; // Modulus (remainder)
+    document.write("Modules: "+a);
+        document.write("<br>"); 
+
+    let e = x ** y;  
+ document.write("Exponential: "+e);    //document.getElementById("demo").innerHTML = Math.pow(x,2);Exponentiation (ES2016);
+ document.write("<br>"); 
+    let preIncrement = ++x; // Pre-increment: x is incremented before use
+ document.write("Preincrement: "+preIncrement);
+        document.write("<br>"); 
+    let postIncrement = y++; // Post-increment: y is used before incrementing       
+ document.write("postincrement: "+postIncrement);
+        document.write("<br>"); 
+    let preDecrement = --x; // Pre-decrement: x is decremented before use
+  document.write("predecrement: "+preDecrement);
+        document.write("<br>"); 
+    let postDecrement = y--; // Post-decrement: y is used before decrementing
+document.write("postdecrement: "+postDecrement);
+        document.write("<br>");
+        // decremented value 
+        document.write(y);
+    document.write(y--);
+    document.write(y);
+
+
+   // Comparison Operators
+    /*Operator	Description	Example
+==	equal to	x == 5
+===	equal value and equal type	x === 5
+!=	not equal	x != 5
+!==	not equal value or not equal type	x !== 5
+>	greater than	x > 5
+<	less than	x < 5
+>=	greater than or equal to	x >= 5
+<=	less than or equal to	x <= 5*/  
+document.write("<h3>Comparision operator examples:</h3>");
+    let g = 10;
+    let h = "10";
+
+    // comparing two values
+document.write("<br>");   document.write("comparing two values equl are not : "+(g == h));
+ // true (loose comparison)
+    // comparing two values with dataa type
+   document.write("<br>"); 
+ document.write("comparing two values with data type equal or not: "+(g === h)); // false (strict comparison)
+  
+document.write("<br>");   document.write("comparing two values equl are not not equal to: : "+(g != h));
+
+   document.write("<br>"); 
+ document.write("comparing two values with data type equal or not with data types not equal to operator: "+(g !== h));
+    var k="12";
+ document.write("<br>");   document.write("comparing two values by checking greater or not: "+(g > k));
+
+  document.write("<br>");   document.write("comparing two values by checking lesser or not: "+(g < k));
+ 
+   document.write("<br>");   document.write("comparing two values by checking greater equalto  or not: "+(g >=k));
+ document.write("<br>");   document.write("comparing two values by checking lessthen or equal not: "+(g <= k));
+
+ document.write("<br>"); 
+document.write("<h3>Bitwise operator examples:</h3>");
+// Bitwise operator
+// for specify the logical values it is used in and gate and or gate  etc i works on all bits so it is know as bitwise ooperator.
+var a1=2;
+var b1=3;
+ document.write("<br>"); 
+
+document.write("the value returned is the of and "+(a1&b1))//and 0&1=0(1&1)
+ document.write("<br>"); 
+document.write("the value returned is the of or "+(a1|b1))//or 0|1=1(0|0=0)
+ document.write("<br>"); 
+ document.write("the value returned is the of xor "+(a1^b1))//nor 0010^0011=0001(1) 1^1=0(0^1=1) or x*(2^y)
+ document.write("<br>"); 
+  document.write("the value returned is the of"+(~b1));//not 0011 ~ 1100=-4
+  document.write("<br>"); 
+  document.write("the value returned is the of right shift with zero "+(a1>>>b1))// right shift with zero 0010>>>0011
+ document.write("<br>"); 
+ document.write("the value returned is the of left shift "+(a1<<b1))//2pow3 2*2*2*2=16
+ document.write("<br>"); 
+ document.write("the value returned is the of right shift "+(a1>>b1))// 0010=>0001=>0000(0) these zero by digit 3 of b1 3times add zeros from left side. or x/(2^y)
+ document.write("<br>"); 
+ document.write("<br>"); 
+
+// Assignment Operators
+document.write("<h3>Assignment operator examples:</h3>");
+/*JavaScript Assignment Operators
+Assignment operators assign values to JavaScript variables.
+
+Given that x = 10 and y = 5, the table below explains the assignment operators:
+
+Operator	Example	Same As	Result
+=	x = y	x = y	x = 5
++=	x += y	x = x + y	x = 15
+-=	x -= y	x = x - y	x = 5
+*=	x *= y	x = x * y	x = 50
+**=	x **= y	x = x ** y	x = 100000
+/=	x /= y	x = x / y	x = 2
+%=	x %= y	x = x % y	x = 0
+:	x: 45	size.x = 45	x = 45*/ 
+    var f = 10;
+    document.write("'=' for assigning value: "+f);
+    document.write("<br>");
+    document.write("here the value of f is 10 adds 5: "+(f += 5));
+     // f = f + 5
+    document.write("<br>");
+
+    document.write("here the value of f is 15 substracts 5: "+(f -= 5));// f = f - 5
+
+document.write("<br>");
+
+    document.write("here the value of f is 10 multiply 5: "+(f *= 5)); // f = f * 5
+    document.write("<br>");
+
+    document.write("here the value of f is 50 divides 5: "+(f /= 5)); // f = f / 4
+
+
+ document.write("<h3>Logical operator examples:</h3>")
+    /*JavaScript Logical Operators
+    
+Operator	Description
+&&	logical and
+||	logical or
+!	logical not*/
+/*Logical Assignment Operators
+Operator	Example	Result
+&&=	true &&= 10	x = 10
+||=	false ||= 10	x = 10
+??=	null ??= 10	x = 10*/ 
+// The Spread (...) Operator
+// The ... operator splits iterables into individual elements.
+ let text = "12345";
+let min = Math.min(...text);
+let max = Math.max(...text);
+    let i = true;
+    let j = false;
+   document.write("All condition true the it return true else false: "+(i && j)); // false 0&1=0(1&1=1) all condition true the it return true else false
+    document.write("<br>"); 
+   document.write("One condition false in multiple conditions it return false else true: "+(i || j)); // true 0|1=0(1|1=1) all condition true the it return true else false
+    document.write("<br>"); 
+   document.write("!operator becoming true to false"+!i); // false
+    document.write("<br>"); 
+   document.write("!operator becoming false to true"+!j); // true         
+    document.write("<br>"); 
+ document.write("<h3>Special operators examples:</h3>")
+var b1=true;
+var b2=false;
+var b3= b2==b1?2:4;
+document.write("ternary operator '?' check condition (b3= b2==b1?2:4;) 2for true 4 for false: "+b3);
+document.write("<br>");
+let b4=(1,2,3);
+document.write("value of b4 to return the one value  b4=(1,2,3); in coma operator seperated value the end one return: "+b4);
+document.write("<br>");
+
+let b5={
+    fname:"prashant",
+    lname:"c"
+}
+// operator delete
+delete b5.fname;
+document.write("deleting value ex:(delete b5.fname;) "+b5.fname);
+document.write("<br>");
+// in operator
+let b6='c' in b5 ? "true":"false";
+document.write("to check value is presented in the specified object or any ex(let b6='c' in b5 ? 'true':'false'; :  "+b6 );
+document.write("<br>");
+// instance of operator for cheacking it is instanceof a specific class or not 
+var b7=b5 instanceof String;
+document.write("if b5 object is instance of the instance of String: "+b7);
+// 'new keyword'
+class aa{
+
+}
+// for creating the class object
+var bg= new aa();
+
+// typeof operator
+document.write( "for cheaking variable or any type: "+typeof(x));
+document.write("<br>");
+
+// void operator (this specifies the below func() has no return type )
+javascript: void func();
+document.write("<br>");
+
+</script>
+<!-- / void operator (this specifies the below func() has no return type ) -->
+ <a href="javascript:void(0)">Hello</a>
+</body>
+</html>

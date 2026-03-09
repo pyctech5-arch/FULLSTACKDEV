@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring JS</title>
+</head>
+<body>
+    <!-- Destructuring Assignment Syntax
+The destructuring assignment syntax can unpack objects into variables:
+
+let {firstName, lastName} = person;
+Object Destructuring -->
+   <script>
+const obj={
+    fname:"manoj",
+    age:21,
+lname:"bajpay"
+}
+let a={fname,lname}=obj;
+document.writeln("Destructured data true the (let a={fname,lname}=obj;) variable :"+fname+" "+lname);
+document.writeln("<BR><br>")
+const obj1={
+    ffname:"manoj",
+    aage:21,
+llname:"bajpay"
+}
+let {ffname, llname, country = "US"} = obj1;
+document.write("Destructured data true the (let a={fname,lname,country='Us'}=obj;) variable :"+ffname+" "+llname+" "+country);
+document.writeln("<BR><br>")
+
+// Destructuring
+let {lname : name} = obj;
+document.writeln("using (let {lame : name} = obj1;): "+name)
+
+   </script> 
+</body>
+</html>
