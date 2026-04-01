@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CSS</title>
+        <style> 
+        #div1 {
+          border-radius: 15px 50px 30px 5px;
+          background: #04AA6D;
+          width: 200px;
+          height: 150px; 
+        }
+        
+        #div2 {
+          border-radius: 15px 50px 30px;
+          background: #04AA6D;
+          width: 200px;
+          height: 150px; 
+        }
+        
+        #div3 {
+          border-radius: 15px 50px;
+          background: #04AA6D;
+          width: 200px;
+          height: 150px; 
+        } 
+        
+        #div4 {
+          border-radius: 15px;
+          background: #04AA6D;
+          width: 200px;
+          height: 150px; 
+        } 
+        </style>
+</head>
+<body>
+    <h2>Rounded corners</h2>
+    <p>CSS border-radius Property
+The border-radius property defines the radius of an element's corners.
+
+This property can be applied to all elements with a background-color, a border, or a background-image.
+
+Here are three examples:</p>
+
+
+
+<h1>The border-radius Property</h1>
+
+<p>Four values - border-radius: 15px 50px 30px 5px:</p>
+<div id="div1"></div>
+
+<p>Three values - border-radius: 15px 50px 30px:</p>
+<div id="div2"></div>
+
+<p>Two values - border-radius: 15px 50px:</p>
+<div id="div3"></div>
+
+<p>One value - border-radius: 15px:</p>
+<div id="div4"></div>
+
+<pre>CSS Rounded Corners Properties
+Property	Description
+border-radius	A shorthand property for setting all the four border-*-*-radius properties
+border-top-left-radius	Defines the shape of the border of the top-left corner
+border-top-right-radius	Defines the shape of the border of the top-right corner
+border-bottom-right-radius	Defines the shape of the border of the bottom-right corner
+border-bottom-left-radius	Defines the shape of the border of the bottom-left corner</pre>
+
+<h2>CSS Border Images</h2>
+<pre>CSS border-image Property
+The border-image property allows you to define an image to be used as the border around an element, instead of the normal border.
+
+This property takes an image and slices it into nine sections, like a tic-tac-toe board. It then places the corners at the corners, and the middle sections are repeated or stretched as you specify.
+
+The border-image property is a shorthand property for the following properties:
+
+border-image-source - defines the path to the image
+border-image-slice - defines how to slice the image
+border-image-width - defines the width of the image
+border-image-outset defines the amount by which the border image area extends beyond the border box
+border-image-repeat - defines how to repeat the image
+Note: For border-image to work, the element also needs the border property set!</pre>
+<style>
+ #borderimg { 
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 30 round;
+}
+#borderimg1 {
+  border: 10px solid transparent;  /* Required for border-image */
+  padding: 15px;
+  border-image: url(border.png) 30 stretch;
+}
+</style>
+<h1>The border-image Property</h1>
+
+<p>Here, the middle sections of the image are repeated to create the border:</p>
+<p id="borderimg">border-image: url(border.png) 30 round;</p>
+
+<p>Here is the original image:</p><img src="border.png">
+<p>Here, the stretch value specifies that the middle section of the image is stretched to fill the area:</p>
+<p>Here, the middle sections of the image are repeated to create the border:</p>
+<p id="borderimg1"> An img as an border</p>
+
+<h2>CSS border-image - Different Slice Values
+Different slice values completely changes the look of the border image:</h2>
+
+<style>
+    #borderimg2 {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 50 round;
+  margin-bottom: 15px;
+}
+
+#borderimg3 {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 20% round;
+  margin-bottom: 15px;  
+}
+
+#borderimg4 {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 30% round;
+  margin-bottom: 15px;  
+}
+</style>
+<h1>The border-image Property</h1>
+
+<p>Different slice values completely changes the look of the border image:</p>
+
+<div id="borderimg2">border-image: url(border.png) 50 round;</div>
+<div id="borderimg3">border-image: url(border.png) 20% round;</div>
+<div id="borderimg4">border-image: url(border.png) 30% round;</div>
+<!-- CSS Border Image Properties
+Property	Description
+border-image	A shorthand property for setting all the border-image-* properties
+border-image-source	Specifies the path to the image to be used as a border
+border-image-slice	Specifies how to slice the border image
+border-image-width	Specifies the widths of the border image
+border-image-outset	Specifies the amount by which the border image area extends beyond the border box
+border-image-repeat	Specifies whether the border image should be repeated, rounded or stretched -->
+</body>
+</html>

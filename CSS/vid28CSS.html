@@ -46,7 +46,31 @@ background-color: #3e6dc4;
     <span style="display:inline-block;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tempora qu        o totam obcaecati quam         , aperiam est reprehenderit nobis quibusdam cupiditate!</span><br>
    <h3 style="display: grid; place-items:center">Display:inline</h3>
     <span style="display: inline;">Lorem ip sum dolor sit amet consectetur a        dipisicing elit. Incidunt tempora  quo totam obcaecati quam, aperiam            est reprehenderit nobis quibusdam cupiditate!</span><br>
-  <!-- Horizontal Alignment
+  <style>
+#p{
+  padding: 10px;
+  border: 1px solid black;
+background-color: lightgreen;
+color: white;
+cursor: pointer;
+margin-bottom: 0px;
+}
+#h{
+  margin-top: 0px;
+  display:none;
+  border: 2px solid black;
+  background-color: gray;
+}
+</style>
+  <p id="p" onclick="myfunc()">Click here to see more contents</p>
+  
+  <p id="h">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quos iste impedit quia voluptatem temporibus omnis minus nulla. Omnis nesciunt vitae sint, nobis ratione enim illo porro animi culpa, alias modi doloribus error nulla, magnam dicta repellendus? Ab sequi architecto nostrum fugit cumque, magni mollitia in autem, corrupti maxime velit!</p>
+  <script>
+    function myfunc(){
+      document.getElementById("h").style.display="block";
+    }
+  </script>
+    <!-- Horizontal Alignment
 There are several ways to horizontally align elements:
 
 margin: auto - Center block elements
@@ -123,5 +147,77 @@ background-color: #00FF00;
 <p>dsfs dsv</p>
 <p>fsdfsfwe rew</p>
 <p>erwe erw e</p>
+<style>
+#con{
+  display: flex;
+  gap: 13px;
+}
+img{
+  height: 200px;
+  width: 200px;
+}
+.box{
+display:block;
+  border: 1px solid black;
+  width: 200px;
+  padding: 5px;
+}
+button{
+  padding: 15px;
+  background-color: green;
+  border: none;
+  border-radius: 5%;
+  color: white;
+  width: 200px;
+  font-size: 22px;
+  cursor: pointer;
+}
+</style>
+<div id="con">
+  <div class="box" id="1" >
+    <img src="camu.jpeg"  alt="">
+    <button onclick="none()">display None</button>
+  </div>
+  <div class="box"  id="2">
+    <img src="panda.jpeg"   alt="">
+<button onclick="hiden()">visiblity hidden</button>
+  </div>
+  <div class="box">
+    <img src="tres.jpeg"    alt="">
+<button onclick="reset()"> reset all</button>
+  </div>
+</div>
+<script>
+  function none(){
+    document.getElementById("1").style.display="none";
+  }
+
+function hiden(){
+    document.getElementById("2").style.visibility="hidden";
+  }
+  
+function reset() {
+document.getElementById("1").style.display="block";
+document.getElementById("2").style.visibility="visible";
+}
+</script>
+<style>
+  div{
+    display: flex;
+  }
+  img{
+    position: relative;
+    z-index: -1;
+  }
+#w{
+    position:absolute;
+}
+</style>
+<h2>using zindex</h2>
+<div>
+  <p id="w">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis suscipit nostrum quibusdam veniam nulla minus dolorum dignissimos corporis quasi maiores, dicta et facere? Quibusdam dolores veniam ducimus reprehenderit! Omnis, distinctio. Ratione commodi ducimus laboriosam minima recusandae natus velit incidunt, atque fugiat at fuga aut nisi eum quaerat officiis quia iusto?</p>
+  <img src="img_tree.png" alt="">
+</div>
+<p>grgcdcdcdc</p>
 </body>
 </html>

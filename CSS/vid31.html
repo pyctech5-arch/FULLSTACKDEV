@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Forms</title>
+</head>
+<body>
+  <h1>Comment forms to see other styling instead of whitch require.</h1>  
+    <!-- CSS Form Inputs
+Styling Form Input Fields
+With CSS, you can style most of the different input types, like text fields, password fields, checkboxes, radio buttons, and file inputs. You can also style input labels and form buttons.
+
+Some commonly used CSS properties for styling input fields, are:
+
+width
+padding
+margin
+border
+border-radius
+background-color
+color
+font-size
+Style Input Width
+The width property is used to set the width of an input field.
+
+Tip: The default width of an HTML input text field, is 20 characters.
+
+Here we set the width to 100%:
+
+First Name 
+Example
+input {
+  width: 100%;
+}
+The example above applies to all <input> elements. If you only want to style a specific input type, you can use attribute selectors:
+
+input[type=text] - will only select text fields
+input[type=password] - will only select password fields
+input[type=number] - will only select number fields
+etc..
+Style Input Padding
+The padding property is used to add some space inside the text field.
+
+Tip: When you have several input fields after each other, you might also want to add some margin, to add more space around them:
+
+First Name 
+ Last Name 
+Example
+input[type=text] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+Note that we have set the box-sizing property to border-box. This makes sure that the padding and eventually borders are included in the total width and height of the elements.
+Read more about the box-sizing property in our CSS Box Sizing chapter.
+
+REMOVE ADS
+
+Style Input Border
+The border property is used to change the border size and color, and the border-radius property can be used to add rounded corners:
+
+First Name 
+Example
+input[type=text] {
+  border: 2px solid red;
+  border-radius: 8px;
+}
+If you only want a bottom border, use the border-bottom property:
+
+First Name 
+Example
+input[type=text] {
+  border: none;
+  border-bottom: 1px solid red;
+}
+Style Input Background Color and Color
+The background-color property is used to add a background color to the input, and the color property is used to change the text color:
+
+John
+Example
+input[type=text] {
+  background-color: #3CBC8D;
+  color: white;
+}
+ -->
+<h2>CSS Form Focus and Icons</h2>
+
+<style>
+label {display: block;}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+}
+
+input[type=text]:focus {
+  background-color: lightblue;
+}
+</style>
+</head>
+<body>
+
+<h2>Input fields with color on :focus</h2>
+
+<p>Here, the input field gets a color when it gets focus (clicked on):</p>
+
+<form>
+  <label for="fname">First Name</label>
+  <input type="text" id="fname" name="fname" value="John">
+  <label for="lname">Last Name</label>
+  <input type="text" id="lname" name="lname" value="Doe">
+</form>
+
+<style>
+form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+label {display: block;}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+</style>
+<body>
+
+<h2>Style an HTML Form with CSS</h2>
+
+<form action="/action_page.php">
+  <label for="fname">First Name</label>
+  <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+  <label for="lname">Last Name</label>
+  <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+  <label for="country">Country</label>
+  <select id="country" name="country">
+    <option value="australia">Australia</option>
+    <option value="canada">Canada</option>
+    <option value="usa">USA</option>
+  </select>
+  
+  <input type="submit" value="Submit">
+</form> 
+
+<!-- CSS Form Inputs
+Styling Form Input Fields
+With CSS, you can style most of the different input types, like text fields, password fields, checkboxes, radio buttons, and file inputs. You can also style input labels and form buttons.
+
+Some commonly used CSS properties for styling input fields, are:
+
+width
+padding
+margin
+border
+border-radius
+background-color
+color
+font-size
+Style Input Width
+The width property is used to set the width of an input field.
+
+Tip: The default width of an HTML input text field, is 20 characters.
+
+Here we set the width to 100%: -->
+
+<style> 
+input {
+  width: 100%;
+}
+</style>
+</head>
+
+
+<h2>A Full-width Input Field</h2>
+
+<form>
+  <label for="fname">First Name</label>
+  <input type="text" id="fname" name="fname">
+</form>
+<!-- The example above applies to all <input> elements. If you only want to style a specific input type, you can use attribute selectors:
+
+input[type=text] - will only select text fields
+input[type=password] - will only select password fields
+input[type=number] - will only select number fields
+etc..
+Style Input Padding
+The padding property is used to add some space inside the text field.
+
+Tip: When you have several input fields after each other, you might also want to add some margin, to add more space around them: -->
+<style>
+label {display: block;}
+ 
+input[type=text] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+</style>
+</head>
+
+<h2>Input Fields with Padding</h2>
+
+<form>
+  <label for="fname">First Name</label>
+  <input type="text" id="fname" name="fname">
+  <label for="lname">Last Name</label>
+  <input type="text" id="lname" name="lname">
+</form>
+
+<!-- Style Input Border
+The border property is used to change the border size and color, and the border-radius property can be used to add rounded corners:
+
+ -->
+<style>
+label {display: block;}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 8px;
+}
+</style>
+</head>
+<body>
+
+<h2>Input fields with Red Rounded Borders</h2>
+
+<form>
+  <label for="fname">First Name</label>
+  <input type="text" id="fname" name="fname">
+  <label for="lname">Last Name</label>
+  <input type="text" id="lname" name="lname">
+</form>
+
+<style>
+label {display: block;}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid red;
+}
+</style>
+</head>
+<body>
+
+<h2>Input Fields with Bottom Border</h2>
+
+<form>
+  <label for="fname">First Name</label>
+  <input type="text" id="fname" name="fname">
+  <label for="lname">Last Name</label>
+  <input type="text" id="lname" name="lname">
+</form>
+
+<!-- Style Input Background Color and Color
+The background-color property is used to add a background color to the input, and the color property is used to change the text color:
+
+ -->
+<style>
+label {display: block;}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #3CBC8D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h2>Input Fields with Background Color and Text Color</h2>
+
+<form>
+  <label for="fname">First Name</label>
+  <input type="text" id="fname" name="fname" value="John">
+  <label for="lname">Last Name</label>
+  <input type="text" id="lname" name="lname" value="Doe">
+</form>
+
+
+
+</body>
+</html>

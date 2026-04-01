@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math functions</title>
+</head>
+<body>
+    <!-- CSS Math Functions
+CSS math functions allow mathematical expressions to be used as property values.
+
+In this chapter, we will explain the following math functions:
+
+calc()
+max()
+min()
+clamp()
+The CSS calc() Function
+The calc() function performs a mathematical calculation that will be used as the property value.
+
+The calc() function supports addition (+), subtraction (-), multiplication (*), and division (/), and can combine different units, like pixels and percentages.
+
+CSS Syntax
+calc(expression)
+Value	Description
+expression	Required. A mathematical expression. The result will be used as the value
+Let us look at an example:
+
+Example
+Use calc() to calculate the width and the height of a <div> element: -->
+
+<style>
+#div1 {
+  width: calc(100% - 100px);
+  height: calc(30vh + 50px);
+  margin: auto;
+  border: 1px solid black;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+
+<h2>The calc() Function</h2>
+
+<p>The width of #div1 is set to 100% minus 100px for padding. This ensures that the #div1 takes up 100% of the container's width, with an offset of 50px on each side (with margin: auto;).</p>
+
+<p>The height of #div1 is set to 30% of the height of the viewport + 50px.</p>
+
+<div id="div1">Some text...</div>
+  <!-- The CSS max() Function
+The max() function takes a comma-separated list of values, and uses the largest value from the list as the property value.
+
+CSS Syntax
+max(value1, value2, ...)
+Value	Description
+value1, value2, ...	Required. A list of comma-separated values
+Let us look at an example:
+
+Example
+Use max() to set the width of #div1 to whichever value is largest, 50% or 300px:
+ -->
+
+ <style>
+#div1 {
+  height: 100px;
+  width: max(50%, 300px);
+  border: 1px solid black;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+
+<h2>The max() Function</h2>
+
+<p>Use max() to set the width of #div1 to whichever is largest: 50% or 300px.</p>
+
+<p>Resize the browser window to see the effect!</p>
+
+<div id="div1">Some text...</div>
+<!--The CSS min() Function
+The min() function takes a comma-separated list of values, and uses the smallest value from the list as the property value.
+
+CSS Syntax
+min(value1, value2, ...)
+Value	Description
+value1, value2, ...	Required. A list of comma-separated values
+Let us look at an example:
+
+Example
+Use min() to set the width of #div1 to whichever value is smallest, 50% or 300px:  -->
+
+<style>
+#div1 {
+  height: 100px;
+  width: min(50%, 300px);
+  border: 1px solid black;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+
+<h2>The min() Function</h2>
+
+<p>Use min() to set the width of #div1 to whichever value is smallest: 50% or 300px.</p>
+
+<p>Resize the browser window to see the effect.</p>
+
+<div id="div1">Some text...</div>
+<!-- The CSS clamp() Function
+The clamp() function is used to set a value that will adjust responsively between a minimum value and a maximum value depending on the size of the viewport.
+
+The clamp() function has three parameters: a minimum value, a preferred value, and a maximum value. If the preferred value is smaller than the minimum value or larger than the maximum value, the preferred value is used.
+
+CSS Syntax
+clamp(min, preferred, max)
+Value	Description
+min	Optional. Specifies the smallest allowed value
+preferred	Required. Specifies the preferred value
+max	Optional. Specifies the largest allowed value
+Let us look at an example:
+
+Example
+Set the <h2> element's minimum font-size to 2rem, and the maximum font-size to 3.5rem. Also, set the <p> element's minimum font-size to 1rem, and the maximum font-size to 2.5rem:
+
+ -->
+<style>
+h2 {
+  font-size: clamp(2rem, 2.5vw, 3.5rem);
+}
+
+p {
+  font-size: clamp(1rem, 2.5vw, 2.5rem);
+}
+</style>
+</head>
+<body>
+
+<h2>The clamp() Function</h2>
+
+<p>Resize the window to see the effect!</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac laoreet quam, id aliquet nisl. Etiam id eros ligula. Aenean euismod, enim sed mollis feugiat, magna massa cursus leo, ut maximus metus eros non ante. Praesent eget tincidunt mauris, ut euismod ipsum. In hac habitasse platea dictumst. In dapibus tortor magna, elementum elementum neque sagittis id. Integer vestibulum semper dui, quis finibus libero elementum nec.</p>
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: flex;
+}
+
+.sidebar {
+  background-color: dimgray;
+  color: white;
+  padding: 20px;
+  width: calc(100% / 3);
+}
+
+.content {
+  background-color: #f1f1f1;
+  width: calc(100% - 100% / 3);
+  padding: calc(1rem + 10px);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="sidebar">Sidebar</div>
+  <div class="content">Main Content</div>
+</div>
+<h2>Imp Optimization For Website</h2>
+<pre>
+CSS Performance Optimization
+Optimizing CSS
+Optimizing CSS makes your website load faster and run more smoothly; which also results in a better user experience.
+
+Here are some tips for optimizing CSS:
+
+1. Use Simple Selectors
+Use simple selectors when possible. Complex selectors increase the parsing time.
+
+Bad Example
+body #navlist ul li a.button:hover {
+  background-color: blue;
+}
+Better Example
+.button:hover {
+  background-color: blue;
+}
+2. Avoid Universal Selector for Styling
+Avoid the universal selector (*) when not strictly necessary. The universal selector (*) affects every element and can slow down page rendering.
+
+ Example
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+3. Avoid Inline Styles
+Avoid inline styles when not necessary. Inline styles make your HTML heavier and are harder to manage.
+
+Bad Example
+<div style="color: red; font-size: 18px;">Hello</div>
+<p style="color: blue; font-size: 16px;">Test</p>
+REMOVE ADS
+
+4. Avoid @import
+Avoid using @import for loading external CSS, as it delays stylesheet loading.
+
+Add external CSS with the <link> tag in the head section, so it loads before the page is rendered.
+
+Example
+<link rel="stylesheet" href="style.css">
+5. Use Shorthand Properties
+Use shorthand properties when possible. It saves space and is faster to parse.
+
+Example
+/* Long version */
+margin-top: 10px;
+margin-right: 20px;
+margin-bottom: 10px;
+margin-left: 20px;
+
+/* Shorthand version */
+margin: 10px 20px;
+6. Cut Down Unnecessary Animations
+A high number of animations and large animations require more processing power to handle, which degrades performance. So, remove unnecessary animations.
+
+7. Use Properties that Not Cause Repaint of Animations
+Animation performance relies also on what properties you are animating.
+
+Some properties (like width, height, left, top), trigger a layout recalculation when animated, and should be avoided.
+
+If possible, use animation properties that do not cause repaint, like transforms, opacity and filter.
+
+8. Combine and Minify CSS
+Use one CSS file when possible, and remove spaces and comments to reduce file size.
+
+You can use tools like:
+
+CSS Minifier
+PostCSS
+Online compressors
+9. Cache Your CSS
+Make sure your CSS file is cached by the browser by giving it a long expiration time in your server settings. This reduces how often users need to re-load it.
+
+Summary
+Keep selectors short and simple
+Avoid layout-thrashing operations
+Use efficient animation techniques
+Use external, minified, and cached stylesheets    
+</pre>
+</body>
+</html>

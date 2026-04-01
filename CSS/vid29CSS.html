@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+<style>
+    .overflow{
+        height: 200px;
+        border: 1px solid black;
+        width: 300px;
+    }
+   img:hover{
+     opacity:1.0;
+    cursor: pointer;
+   }
+    img{
+        opacity: 0.5;
+    }
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h2, p {
+  margin: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+position: fixed;
+top: 0;
+width:100vw;
+z-index: 1;
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+    background-color: #111111;
+}
+
+#btu{
+  
+}
+ul li a #btu:hover{
+ background-color: #111111;
+}
+/* For verticle navbar */
+#a {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 130px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  margin-top: 45px;
+  display: none;/*Remove this while using this*/
+}
+
+.b .c {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  width: 130px;
+  text-align:center;
+}
+
+.b .c.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.b .c:hover:not(.active) {
+  background-color: #555555;
+  color: white;
+}
+
+/* Drop down Menu */
+.dropbtn {
+  background-color: #333333;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  padding-bottom:12px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.dropdown1 {
+  position:fixed;
+  margin-left: 355px;
+  margin-top:0;
+  top:0;
+  z-index: 1;
+}
+
+.dropdown-content1 {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content1 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content1 a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown1:hover .dropdown-content1 {
+  display: block;
+}
+
+.dropdown1:hover .dropbtn {
+ background-color: #111111;
+}
+/* Drop dowm image */
+.dropdown2 {
+  position: relative;
+}
+
+.dropdown-content2 {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  opacity:1.0;
+}
+.dropdown2 >img{
+  opacity: 1.0;
+}
+.dropdown-content2>img{
+opacity:1.0;
+}
+
+.dropdown2:hover .dropdown-content2 {
+  display: block;
+}
+
+.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+
+/* Image Gallery */
+div.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+div.gallery-item {
+  margin: 5px;
+  border: 1px solid #ccc;
+  width: 180px;
+}
+
+div.gallery-item:hover {
+  border: 1px solid #777;
+}
+
+div.gallery-item img {
+  width: 100%;
+  height: auto;
+}
+
+div.gallery-item div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+/* Image spirites */
+#navlist {
+  position: relative;
+}
+
+#navlist li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  top: 0;
+}
+
+#navlist li, #navlist a {
+  height: 44px;
+  display: block;
+}
+
+#home {
+  left: 0px;
+  width: 46px;
+  background: url('img_navsprites_hover.gif') 0 0;
+}
+
+#prev {
+  left: 60px;
+  width: 43px;
+  background: url('img_navsprites_hover.gif') -47px 0;
+}
+
+#next {
+  left: 120px;
+  width: 43px;
+  background: url('img_navsprites_hover.gif') -91px 0;
+}
+
+#home a:hover {
+  background: url('img_navsprites_hover.gif') 0 -45px;
+}
+
+#prev a:hover {
+  background: url('img_navsprites_hover.gif') -47px -45px;
+}
+
+#next a:hover {
+  background: url('img_navsprites_hover.gif') -91px -45px;
+}
+</style>
+</head>
+<body>
+  <script src="https://kit.fontawesome.com/1068acec9b.js" crossorigin="anonymous"></script>
+    <ul>
+      <li ><a onmouseenter="cloose()" onmouseover="openn()" href="" ><i class="fas fa-bars"></i></a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+
+     <div class="dropdown1">
+       <button class="dropbtn">Dropdown Menu</button>
+       <div class="dropdown-content1">
+         <a href="#">Link 1</a>
+         <a href="#">Link 2</a>
+         <a href="#">Link 3</a>
+        </div></div>
+  
+      <ul id="a">
+        <li class="b"><a class="c active" href="#home">Home</a></li>
+        <li class="b"><a class="c" href="#news">News</a></li>
+        <li class="b"><a class="c" href="#contact">Contact</a></li>
+        <li class="b"><a class="c" href="#about">About</a></li>
+      </ul>
+    </ul>
+    <h2>Horizontal Navbar Using Float</h2>
+    
+    <p>Some text on the website.</p>
+    <h2>Opacity</h2>
+        <img  src="dogu.jpeg" width="300px" alt="">
+    <h2>overflow hidden</h2>
+    <div class="overflow" style="overflow: hidden;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius nostrum iure, cum harum nihil illo commodi iusto error, facere ad, porro tempore laudantium molestiae mollitia rem ipsa! Soluta sunt non reiciendis sed, mollitia tenetur, ad recusandae sequi ea ex excepturi! Provident similique error nobis id aliquid excepturi quaerat? Perferendis, modi eius alias neque voluptatum quis dicta corrupti fugit temporibus voluptates, earum repellendus quaerat aliquid amet soluta eaque debitis rem aliquam nobis ipsa velit distinctio? Saepe, provident repellat magnam voluptatum veniam quisquam earum porro minus sed sit architecto exercitationem, veritatis debitis minima culpa soluta. Necessitatibus deleniti magnam et vero totam deserunt.</div>
+    <h2>overflow scroll</h2>
+    <div class="overflow" style="overflow: scroll;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex ipsam hic quia ipsum aut itaque ut sint laboriosam optio reiciendis, quis fugiat veritatis omnis dolores obcaecati quisquam, iure recusandae facilis. Voluptate fuga praesentium earum odio ipsam eius. Possimus reiciendis deserunt ipsa quis illum ad praesentium numquam, architecto dolor, quisquam illo quaerat, tempore voluptates facilis unde ea. Animi expedita, ratione doloribus suscipit dolorem autem saepe ullam, iste ut porro deleniti fugiat enim quis maiores temporibus assumenda recusandae obcaecati. Eos consectetur cum modi labore tempore id, libero amet ratione debitis illo at autem dignissimos doloribus laboriosam quaerat recusandae consequuntur! Omnis, provident iste?</div>
+    <h2>overflow auto</h2>
+    <div class="overflow" style="overflow: auto;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam id assumenda officia excepturi rem? Corporis placeat voluptatem ut ducimus eligendi a veritatis velit porro consequuntur! Mollitia nostrum quia quod, sapiente distinctio illo dolorum asperiores sint libero veniam excepturi, optio reiciendis nihil aperiam commodi! Explicabo quas accusantium fugit recusandae magnam quis, facere assumenda. Impedit itaque nobis magnam rerum. Sed a, officiis natus at blanditiis reiciendis. Autem deleniti alias recusandae rerum quidem voluptate sequi libero labore sapiente odit sit iusto eius explicabo in facere at amet, est corrupti? Sit, voluptatibus. Deserunt tenetur totam ullam laborum reprehenderit ab distinctio magni quaerat quod non!</div>
+   <h2>overflow x</h2>   
+    <div class="overflow" style="overflow-x:scroll;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quisquam, repellendus eaque officiis itaque ipsam, voluptas illo, accusantium libero expedita minus odio ipsa. Recusandae fugiat eius velit aspernatur illo, provident dignissimos eveniet nihil quis sunt ratione iusto labore est rem, quidem at suscipit laborum libero doloribus doloremque corporis sit odio, molestias quae. Est eos illum earum, eligendi suscipit dignissimos veniam ad fuga optio placeat repellat voluptate necessitatibus veritatis quia unde? Doloribus cupiditate autem laudantium, veritatis blanditiis reiciendis deleniti magnam quia? Fugiat consequuntur ab molestias voluptate alias labore temporibus, quas velit eligendi ad porro amet quibusdam non accusamus eius maxime dolores.</div>
+ <h2>overflow y</h2>   
+    <div class="overflow" style="overflow-y:scroll;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quisquam, repellendus eaque officiis itaque ipsam, voluptas illo, accusantium libero expedita minus odio ipsa. Recusandae fugiat eius velit aspernatur illo, provident dignissimos eveniet nihil quis sunt ratione iusto labore est rem, quidem at suscipit laborum libero doloribus doloremque corporis sit odio, molestias quae. Est eos illum earum, eligendi suscipit dignissimos veniam ad fuga optio placeat repellat voluptate necessitatibus veritatis quia unde? Doloribus cupiditate autem laudantium, veritatis blanditiis reiciendis deleniti magnam quia? Fugiat consequuntur ab molestias voluptate alias labore temporibus, quas velit eligendi ad porro amet quibusdam non accusamus eius maxime dolores.</div>
+    <h2>overflow visible</h2>   
+    <div class="overflow" style="overflow: visible;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quisquam, repellendus eaque officiis itaque ipsam, voluptas illo, accusantium libero expedita minus odio ipsa. Recusandae fugiat eius velit aspernatur illo, provident dignissimos eveniet nihil quis sunt ratione iusto labore est rem, quidem at suscipit laborum libero doloribus doloremque corporis sit odio, molestias quae. Est eos illum earum, eligendi suscipit dignissimos veniam ad fuga optio placeat repellat voluptate necessitatibus veritatis quia unde? Doloribus cupiditate autem laudantium, veritatis blanditiis reiciendis deleniti magnam quia? Fugiat consequuntur ab molestias voluptate alias labore temporibus, quas velit eligendi ad porro amet quibusdam non accusamus eius maxime dolores.</div>
+<br><br><br><br><br><br>
+<style>
+  .dropdown{
+cursor: pointer;
+position: relative;
+  }
+  .dropdown-content{
+box-shadow:2px 2px 22px 2px;
+width: 140px;
+padding: 6px;
+border-radius: 5px;
+display: none;
+position: absolute;
+  }
+.dropdown:hover .dropdown-content{
+    display: block;
+  }
+</style>
+<h2>Dropdown menues</h2>
+<div class="dropdown">Mouse over me!
+  <div class="dropdown-content">Hello World!</div>
+</div>
+<br><br><br>
+
+
+
+<h2>Dropdown Menu</h2>
+<p>Move the mouse over the button to open the dropdown menu.</p>
+
+<h2>Dropdown Image</h2>
+<p>Move the mouse over the image below to open the dropdown content.</p>
+
+<div class="dropdown2">
+  <img src="panda.jpeg" alt="Cinque Terre" width="100" height="50">
+  <div class="dropdown-content2">
+    <img src="panda.jpeg" alt="Cinque Terre" width="300" height="200">
+    <div class="desc">Beautiful panda</div>
+  </div>
+</div>
+
+<script>
+
+     function cloose(){
+        document.getElementById("a").style.display="none"
+    }
+     function openn(){
+        document.getElementById("a").style.display="block"
+    }
+</script>
+
+
+<h2>Image Gallery</h2>
+
+<div class="gallery">
+
+<div class="gallery-item">
+  <a target="_blank" href="camu.jpeg">
+    <img style="opacity: 1.0;" src="camu.jpeg" alt="Cinque Terre" width="600" height="400">
+  </a>
+  <div class="desc">Cinque Terre</div>
+</div>
+
+<div class="gallery-item">
+  <a target="_blank" href="dogu.jpeg">
+    <img style="opacity: 1.0;"  src="dogu.jpeg" alt="Forest" width="600" height="400">
+  </a>
+  <div class="desc">Green Forest</div>
+</div>
+
+<div class="gallery-item">
+  <a target="_blank" href="tres.jpeg">
+    <img style="opacity: 1.0;" src="tres.jpeg" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc">Northern Lights</div>
+</div>
+
+<div class="gallery-item">
+  <a target="_blank" href="ironman.png">
+    <img style="opacity: 1.0;" src="ironman.png" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc">Mountains</div>
+</div>
+
+</div>
+<h2>Image sprites</h2>
+<!-- ✅ Why they are used
+1. Reduce HTTP requests
+
+Instead of loading many small images (icons, buttons, etc.), the browser loads one single image.
+👉 Fewer requests = faster page load.
+
+2. Improve performance
+
+Especially on older or slower networks, multiple requests can slow things down. Sprites help make websites feel faster.
+
+3. Better caching
+
+The combined image is cached once.
+👉 Next time the page loads, no need to download each icon again.
+
+4. Smooth UI interactions
+
+Used for hover effects, animations, or states (like normal / hover / active button) without loading new images. -->
+
+<h2>Image Sprites - Hover effect</h2>
+
+<ul id="navlist">
+  <li id="home"><a href="#"></a></li>
+  <li id="prev"><a href="#"></a></li>
+  <li id="next"><a href="#"></a></li>
+</ul>
+<a href="https://www.w3schools.com/css/css_image_sprites.asp">click hereto know more about image spirits</a>
+</body>
+</html>

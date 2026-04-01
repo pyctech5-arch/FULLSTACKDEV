@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS form elements</title>
+</head>
+<body>
+    <!-- Style Textarea
+By default, a <textarea> can be resized with a "grabber" in the bottom right corner. To remove the grabber, set the resize property to none: -->
+
+    <style> 
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+</style>
+</head>
+<body>
+
+<h2>Styling textarea</h2>
+
+<p><strong>Tip:</strong> Use the resize property to prevent textareas from being resized (disable the "grabber" in the bottom right corner):</p>
+
+<form>
+  <textarea>Some text...</textarea>
+</form>
+
+<style> 
+select {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<body>
+
+<h2>Styling a Dropdown Menu</h2>
+
+<form>
+  <select id="country" name="country">
+  <option value="au">Australia</option>
+  <option value="ca">Canada</option>
+  <option value="usa">USA</option>
+  </select>
+</form>
+
+<style> 
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h2>Styling form buttons</h2>
+
+<form>
+  <input type="button" value="Button">
+  <input type="reset" value="Reset">
+  <input type="submit" value="Submit">
+</form>
+
+<pre>
+CSS Responsive Form
+The following example uses CSS media queries to create a responsive form. You will learn more about media queries in a later chapter.
+
+When the screen is less than 600px wide, we make the labels and input fields stack on top of each other, instead of next to each other.
+
+Resize the screen to see the form layout change!    
+</pre>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.responsive-form {
+  max-width: 600px;
+  width: 100%;
+  border-radius: 4px;
+  border: 2px solid #04AA6D;;
+  background-color:  #f2f2f2;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+label {
+  min-width: 48%;
+  margin-bottom: 10px;
+}
+
+input[type=text], select {
+  min-width: 45%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+textarea {
+  min-width: 45%;
+  height: 150px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  label,
+  input[type=text],
+  input[type=submit],
+  select, textarea {
+    flex: 100%;
+    min-width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+<h2>Responsive Form</h2>
+<p>Resize the screen to see the form layout change!</p>
+
+<div class="responsive-form">
+
+ <form action="/action_page.php">
+   <label for="fname">First Name:</label>
+   <input type="text" id="fname" name="fname" placeholder="Your first name">
+
+   <label for="lname">Last Name:</label>
+   <input type="text" id="lname" name="lname" placeholder="Your last name">
+
+   <label for="country">Country:</label>
+   <select id="country" name="country">
+     <option value="australia">Australia</option>
+     <option value="canada">Canada</option>
+     <option value="usa">USA</option>
+    </select>
+    
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" placeholder="Write something.."></textarea>
+
+    <input type="submit" value="Submit">
+ </form>
+
+</div>
+<h2>CSS COUNTERS</h2>
+<!-- CSS Counters
+With CSS counters, you can create dynamic numbering of elements (like headings, sections, or list items) without using JavaScript.
+
+CSS counters are "variables" maintained by CSS, and their values can be incremented (or decremented) by CSS rules.
+
+ -->
+<!-- CSS Automatic Numbering With Counters
+CSS counters are like "variables". The variable values can be incremented (or decremented) by CSS rules.
+
+To work with CSS counters we will use the following properties:
+
+counter-reset - Creates or resets a counter
+counter-increment - Increments or decrements a counter
+content - Inserts generated content
+counter() - Adds the value of a counter to an element
+To use a CSS counter, it must first be created with the counter-reset property.
+
+CSS Increase and Decrease Counter
+The following example creates a counter for the page (in the body selector), then it increments the counter value by 1 for each <h2> element: -->
+
+    <style>
+body {
+  counter-reset: section;
+}
+
+h2::before {
+  counter-increment: section;
+  content: "Section " counter(section) ": ";
+}
+/* uncomment this for decrement */
+/* body {
+  counter-reset: section;
+}
+
+h2::before {
+  counter-increment: section -1;
+  content: "Section " counter(section) ": ";
+} */
+
+/* Incrementing this by custom values */
+/* body {
+  counter-reset: section;
+}
+
+h2::before {
+  counter-increment: section 2;
+  content: "Section " counter(section) ": ";
+} */
+</style>
+</head>
+<body>
+
+<h1>Using CSS Counters</h1>
+
+<h2>HTML Tutorial</h2>
+<p>Some description here...</p>
+
+<h2>CSS Tutorial</h2>
+<p>Some description here...</p>
+
+<h2>JavaScript Tutorial</h2>
+<p>Some description here...</p>
+
+<h2>Python Tutorial</h2>
+<p>Some description here...</p>
+
+<h2>SQL Tutorial</h2>
+<p>Some description here...</p>
+
+<!-- Decrementing a Counter
+The counter-increment property has a second parameter. The default value is 1. To decrease the counter value, you can set it to -1. -->
+
+
+</body>
+</html>

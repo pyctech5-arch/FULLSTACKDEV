@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Attribute Selectors</title>
+</head>
+<body>
+    <pre>CSS [attribute] Selector
+The [attribute] selector is used to select elements with the specified attribute.
+
+The following example selects all <a> elements with a target attribute:</pre>
+<style>
+a[target] {
+  background-color: yellow;
+}
+</style>
+</head>
+<body>
+
+<h2>CSS [attribute] Selector</h2>
+
+<p>Select and style the links with a target attribute:</p>
+
+<a href="https://www.w3schools.com" target="_blank">W3schools.com</a>
+<a href="https://www.w3schools.com/css/">CSS</a>
+<a href="https://www.w3schools.com/html/" target="_blank">HTML</a>
+<pre>
+CSS [attribute="value"] Selector
+The [attribute="value"] selector is used to select elements with a specific attribute with an exact value.
+
+The following example selects all <a> elements with a target="_blank" attribute:
+</pre>
+<style>
+a[target=_blank] {
+  background-color: yellow;
+}
+</style>
+</head>
+<body>
+
+<h2>CSS [attribute="value"] Selector</h2>
+
+<p>Select and style the links with a target="_blank" attribute:</p>
+
+<a href="https://www.w3schools.com" target="_blank">W3schools.com</a>
+<a href="https://www.w3schools.com/css/">CSS</a>
+<a href="https://www.w3schools.com/html/" target="_top">HTML</a>
+
+<pre>
+CSS [attribute~="value"] Selector
+The [attribute~="value"] selector is used to select elements with an attribute value containing a specific word.
+
+The following example selects all elements with a title attribute that contains a space-separated list of words, one of which is "flower":
+</pre>
+
+<style>
+[title~="flower"] {
+  border: 5px solid yellow;
+}
+</style>
+</head>
+<body>
+
+<h2>CSS [attribute~="value"] Selector</h2>
+<p>All images with the title attribute containing the word "flower" get a yellow border.</p>
+
+<img src="panda.jpeg" title="klematis flower" width="150" height="113">
+<img src="tres.jpeg" title="flower" width="224" height="162">
+<img src="dogu.jpeg" title="tree" width="200" height="358">
+
+<pre>
+CSS [attribute|="value"] Selector
+The [attribute|="value"] selector is used to select elements with the specific attribute, whose value can be exactly the specific value, or start with the specific value followed by a hyphen (-).
+
+Note: The value has to be a whole word, either alone, like class="top", or followed by a hyphen ( - ), like class="top-text".
+</pre>
+<style>
+[class|=top] {
+  background: yellow;
+}
+</style>
+</head>
+<body>
+
+<h2>CSS [attribute|="value"] Selector</h2>
+
+<h1 class="top">Welcome</h1>
+<p class="top-text">Hello world!</p>
+<p class="topcontent">Are you learning CSS?</p>
+<h2>CSS Advanced Attribute Selectors</h2>
+<pre>
+    d on partial attribute values using special operators.
+
+CSS [attribute^="value"] Selector
+The [attribute^="value"] selector is used to select elements with the specific attribute, whose value starts with a specific value.
+
+The following example selects all elements with a class attribute value that starts with "top":
+</pre>
+<style>
+[class^="top"] {
+  background: yellow;
+}
+</style>
+</head>
+<body>
+
+<h2>CSS [attribute^="value"] Selector</h2>
+
+<h1 class="top">Welcome</h1>
+<p class="top-text">Hello world!</p>
+<p class="topcontent">Are you learning CSS?</p>
+<pre>
+CSS [attribute$="value"] Selector
+The [attribute$="value"] selector is used to select elements whose attribute value ends with a specific value.
+
+The following example selects all elements with a class attribute value that ends with "test":    
+</pre>
+<style> 
+[class$="test"] {
+  background: yellow;
+}
+</style>
+</head>
+<body>
+
+<h2>CSS [attribute$="value"] Selector</h2>
+
+<div class="first_test">The first div element.</div>
+<div class="second">The second div element.</div>
+<div class="my-test">The third div element.</div>
+<p class="mytest">This is some text in a paragraph.</p>
+
+<pre>
+CSS [attribute*="value"] Selector
+The [attribute*="value"] selector is used to select elements whose attribute value contains a specific value.
+
+The following example selects all elements with a class attribute value that contains "te":
+</pre>
+<style> 
+[class*="te"] {
+  background: yellow;
+}
+</style>
+</head>
+<body>
+
+<h2>CSS [attribute*="value"] Selector</h2>
+
+<div class="first_test">The first div element.</div>
+<div class="second">The second div element.</div>
+<div class="my-test">The third div element.</div>
+<p class="mytest">This is some text in a paragraph.</p>
+
+<pre>
+Style Form Elements With Attribute Selectors
+The CSS attribute selectors can be useful for styling form elements, based on input type:
+</pre>
+<style>
+input[type="text"] {
+  width: 150px;
+  padding: 6px;
+  margin-bottom: 10px;
+  background-color: pink;
+}
+
+input[type="button"] {
+  width: 100px;
+  padding: 6px;
+  background-color: lightgreen;
+}
+</style>
+</head>
+<body>
+
+<h2>Style Form Elements with Attribute Selectors</h2>
+
+<form name="input" action="" method="get">
+  Firstname: <input type="text" name="Name" value="Peter" size="20"><br>
+  Lastname: <input type="text" name="Name" value="Griffin" size="20"><br><br>
+  <input type="button" value="Button">
+</form>
+</body>
+</html>
