@@ -21,6 +21,22 @@
   background-repeat: no-repeat, repeat;
   padding: 15px;
 }
+#div1 {
+  border: 1px solid black;
+  background-image: url(img_flwr.gif);
+  background-position: right top;    
+  background-repeat: no-repeat;
+  background-size: 100px 80px;
+  padding: 15px;
+}
+
+#div2 {
+  border: 1px solid black;
+  background-image: url(img_flwr.gif);
+  background-position: right top;    
+  background-repeat: no-repeat;
+  padding: 15px;
+}
 </style>
 <h1>Multiple Backgrounds</h1>
 <p>The following div element has two background images:</p>
@@ -39,5 +55,28 @@ background-image	Specifies one or more background images for an element
 background-origin	Specifies where the background image(s) is/are positioned
 background-size	Specifies the size of the background image(s)
 </pre>
-    </body>
+<h2>The CSS background-size Property
+</h2>
+<pre>The background-size property allows you to specify the size of background images.
+
+The background size can be specified in lengths, percentages, or by using one of the keywords: auto, contain, or cover.
+
+The following example resizes a background image to much smaller than the original image (using pixels):</pre>  
+<h1>The background-size Property</h1>
+
+<p>Resized background-image with pixels:</p>
+<div id="div1">
+  <h2>Lorem Ipsum Dolor</h2>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<p>Original size of the background-image:</p>
+<div id="div2">
+  <h2>Lorem Ipsum Dolor</h2>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+</div>
+
+</body>
 </html>
