@@ -137,8 +137,8 @@ return (
         </div>
         <div className='form-group mb-2'>
             <label className='form-label' htmlFor="Email">Email: </label>
-            <input 
-            type="text" 
+            <input
+            type="email" 
             //
             className={`form-control ${errors.email ? 'is-invalid' : '' }`} 
             value={email} 
